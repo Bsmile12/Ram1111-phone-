@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vocab Master · แบบฝึก Tenses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a12; --bg-2:#1a1a2e; --bg-3:#22223a;
+    --text:#f0f0ff; --text-soft:rgba(240,240,255,.55);
+    --accent:#7c6af7; --accent-hover:#9585ff; --accent-2:#f76a8c;
+    --border:rgba(255,255,255,.07); --border-light:rgba(255,255,255,.12);
+    --success:#3dd68c; --success-bg:rgba(61,214,140,.15);
+    --error:#f76a6a; --error-bg:rgba(247,106,106,.15);
+    --body:'Kanit',system-ui,-apple-system,sans-serif;
+    --mono:'Space Mono',ui-monospace,Consolas,monospace;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--body); color:var(--text);
+    background:var(--bg);
+    background-image:radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,106,247,.10) 0%, transparent 60%);
+    min-height:100vh;
+  }
+  header{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:14px 20px;border-bottom:1px solid var(--border);
+    position:sticky;top:0;background:rgba(10,10,18,.9);backdrop-filter:blur(12px);z-index:20;
+  }
+  .logo{display:flex;align-items:center;gap:11px}
+  .logo .badge{
+    font-family:var(--body);font-weight:700;font-size:11px;line-height:1.05;text-align:center;
+    color:#fff;background:var(--accent);padding:8px 9px;border-radius:10px;
+  }
+  .logo .head-txt{display:flex;flex-direction:column;gap:2px}
+  .logo .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--text-soft)}
+  .logo .ttl{font-weight:600;font-size:16px;line-height:1.15;color:var(--text)}
+  .backlink{
+    font-family:var(--body);font-size:13px;color:var(--text);text-decoration:none;
+    border:1px solid var(--border);background:var(--bg-2);padding:8px 14px;white-space:nowrap;
+    border-radius:8px;transition:.2s;
+  }
+  .backlink:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .container{max-width:860px;margin:0 auto;padding:22px 18px 80px}
+
+  /* topic switcher */
+  .topic-bar{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 22px}
+  .topic-btn{
+    background:var(--bg-2);border:1px solid var(--border);padding:10px 16px;cursor:pointer;
+    font-family:var(--body);font-weight:500;font-size:14px;color:var(--text);
+    display:flex;align-items:center;gap:7px;border-radius:8px;transition:.2s;
+  }
+  .topic-btn:hover{background:var(--bg-3);border-color:var(--border-light)}
+  .topic-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  h1{font-size:24px;font-weight:600;margin:6px 0 2px;color:var(--text)}
+  .sub{color:var(--text-soft);margin:0 0 22px;font-size:14.5px}
+  .modes{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:0 0 26px}
+  @media(max-width:640px){.modes{grid-template-columns:repeat(2,1fr)}}
+  .mode-btn{
+    background:var(--bg-2);border:1px solid var(--border);
+    padding:15px 12px;text-align:center;cursor:pointer;transition:.2s;color:var(--text);
+    font-family:var(--body);font-weight:500;font-size:14px;
+    display:flex;flex-direction:column;align-items:center;gap:7px;
+    border-radius:var(--radius);
+  }
+  .mode-btn:hover{background:var(--bg-3);border-color:var(--border-light)}
+  .mode-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .mode-btn.hidden-mode{display:none}
+  .mode-btn .ic{font-size:21px}
+  .panel{display:none}
+  .panel.show{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .btn{
+    background:var(--accent);color:#fff;border:none;padding:10px 18px;
+    font-family:var(--body);font-weight:600;cursor:pointer;font-size:14px;transition:.2s;
+    border-radius:8px;
+  }
+  .btn:hover{background:var(--accent-hover);box-shadow:0 4px 15px rgba(124,106,247,.3)}
+  .btn:active{transform:scale(.97)}
+  .btn.ghost{background:var(--bg-2);color:var(--text);border:1px solid var(--border)}
+  .btn.ghost:hover{background:var(--bg-3);border-color:var(--border-light)}
+  .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  .counter{color:var(--text-soft);font-weight:600;font-size:14px;font-family:var(--body)}
+
+  /* Flashcards */
+  .flip-wrap{perspective:1600px;margin:0 auto;max-width:620px}
+  .flip{position:relative;width:100%;min-height:320px;cursor:pointer;transition:transform .5s;transform-style:preserve-3d}
+  .flip.flipped{transform:rotateX(180deg)}
+  .face{
+    position:absolute;inset:0;backface-visibility:hidden;
+    background:var(--bg-2);border:1px solid var(--border);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:28px;text-align:center;border-radius:var(--radius);
+  }
+  .face .tag{position:absolute;top:13px;left:16px;color:var(--text-soft);font-size:12px;font-weight:600;letter-spacing:.6px}
+  .face.front .term{font-size:30px;font-weight:700;line-height:1.25;color:#fff}
+  .face.back{transform:rotateX(180deg)}
+  .face.back .struct{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent);
+    background:var(--bg-3);border:1px solid var(--border);padding:8px 14px;margin-bottom:14px;border-radius:8px}
+  .face.back .use{font-size:16.5px;margin-bottom:10px}
+  .face.back .ex{font-size:15px;color:var(--text-soft);font-style:italic}
+  .fc-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:18px}
+  .round{width:46px;height:46px;border:1px solid var(--border);background:var(--bg-2);color:var(--text);font-size:20px;cursor:pointer;border-radius:50%;transition:.2s}
+  .round:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .progress{height:6px;background:var(--bg-3);border-radius:3px;overflow:hidden;margin:16px auto 0;max-width:620px}
+  .progress > i{display:block;height:100%;background:var(--accent);width:0;transition:.3s;border-radius:3px}
+
+  /* Learn / Test question cards */
+  .q-card{background:var(--bg-2);border:1px solid var(--border);padding:22px;border-radius:var(--radius)}
+  .q-prompt{font-size:14px;color:var(--text-soft);margin-bottom:6px}
+  .q-term{font-size:22px;font-weight:600;margin-bottom:20px;line-height:1.3;color:#fff}
+  .q-term .struct{font-family:var(--mono);color:var(--accent)}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.opts{grid-template-columns:1fr}}
+  .opt{
+    text-align:left;background:var(--bg-3);border:1px solid var(--border);
+    padding:13px 15px;cursor:pointer;color:var(--text);font-size:14px;transition:.2s;line-height:1.4;
+    border-radius:8px;font-family:var(--mono);
+  }
+  .opt:hover{background:var(--border);border-color:var(--border-light)}
+  .opt.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .opt.correct{border-color:var(--success);background:var(--success-bg);color:var(--success)}
+  .opt.wrong{border-color:var(--error);background:var(--error-bg);color:var(--error)}
+  .q-note{margin-top:10px;font-size:14px;font-weight:600;color:var(--error)}
+  .opt:disabled{cursor:default}
+  .feedback{margin-top:16px;font-weight:600;font-size:16px}
+  .feedback.ok{color:var(--success)}
+  .feedback.no{color:var(--error)}
+
+  /* Write / Analyze inputs */
+  .tinput{width:100%;background:var(--bg-3);border:1px solid var(--border);padding:12px 14px;color:var(--text);font-size:16px;font-family:var(--mono);margin-top:6px;border-radius:8px;transition:.2s}
+  .tinput:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,106,247,.2)}
+  .tinput.ok{border-color:var(--success);background:var(--success-bg)}
+  .tinput.no{border-color:var(--error);background:var(--error-bg)}
+  .tinput:disabled{opacity:.9}
+  .field-label{font-size:14px;color:var(--text-soft);font-weight:600;margin-top:16px}
+  .ans-reveal{font-size:14px;margin-top:5px;font-weight:600}
+  .sentence{font-size:21px;font-weight:600;text-align:center;margin:6px 0 4px;line-height:1.45;color:#fff}
+
+  /* Match */
+  .match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:560px){.match-grid{grid-template-columns:repeat(2,1fr)}}
+  .tile{
+    background:var(--bg-2);border:1px solid var(--border);padding:14px;
+    min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center;
+    cursor:pointer;font-size:14px;transition:.2s;line-height:1.35;font-family:var(--mono);
+    border-radius:8px;
+  }
+  .tile:hover{background:var(--bg-3);border-color:var(--border-light)}
+  .tile.sel{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .tile.gone{opacity:0;pointer-events:none;transform:scale(.8);transition:.35s}
+  .tile.miss{border-color:var(--error);animation:shake .3s}
+  @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+  /* Results */
+  .result{text-align:center;background:var(--bg-2);border:1px solid var(--border);padding:34px;border-radius:var(--radius)}
+  .score-ring{font-size:48px;font-weight:700;color:#fff;display:inline-block}
+  .result p{color:var(--text-soft);font-size:16px}
+  .hidden{display:none!important}
+  .center{text-align:center}
+  .foot{color:var(--text-soft);font-size:12.5px;text-align:center;margin-top:40px}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){.panel.show{animation:none}.flip{transition:none}}
+  @media(max-width:560px){
+    header{padding:10px 14px}
+    .logo .eyebrow{display:none}
+    .logo .badge{font-size:10px;padding:6px 7px}
+    .logo .ttl{font-size:15px}
+    .backlink{font-size:12px;padding:7px 10px}
+    .topic-btn{font-size:13px;padding:8px 12px}
+    h1{font-size:20px}
+  }
+  /* Vocab Master look */
+  .vm-logo{font-family:var(--mono);font-weight:700;font-size:14px;color:var(--accent);letter-spacing:-1px;text-decoration:none;white-space:nowrap;flex:0 0 auto}
+  .vm-logo span{color:var(--accent-2)}
+  .btn:not(.ghost):not(.danger){background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .btn:not(.ghost):not(.danger):hover{background:linear-gradient(135deg,var(--accent-hover),var(--accent-2));box-shadow:0 4px 15px rgba(124,106,247,.3)}
+  @media(max-width:560px){.vm-logo{font-size:12px}.head-txt{flex:1 1 0!important;min-width:0!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a class="vm-logo" href="index.html">VOCAB<span>MASTER</span></a>
+    <span class="head-txt">
+      <span class="eyebrow">RAM 1111 · แบบฝึก</span>
+      <span class="ttl">คลังแบบฝึก</span>
+    </span>
+  </div>
+  <a class="backlink" href="index.html">← กลับหน้าหลัก</a>
+</header>
+
+<div class="container">
+  <div class="topic-bar" id="topicBar">
+    <button class="topic-btn active" data-topic="tenses"><span>📘</span>12 Tenses</button>
+    <button class="topic-btn" data-topic="modals"><span>🔑</span>Modal Verbs</button>
+    <button class="topic-btn" data-topic="irregular"><span>🔁</span>Irregular Verbs</button>
+  </div>
+
+  <h1 id="topicTitle">12 Tenses — ท่อง 12 กาล</h1>
+  <p class="sub" id="topicSub">ท่องและทดสอบ 12 Tense ภาษาอังกฤษ · เลือกโหมดการเรียนด้านล่าง</p>
+
+  <div class="modes">
+    <button class="mode-btn active" data-mode="flash"><span class="ic">🗂️</span>Flashcards</button>
+    <button class="mode-btn" data-mode="learn"><span class="ic">🧠</span>Learn</button>
+    <button class="mode-btn" data-mode="match"><span class="ic">🧩</span>Match</button>
+    <button class="mode-btn" data-mode="test"><span class="ic">📝</span>Test</button>
+    <button class="mode-btn" data-mode="write"><span class="ic">🖊️</span>Write</button>
+    <button class="mode-btn" data-mode="analyze"><span class="ic">🔎</span>วิเคราะห์</button>
+  </div>
+
+  <section id="flash" class="panel show">
+    <div class="toolbar">
+      <span class="counter"><span id="fcNow">1</span> / <span id="fcTotal">12</span></span>
+      <div style="display:flex;gap:8px">
+        <button class="btn ghost" id="fcShuffle">🔀 สลับ</button>
+        <button class="btn ghost" id="fcReset">↺ เริ่มใหม่</button>
+      </div>
+    </div>
+    <div class="flip-wrap">
+      <div class="flip" id="flip">
+        <div class="face front">
+          <span class="tag" id="fcFrontTag">TERM · แตะเพื่อพลิก</span>
+          <div class="term" id="fcTerm">—</div>
+        </div>
+        <div class="face back">
+          <span class="tag" id="fcBackTag">DEFINITION</span>
+          <div class="struct" id="fcStruct"></div>
+          <div class="use" id="fcUse"></div>
+          <div class="ex" id="fcEx"></div>
+        </div>
+      </div>
+    </div>
+    <div class="progress"><i id="fcBar"></i></div>
+    <div class="fc-nav">
+      <button class="round" id="fcPrev">‹</button>
+      <button class="round" id="fcNext">›</button>
+    </div>
+  </section>
+
+  <section id="learn" class="panel">
+    <div class="toolbar">
+      <span class="counter">คำถาม <span id="lnNow">1</span> / <span id="lnTotal">12</span></span>
+      <span class="counter">✅ <span id="lnScore">0</span></span>
+    </div>
+    <div id="lnBody"></div>
+  </section>
+
+  <section id="match" class="panel">
+    <div class="toolbar">
+      <span class="counter"><span id="mtLabel">จับคู่</span> · ⏱️ <span id="mtTime">0.0</span>s</span>
+      <button class="btn ghost" id="mtRestart">↺ เล่นใหม่</button>
+    </div>
+    <div class="match-grid" id="mtGrid"></div>
+  </section>
+
+  <section id="test" class="panel">
+    <div class="toolbar">
+      <span class="counter">ข้อ <span id="tsNow">1</span> / <span id="tsTotal">10</span></span>
+      <span class="counter">✅ <span id="tsScore">0</span></span>
+    </div>
+    <div id="tsBody"></div>
+  </section>
+
+  <section id="write" class="panel">
+    <div class="toolbar">
+      <span class="counter">ข้อ <span id="wrNow">1</span> / <span id="wrTotal">12</span></span>
+      <span class="counter">✅ <span id="wrScore">0</span></span>
+    </div>
+    <div id="wrBody"></div>
+  </section>
+
+  <section id="analyze" class="panel">
+    <div class="toolbar">
+      <span class="counter">วิเคราะห์ประโยค · พิมพ์ตอบ Tense + S + V</span>
+      <button class="btn ghost" id="anNew">🔀 ประโยคใหม่</button>
+    </div>
+    <div id="anBody"></div>
+  </section>
+
+  <p class="foot">คลังแบบฝึกของ RAM 1111 · เนื้อหาฝึกทั่วไปเพื่อทบทวน (ไม่ได้ดึงจากชีทโดยตรง)</p>
+</div>
+
+<script>
+/* ================= DATASETS ================= */
+const TENSE_CARDS = [
+  {t:"Present Simple", s:"S + V1(s/es)", u:"ความจริง / กิจวัตรประจำวัน", e:"She works here every day."},
+  {t:"Present Continuous", s:"S + is/am/are + V-ing", u:"กำลังทำอยู่ตอนนี้", e:"She is working right now."},
+  {t:"Present Perfect", s:"S + has/have + V3", u:"อดีตต่อเนื่องถึงปัจจุบัน / เพิ่งเสร็จ", e:"She has worked here for years."},
+  {t:"Present Perfect Continuous", s:"S + has/have + been + V-ing", u:"ทำต่อเนื่องมาถึงตอนนี้ (เน้นช่วงเวลา)", e:"She has been working for three hours."},
+  {t:"Past Simple", s:"S + V2", u:"จบไปแล้วในอดีต", e:"She worked yesterday."},
+  {t:"Past Continuous", s:"S + was/were + V-ing", u:"กำลังทำ ณ จุดหนึ่งในอดีต", e:"She was working at 8 PM."},
+  {t:"Past Perfect", s:"S + had + V3", u:"อดีตก่อนอีกอดีต", e:"She had worked before he came."},
+  {t:"Past Perfect Continuous", s:"S + had + been + V-ing", u:"ทำต่อเนื่องก่อนเหตุการณ์ในอดีต", e:"She had been working for two hours when he arrived."},
+  {t:"Future Simple", s:"S + will + V1", u:"จะทำในอนาคต", e:"She will work tomorrow."},
+  {t:"Future Continuous", s:"S + will + be + V-ing", u:"กำลังทำ ณ จุดหนึ่งในอนาคต", e:"She will be working at 8 PM."},
+  {t:"Future Perfect", s:"S + will + have + V3", u:"จะเสร็จก่อนจุดหนึ่งในอนาคต", e:"She will have worked by 5 PM."},
+  {t:"Future Perfect Continuous", s:"S + will + have + been + V-ing", u:"จะทำต่อเนื่องถึงจุดหนึ่งในอนาคต", e:"She will have been working for four hours by then."},
+];
+const SENTENCES=[
+  {q:"She works here every day.", tense:"Present Simple", s:["she"], v:["works"]},
+  {q:"They play football on Sundays.", tense:"Present Simple", s:["they"], v:["play"]},
+  {q:"The train leaves at noon.", tense:"Present Simple", s:["the train","train"], v:["leaves"]},
+  {q:"My father drives to work.", tense:"Present Simple", s:["my father","father"], v:["drives"]},
+  {q:"I am reading a book now.", tense:"Present Continuous", s:["i"], v:["am reading","reading"]},
+  {q:"The children are sleeping upstairs.", tense:"Present Continuous", s:["the children","children"], v:["are sleeping","sleeping"]},
+  {q:"We have finished our homework.", tense:"Present Perfect", s:["we"], v:["have finished","finished"]},
+  {q:"She has been studying since morning.", tense:"Present Perfect Continuous", s:["she"], v:["has been studying","studying"]},
+  {q:"He fixed the car yesterday.", tense:"Past Simple", s:["he"], v:["fixed"]},
+  {q:"She worked yesterday.", tense:"Past Simple", s:["she"], v:["worked"]},
+  {q:"It was raining all night.", tense:"Past Continuous", s:["it"], v:["was raining","raining"]},
+  {q:"The dog had eaten before we arrived.", tense:"Past Perfect", s:["the dog","dog"], v:["had eaten","eaten"]},
+  {q:"She had been working for two hours when he arrived.", tense:"Past Perfect Continuous", s:["she"], v:["had been working","working"]},
+  {q:"You will love this movie.", tense:"Future Simple", s:["you"], v:["will love","love"]},
+  {q:"She will work tomorrow.", tense:"Future Simple", s:["she"], v:["will work","work"]},
+  {q:"We will be traveling next week.", tense:"Future Continuous", s:["we"], v:["will be traveling","traveling"]},
+  {q:"By 2030, they will have built the bridge.", tense:"Future Perfect", s:["they"], v:["will have built","built"]},
+  {q:"She will have been working for four hours by then.", tense:"Future Perfect Continuous", s:["she"], v:["will have been working","working"]},
+];
+const MODAL_CARDS = [
+  {t:"will", s:"จะ (อนาคต) / ความตั้งใจ", u:"บอกอนาคต, ความตั้งใจ, การตัดสินใจตอนนั้น", e:"I will call you tonight."},
+  {t:"shall", s:"จะ (ใช้กับ I/We) / ข้อเสนอ", u:"อนาคตกับ I/We, เสนอตัวหรือชวน (Shall I/we...?)", e:"Shall I open the window?"},
+  {t:"can", s:"สามารถ / ขออนุญาต (ไม่ทางการ)", u:"ความสามารถ, ขออนุญาตแบบกันเอง", e:"She can speak English."},
+  {t:"could", s:"สามารถ (อดีต) / ขอสุภาพ", u:"ความสามารถในอดีต, คำขอสุภาพ", e:"Could you help me, please?"},
+  {t:"may", s:"อาจจะ / ขออนุญาต (ทางการ)", u:"ความเป็นไปได้, ขออนุญาตแบบสุภาพทางการ", e:"It may rain this evening."},
+  {t:"might", s:"อาจจะ (โอกาสน้อยกว่า may)", u:"ความเป็นไปได้ที่น้อยกว่า may", e:"He might come to the party."},
+  {t:"must", s:"ต้อง (จำเป็นสูง / กฎ)", u:"ความจำเป็นสูง, ข้อบังคับ, การคาดเดาที่มั่นใจมาก", e:"You must wear a helmet."},
+  {t:"have to", s:"ต้อง (จำเป็นจากภายนอก)", u:"ความจำเป็นจากกฎ/สถานการณ์ภายนอก, อดีตใช้ had to", e:"I have to work on Saturday."},
+  {t:"should", s:"ควรจะ (คำแนะนำ)", u:"คำแนะนำ, สิ่งที่ควรทำ", e:"You should see a doctor."},
+  {t:"ought to", s:"ควรจะ (= should)", u:"คำแนะนำ ความหมายเท่ากับ should", e:"You ought to apologize to her."},
+  {t:"would", s:"จะ (อดีตของ will) / คำขอสุภาพ", u:"เล่าอดีต, สมมติ, คำขอ/คำเชิญสุภาพ", e:"Would you like some coffee?"},
+  {t:"would like", s:"อยากได้ / อยากจะ (สุภาพ = want)", u:"บอกความต้องการอย่างสุภาพ ตามด้วย to + V1 หรือ นาม", e:"I would like to order now."},
+];
+const IRREG_CARDS = [
+  {t:"be", s:"was, were / been", u:"เป็น อยู่ คือ", e:"They were happy yesterday."},
+  {t:"become", s:"became / become", u:"กลายเป็น", e:"She became a doctor."},
+  {t:"begin", s:"began / begun", u:"เริ่ม", e:"The show began at eight."},
+  {t:"break", s:"broke / broken", u:"ทำแตก / หัก", e:"He broke the glass."},
+  {t:"bring", s:"brought / brought", u:"นำมา", e:"She brought some food."},
+  {t:"buy", s:"bought / bought", u:"ซื้อ", e:"I bought a new phone."},
+  {t:"catch", s:"caught / caught", u:"จับ", e:"The cat caught a mouse."},
+  {t:"come", s:"came / come", u:"มา", e:"He came home late."},
+  {t:"do", s:"did / done", u:"ทำ", e:"She did her homework."},
+  {t:"drink", s:"drank / drunk", u:"ดื่ม", e:"We drank coffee."},
+  {t:"drive", s:"drove / driven", u:"ขับ", e:"He drove to Chiang Mai."},
+  {t:"eat", s:"ate / eaten", u:"กิน", e:"They ate lunch together."},
+  {t:"fall", s:"fell / fallen", u:"ตก / ล้ม", e:"The leaves fell down."},
+  {t:"feel", s:"felt / felt", u:"รู้สึก", e:"I felt tired."},
+  {t:"find", s:"found / found", u:"พบ / หาเจอ", e:"She found her keys."},
+  {t:"get", s:"got / got (gotten)", u:"ได้รับ / ไปถึง", e:"He got a gift."},
+  {t:"give", s:"gave / given", u:"ให้", e:"She gave me a book."},
+  {t:"go", s:"went / gone", u:"ไป", e:"They went to the market."},
+  {t:"have", s:"had / had", u:"มี", e:"We had a good time."},
+  {t:"know", s:"knew / known", u:"รู้ / รู้จัก", e:"I knew the answer."},
+  {t:"leave", s:"left / left", u:"ออกจาก / ทิ้งไว้", e:"He left the office early."},
+  {t:"make", s:"made / made", u:"ทำ / สร้าง", e:"She made a cake."},
+  {t:"meet", s:"met / met", u:"พบ", e:"We met at the station."},
+  {t:"pay", s:"paid / paid", u:"จ่าย", e:"I paid the bill."},
+  {t:"put", s:"put / put", u:"วาง", e:"He put it on the table."},
+  {t:"read", s:"read / read", u:"อ่าน (V2/V3 ออกเสียง เรด)", e:"She read the news last night."},
+  {t:"run", s:"ran / run", u:"วิ่ง", e:"They ran fast."},
+  {t:"say", s:"said / said", u:"พูด / กล่าว", e:"He said hello."},
+  {t:"see", s:"saw / seen", u:"เห็น", e:"I saw a movie."},
+  {t:"sell", s:"sold / sold", u:"ขาย", e:"She sold her car."},
+  {t:"send", s:"sent / sent", u:"ส่ง", e:"He sent an email."},
+  {t:"sing", s:"sang / sung", u:"ร้องเพลง", e:"They sang together."},
+  {t:"sit", s:"sat / sat", u:"นั่ง", e:"We sat by the window."},
+  {t:"speak", s:"spoke / spoken", u:"พูด", e:"She spoke slowly."},
+  {t:"take", s:"took / taken", u:"เอา / นำไป", e:"He took my pen."},
+  {t:"teach", s:"taught / taught", u:"สอน", e:"She taught English."},
+  {t:"tell", s:"told / told", u:"บอก", e:"He told a story."},
+  {t:"think", s:"thought / thought", u:"คิด", e:"I thought about it."},
+  {t:"write", s:"wrote / written", u:"เขียน", e:"She wrote a letter."},
+];
+
+const TOPICS = {
+  tenses: {
+    title:"12 Tenses — ท่อง 12 กาล",
+    sub:"ท่องและทดสอบ 12 Tense ภาษาอังกฤษ · เลือกโหมดการเรียนด้านล่าง",
+    cards:TENSE_CARDS, sentences:SENTENCES,
+    frontTag:"TENSE · แตะเพื่อพลิก", backTag:"โครงสร้าง & การใช้",
+    learnPrompt:"โครงสร้างของ Tense นี้คือข้อใด?",
+    writePrompt:"พิมพ์โครงสร้างของ Tense นี้ (เช่น S + V1)",
+    matchLabel:"จับคู่ Tense กับโครงสร้าง",
+    testA:c=>`โครงสร้างของ "${c.t}" คือ?`,
+    testB:c=>`โครงสร้างนี้คือ Tense ใด?  «${c.s}»`,
+  },
+  modals: {
+    title:"Modal Verbs — กริยาช่วย",
+    sub:"can / could / may / must / should / would ... จำความหมายและการใช้",
+    cards:MODAL_CARDS, sentences:null,
+    frontTag:"MODAL · แตะเพื่อพลิก", backTag:"ความหมาย & การใช้",
+    learnPrompt:"ความหมาย/การใช้ของ modal นี้คือข้อใด?",
+    writePrompt:"พิมพ์ความหมาย/การใช้สั้นๆ ของ modal นี้",
+    matchLabel:"จับคู่ Modal กับความหมาย",
+    testA:c=>`ความหมาย/การใช้ของ "${c.t}" คือ?`,
+    testB:c=>`modal ตัวใดมีความหมายว่า «${c.s}» ?`,
+  },
+  irregular: {
+    title:"Irregular Verbs — กริยาอปกติ 3 ช่อง",
+    sub:"go → went → gone ... จำช่อง 2 และ ช่อง 3 ของกริยาที่พบบ่อย",
+    cards:IRREG_CARDS, sentences:null,
+    frontTag:"V1 (ช่อง 1) · แตะเพื่อพลิก", backTag:"ช่อง 2 / ช่อง 3 · แปล",
+    learnPrompt:"ช่อง 2 / ช่อง 3 ของกริยานี้คือข้อใด?",
+    writePrompt:"พิมพ์ช่อง 2 และ ช่อง 3 (เช่น went / gone)",
+    matchLabel:"จับคู่ V1 กับ ช่อง 2 / ช่อง 3",
+    testA:c=>`ช่อง 2 / ช่อง 3 ของ "${c.t}" คือ?`,
+    testB:c=>`กริยา (ช่อง 1) ใดผันเป็น «${c.s}» ?`,
+  },
+};
+let CUR = TOPICS.tenses;
+
+const shuffle = a => { a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];} return a; };
+const sample = (a,n) => shuffle(a).slice(0,n);
+const quizSet = () => { const c=CUR.cards; return c.length>15 ? sample(c,15) : shuffle(c); };
+
+/* ================= TOPIC SWITCH ================= */
+document.querySelectorAll('.topic-btn').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.topic-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    CUR = TOPICS[b.dataset.topic];
+    document.getElementById('topicTitle').textContent = CUR.title;
+    document.getElementById('topicSub').textContent = CUR.sub;
+    const anBtn = document.querySelector('.mode-btn[data-mode="analyze"]');
+    anBtn.classList.toggle('hidden-mode', !CUR.sentences);
+    document.querySelectorAll('.mode-btn').forEach(x=>x.classList.remove('active'));
+    document.querySelector('.mode-btn[data-mode="flash"]').classList.add('active');
+    Object.values(panels).forEach(p=>p.classList.remove('show'));
+    panels.flash.classList.add('show');
+    fcOrder=[...CUR.cards]; fcIdx=0; renderFc();
+  };
+});
+
+/* ================= MODE SWITCH ================= */
+const panels = {flash:document.getElementById('flash'),learn:document.getElementById('learn'),match:document.getElementById('match'),test:document.getElementById('test'),write:document.getElementById('write'),analyze:document.getElementById('analyze')};
+document.querySelectorAll('.mode-btn').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.mode-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    Object.values(panels).forEach(p=>p.classList.remove('show'));
+    const m=b.dataset.mode; panels[m].classList.add('show');
+    if(m==='flash'){ fcOrder=[...CUR.cards]; fcIdx=0; renderFc(); }
+    if(m==='learn') startLearn();
+    if(m==='match') startMatch();
+    if(m==='test') startTest();
+    if(m==='write') startWrite();
+    if(m==='analyze') startAnalyze();
+  };
+});
+
+/* ================= FLASHCARDS ================= */
+let fcOrder=[...CUR.cards], fcIdx=0;
+const flip=document.getElementById('flip');
+function renderFc(){
+  const c=fcOrder[fcIdx];
+  flip.classList.remove('flipped');
+  document.getElementById('fcFrontTag').textContent=CUR.frontTag;
+  document.getElementById('fcBackTag').textContent=CUR.backTag;
+  document.getElementById('fcTerm').textContent=c.t;
+  document.getElementById('fcStruct').textContent=c.s;
+  document.getElementById('fcUse').textContent=c.u;
+  document.getElementById('fcEx').textContent="“"+c.e+"”";
+  document.getElementById('fcNow').textContent=fcIdx+1;
+  document.getElementById('fcTotal').textContent=fcOrder.length;
+  document.getElementById('fcBar').style.width=((fcIdx+1)/fcOrder.length*100)+'%';
+}
+flip.onclick=()=>flip.classList.toggle('flipped');
+document.getElementById('fcNext').onclick=()=>{fcIdx=(fcIdx+1)%fcOrder.length;renderFc();};
+document.getElementById('fcPrev').onclick=()=>{fcIdx=(fcIdx-1+fcOrder.length)%fcOrder.length;renderFc();};
+document.getElementById('fcShuffle').onclick=()=>{fcOrder=shuffle(CUR.cards);fcIdx=0;renderFc();};
+document.getElementById('fcReset').onclick=()=>{fcOrder=[...CUR.cards];fcIdx=0;renderFc();};
+document.addEventListener('keydown',e=>{
+  if(!panels.flash.classList.contains('show'))return;
+  if(e.key==='ArrowRight')document.getElementById('fcNext').click();
+  if(e.key==='ArrowLeft')document.getElementById('fcPrev').click();
+  if(e.key===' '){e.preventDefault();flip.classList.toggle('flipped');}
+});
+renderFc();
+
+/* ================= LEARN (term -> definition) ================= */
+let lnQ=[], lnIdx=0, lnScore=0;
+function startLearn(){
+  lnQ=quizSet(); lnIdx=0; lnScore=0;
+  document.getElementById('lnScore').textContent=0;
+  document.getElementById('lnTotal').textContent=lnQ.length;
+  renderLearn();
+}
+function renderLearn(){
+  if(lnIdx>=lnQ.length){ return finishLearn(); }
+  const c=lnQ[lnIdx];
+  document.getElementById('lnNow').textContent=lnIdx+1;
+  const wrong=sample(CUR.cards.filter(x=>x.t!==c.t),3).map(x=>x.s);
+  const opts=shuffle([c.s,...wrong]);
+  const body=document.getElementById('lnBody');
+  body.innerHTML='';
+  const card=document.createElement('div');card.className='q-card';
+  card.innerHTML=`<div class="q-prompt">${CUR.learnPrompt}</div>
+    <div class="q-term">${c.t}</div><div class="opts"></div><div class="feedback"></div>`;
+  const box=card.querySelector('.opts');
+  opts.forEach(o=>{
+    const btn=document.createElement('button');btn.className='opt';btn.textContent=o;
+    btn.onclick=()=>{
+      box.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+      const fb=card.querySelector('.feedback');
+      if(o===c.s){btn.classList.add('correct');lnScore++;document.getElementById('lnScore').textContent=lnScore;fb.className='feedback ok';fb.textContent='✅ ถูกต้อง!';}
+      else{btn.classList.add('wrong');box.querySelectorAll('.opt').forEach(x=>{if(x.textContent===c.s)x.classList.add('correct');});fb.className='feedback no';fb.textContent='❌ คำตอบที่ถูก: '+c.s;}
+      const nx=document.createElement('button');nx.className='btn';nx.style.marginTop='16px';nx.textContent=lnIdx<lnQ.length-1?'ข้อถัดไป →':'ดูผล →';
+      nx.onclick=()=>{lnIdx++;renderLearn();};
+      card.appendChild(nx);nx.focus();
+    };
+    box.appendChild(btn);
+  });
+  body.appendChild(card);
+}
+function finishLearn(){
+  const pct=Math.round(lnScore/lnQ.length*100);
+  document.getElementById('lnBody').innerHTML=
+   `<div class="result"><div class="score-ring">${lnScore}/${lnQ.length}</div>
+    <p>คุณตอบถูก ${pct}% ${pct===100?'🎉 เก่งมาก!':pct>=70?'👍 ดีมาก':'💪 ลองอีกครั้ง'}</p>
+    <button class="btn" onclick="startLearn()">เล่นอีกครั้ง</button></div>`;
+}
+
+/* ================= MATCH ================= */
+let mtSel=null, mtLeft=0, mtT0=0, mtTimer=null;
+function startMatch(){
+  clearInterval(mtTimer);
+  document.getElementById('mtLabel').textContent=CUR.matchLabel;
+  const pick=sample(CUR.cards,6);
+  const tiles=[];
+  pick.forEach(c=>{tiles.push({k:c.t,txt:c.t,type:'t'});tiles.push({k:c.t,txt:c.s,type:'s'});});
+  const grid=document.getElementById('mtGrid');grid.innerHTML='';
+  mtSel=null; mtLeft=pick.length;
+  shuffle(tiles).forEach(o=>{
+    const d=document.createElement('div');d.className='tile';d.textContent=o.txt;d.dataset.k=o.k;
+    d.onclick=()=>onTile(d);
+    grid.appendChild(d);
+  });
+  mtT0=performance.now();
+  mtTimer=setInterval(()=>{document.getElementById('mtTime').textContent=((performance.now()-mtT0)/1000).toFixed(1);},100);
+}
+function onTile(d){
+  if(d.classList.contains('gone')||d===mtSel)return;
+  if(!mtSel){mtSel=d;d.classList.add('sel');return;}
+  if(mtSel.dataset.k===d.dataset.k){
+    d.classList.add('gone');mtSel.classList.add('gone');mtSel=null;mtLeft--;
+    if(mtLeft===0){clearInterval(mtTimer);const t=((performance.now()-mtT0)/1000).toFixed(1);
+      document.getElementById('mtGrid').innerHTML=
+       `<div class="result" style="grid-column:1/-1"><div class="score-ring">${t}s</div>
+        <p>จับคู่ครบทั้งหมด! 🎉</p><button class="btn" onclick="startMatch()">เล่นอีกครั้ง</button></div>`;}
+  } else {
+    const a=mtSel,b=d;a.classList.add('miss');b.classList.add('miss');
+    setTimeout(()=>{a.classList.remove('miss','sel');b.classList.remove('miss');},350);
+    mtSel=null;
+  }
+}
+document.getElementById('mtRestart').onclick=startMatch;
+
+/* ================= TEST ================= */
+let tsQ=[], tsIdx=0, tsScore=0;
+function startTest(){
+  tsQ=sample(CUR.cards,Math.min(10,CUR.cards.length)).map((c,i)=>{
+    const askDef = i%2===0;
+    const prompt = askDef ? CUR.testA(c) : CUR.testB(c);
+    const correct = askDef ? c.s : c.t;
+    const pool = askDef ? CUR.cards.map(x=>x.s) : CUR.cards.map(x=>x.t);
+    const wrong = sample(pool.filter(x=>x!==correct),3);
+    return {prompt, correct, opts:shuffle([correct,...wrong])};
+  });
+  tsIdx=0; tsScore=0;
+  document.getElementById('tsScore').textContent=0;
+  document.getElementById('tsTotal').textContent=tsQ.length;
+  renderTest();
+}
+function renderTest(){
+  if(tsIdx>=tsQ.length){ return finishTest(); }
+  const q=tsQ[tsIdx];
+  document.getElementById('tsNow').textContent=tsIdx+1;
+  const body=document.getElementById('tsBody');body.innerHTML='';
+  const card=document.createElement('div');card.className='q-card';
+  card.innerHTML=`<div class="q-prompt">ข้อ ${tsIdx+1}</div><div class="q-term" style="font-size:19px">${q.prompt}</div><div class="opts"></div><div class="feedback"></div>`;
+  const box=card.querySelector('.opts');
+  q.opts.forEach(o=>{
+    const btn=document.createElement('button');btn.className='opt';btn.textContent=o;
+    btn.onclick=()=>{
+      box.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+      const fb=card.querySelector('.feedback');
+      if(o===q.correct){btn.classList.add('correct');tsScore++;document.getElementById('tsScore').textContent=tsScore;fb.className='feedback ok';fb.textContent='✅ ถูกต้อง!';}
+      else{btn.classList.add('wrong');box.querySelectorAll('.opt').forEach(x=>{if(x.textContent===q.correct)x.classList.add('correct');});fb.className='feedback no';fb.textContent='❌ คำตอบที่ถูก: '+q.correct;}
+      const nx=document.createElement('button');nx.className='btn';nx.style.marginTop='16px';nx.textContent=tsIdx<tsQ.length-1?'ข้อถัดไป →':'ดูผล →';
+      nx.onclick=()=>{tsIdx++;renderTest();};
+      card.appendChild(nx);nx.focus();
+    };
+    box.appendChild(btn);
+  });
+  body.appendChild(card);
+}
+function finishTest(){
+  const pct=Math.round(tsScore/tsQ.length*100);
+  document.getElementById('tsNow').textContent=tsQ.length;
+  document.getElementById('tsBody').innerHTML=
+   `<div class="result"><div class="score-ring">${tsScore}/${tsQ.length}</div>
+    <p>คะแนน ${pct}% ${pct>=80?'🎉 ยอดเยี่ยม!':pct>=50?'👍 ผ่าน':'💪 ทบทวนอีกนิด'}</p>
+    <button class="btn" onclick="startTest()">ทำชุดใหม่</button></div>`;
+}
+
+/* ================= WRITE ================= */
+let wrQ=[], wrIdx=0, wrScore=0;
+const normS = s => (s||'').toLowerCase().replace(/\s+/g,'').replace(/["""'\/,;]/g,'');
+const stripParen = s => s.replace(/\([^)]*\)/g,'');
+function matchStruct(input, correct){
+  const a=normS(input), b=normS(correct);
+  if(!a) return false;
+  if(a===b) return true;
+  if(stripParen(a)===stripParen(b)) return true;
+  return false;
+}
+function startWrite(){
+  wrQ=quizSet(); wrIdx=0; wrScore=0;
+  document.getElementById('wrScore').textContent=0;
+  document.getElementById('wrTotal').textContent=wrQ.length;
+  renderWrite();
+}
+function renderWrite(){
+  if(wrIdx>=wrQ.length){ return finishWrite(); }
+  const c=wrQ[wrIdx];
+  document.getElementById('wrNow').textContent=wrIdx+1;
+  const body=document.getElementById('wrBody'); body.innerHTML='';
+  const card=document.createElement('div'); card.className='q-card';
+  card.innerHTML=`<div class="q-prompt">${CUR.writePrompt}</div>
+    <div class="q-term">${c.t}</div>
+    <input class="tinput" autocomplete="off" spellcheck="false" placeholder="พิมพ์คำตอบ แล้วกด Enter">
+    <div class="feedback"></div>`;
+  body.appendChild(card);
+  const input=card.querySelector('.tinput');
+  const fb=card.querySelector('.feedback');
+  input.focus();
+  let answered=false;
+  const chk=document.createElement('button'); chk.className='btn'; chk.style.marginTop='14px'; chk.textContent='ตรวจคำตอบ';
+  const submit=()=>{
+    if(answered) return; answered=true; chk.remove();
+    input.disabled=true;
+    const ok=matchStruct(input.value, c.s);
+    if(ok){input.classList.add('ok'); wrScore++; document.getElementById('wrScore').textContent=wrScore; fb.className='feedback ok'; fb.textContent='✅ ถูกต้อง!';}
+    else{input.classList.add('no'); fb.className='feedback no'; fb.innerHTML='❌ เฉลย: <b>'+c.s+'</b>';}
+    const nx=document.createElement('button'); nx.className='btn'; nx.style.marginTop='16px'; nx.textContent=wrIdx<wrQ.length-1?'ข้อถัดไป →':'ดูผล →';
+    nx.onclick=()=>{wrIdx++; renderWrite();};
+    card.appendChild(nx); nx.focus();
+  };
+  input.addEventListener('keydown',e=>{ if(e.key==='Enter'){e.preventDefault(); submit();} });
+  chk.onclick=submit;
+  card.appendChild(chk);
+}
+function finishWrite(){
+  const pct=Math.round(wrScore/wrQ.length*100);
+  document.getElementById('wrNow').textContent=wrQ.length;
+  document.getElementById('wrBody').innerHTML=
+   `<div class="result"><div class="score-ring">${wrScore}/${wrQ.length}</div>
+    <p>คะแนน ${pct}% ${pct>=80?'🎉 ยอดเยี่ยม!':pct>=50?'👍 ผ่าน':'💪 ทบทวนอีกนิด'}</p>
+    <button class="btn" onclick="startWrite()">เล่นอีกครั้ง</button></div>`;
+}
+
+/* ================= ANALYZE (tenses only) ================= */
+let anCur=null;
+const naW = s => (s||'').toLowerCase().trim().replace(/\s+/g,' ').replace(/[.,!?"""']/g,'');
+const naT = s => naW(s).replace(/progressive/g,'continuous').replace(/\bcont\b\.?/g,'continuous');
+function accept(input, arr, isTense){
+  const n=(isTense?naT:naW)(input);
+  if(!n) return false;
+  return arr.some(a=>(isTense?naT:naW)(a)===n);
+}
+function startAnalyze(){ renderAnalyze(); }
+function renderAnalyze(){
+  const list=CUR.sentences||SENTENCES;
+  const s=list[Math.random()*list.length|0];
+  anCur=s;
+  const body=document.getElementById('anBody'); body.innerHTML='';
+  const card=document.createElement('div'); card.className='q-card';
+  card.innerHTML=`
+    <div class="q-prompt">อ่านประโยคแล้วพิมพ์ตอบทั้ง 3 ช่อง (กด Enter เพื่อไปช่องถัดไป)</div>
+    <div class="sentence">"${s.q}"</div>
+    <div class="field-label">1) ประโยคนี้เป็น Tense อะไร?</div>
+    <input class="tinput" data-f="tense" autocomplete="off" spellcheck="false" placeholder="เช่น Present Simple">
+    <div class="ans-reveal" data-r="tense"></div>
+    <div class="field-label">2) คำ/กลุ่มคำที่เป็นประธาน (S)?</div>
+    <input class="tinput" data-f="s" autocomplete="off" spellcheck="false" placeholder="เช่น She">
+    <div class="ans-reveal" data-r="s"></div>
+    <div class="field-label">3) คำ/กลุ่มคำที่เป็นกริยา (V)?</div>
+    <input class="tinput" data-f="v" autocomplete="off" spellcheck="false" placeholder="เช่น works">
+    <div class="ans-reveal" data-r="v"></div>
+    <div class="feedback"></div>`;
+  body.appendChild(card);
+  const inputs=[...card.querySelectorAll('.tinput')];
+  inputs[0].focus();
+  let done=false;
+  const chk=document.createElement('button'); chk.className='btn'; chk.style.marginTop='16px'; chk.textContent='ตรวจคำตอบ';
+  const check=()=>{
+    if(done) return; done=true; chk.remove();
+    const map={tense:[s.tense], s:s.s, v:s.v};
+    let got=0;
+    ['tense','s','v'].forEach(f=>{
+      const inp=card.querySelector(`[data-f="${f}"]`); inp.disabled=true;
+      const isT=(f==='tense');
+      const ok=accept(inp.value, map[f], isT);
+      inp.classList.add(ok?'ok':'no');
+      const rev=card.querySelector(`[data-r="${f}"]`);
+      if(ok){got++; rev.className='ans-reveal'; rev.style.color='var(--success)'; rev.textContent='✅ ถูกต้อง';}
+      else{ rev.className='ans-reveal'; rev.style.color='var(--error)'; rev.innerHTML='❌ เฉลย: <b>'+(f==='tense'?s.tense:map[f][0])+'</b>'; }
+    });
+    const fb=card.querySelector('.feedback');
+    fb.className='feedback '+(got===3?'ok':'no');
+    fb.textContent=`ตอบถูก ${got}/3 ช่อง`;
+    const nx=document.createElement('button'); nx.className='btn'; nx.style.marginTop='16px'; nx.textContent='ประโยคใหม่ →';
+    nx.onclick=renderAnalyze; card.appendChild(nx); nx.focus();
+  };
+  inputs.forEach(inp=>inp.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){e.preventDefault(); const i=inputs.indexOf(inp); if(i<inputs.length-1) inputs[i+1].focus(); else check();}
+  }));
+  chk.onclick=check;
+  card.appendChild(chk);
+}
+document.getElementById('anNew').onclick=renderAnalyze;
+</script>
+</body>
+</html>

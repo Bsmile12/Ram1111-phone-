@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XM1FK5GLR1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XM1FK5GLR1');
+</script>
+</head>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vocab Master</title>
@@ -13,7 +24,7 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);padding:0 14px;display:flex;align-items:center;height:56px;}
 .logo{font-family:var(--fen);font-weight:700;font-size:14px;color:var(--ac);margin-right:auto;letter-spacing:-1px;}
 .logo span{color:var(--ac2);}
-.ntab{height:56px;padding:0 11px;background:none;border:none;color:var(--mu);cursor:pointer;font-family:var(--fth);font-size:13px;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;}
+.ntab{height:56px;padding:0 11px;background:none;border:none;color:var(--mu);cursor:pointer;font-family:var(--fth);font-size:13px;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;white-space:nowrap;}
 .ntab.active{color:var(--tx);border-bottom-color:var(--ac);}
 .ntab:hover{color:var(--tx);}
 .xpn{display:flex;align-items:center;gap:6px;margin-left:8px;}
@@ -185,39 +196,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
 .complete-sub{font-size:14px;color:var(--mu);margin-bottom:18px;}
 .xp-badge{display:inline-block;background:rgba(247,199,106,.15);border:1px solid rgba(247,199,106,.4);border-radius:20px;padding:6px 18px;font-family:var(--fen);font-size:20px;font-weight:700;color:var(--yw);margin-bottom:20px;}
 .back-btn{background:var(--ac);border:none;border-radius:11px;padding:11px 28px;color:white;font-family:var(--fth);font-size:14px;font-weight:600;cursor:pointer;}
-/* ===== GRAMMAR MODE ===== */
-.gr-wrap{max-width:600px;margin:0 auto;padding:20px 16px 80px;}
-.gr-hero{background:linear-gradient(135deg,rgba(124,106,247,.2),rgba(247,106,140,.15));border:1px solid rgba(124,106,247,.4);border-radius:20px;padding:22px;margin-bottom:20px;text-align:center;}
-.gr-hero-icon{font-size:44px;display:block;margin-bottom:8px;}
-.gr-hero-title{font-size:20px;font-weight:700;margin-bottom:4px;}
-.gr-hero-sub{font-size:13px;color:var(--mu);}
-.gr-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
-.gr-tab{background:var(--card);border:1px solid var(--brd);border-radius:20px;padding:6px 14px;font-family:var(--fth);font-size:12px;color:var(--mu);cursor:pointer;transition:all .15s;}
-.gr-tab.active{border-color:var(--ac);color:var(--tx);background:rgba(124,106,247,.12);}
-.gr-card{background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:18px;margin-bottom:14px;}
-.gr-card-title{font-size:14px;font-weight:700;color:var(--ac);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
-.gr-formula{background:rgba(124,106,247,.1);border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:10px 14px;font-family:var(--fen);font-size:12px;color:var(--tx);margin:8px 0;line-height:1.6;}
-.gr-example{display:flex;flex-direction:column;gap:3px;padding:8px 12px;background:rgba(255,255,255,.03);border-radius:8px;margin:4px 0;}
-.gr-en{font-family:var(--fen);font-size:13px;font-weight:700;color:var(--tx);}
-.gr-th{font-size:12px;color:var(--mu);}
-.gr-rule{font-size:12px;color:var(--yw);background:rgba(247,199,106,.08);border-radius:6px;padding:6px 10px;margin:4px 0;}
-.gr-rule::before{content:'★ ';}
-.gr-tbl{width:100%;border-collapse:collapse;font-size:12px;margin:10px 0;}
-.gr-tbl th{background:rgba(124,106,247,.2);color:var(--tx);font-weight:700;padding:7px 10px;text-align:left;border:1px solid var(--brd);}
-.gr-tbl td{padding:6px 10px;border:1px solid var(--brd);vertical-align:top;}
-.gr-tbl tr:nth-child(even) td{background:rgba(255,255,255,.02);}
-/* GRAMMAR QUIZ */
-.gr-quiz-wrap{background:var(--card);border:1px solid var(--brd);border-radius:20px;padding:22px;max-width:600px;width:100%;position:relative;}
-.gr-quiz-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f7c76a,#f76a8c);border-radius:20px 20px 0 0;}
-.gr-q-topic{display:inline-flex;align-items:center;background:rgba(247,199,106,.15);border:1px solid rgba(247,199,106,.35);border-radius:20px;padding:3px 11px;font-size:11px;color:var(--yw);font-family:var(--fen);margin-bottom:10px;}
-.gr-q-text{font-size:16px;font-weight:600;margin-bottom:6px;line-height:1.5;}
-.gr-blank{display:inline-block;min-width:80px;border-bottom:2px solid var(--ac);text-align:center;font-family:var(--fen);color:var(--ac);padding:0 4px;}
-.gr-hint{font-size:11px;color:var(--mu);margin-bottom:16px;}
-.gr-score-bar{display:flex;gap:6px;max-width:600px;width:100%;}
-.gr-stat{flex:1;background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:8px;text-align:center;}
-.gr-stat-n{font-family:var(--fen);font-size:18px;font-weight:700;display:block;}
-.gr-stat-l{font-size:10px;color:var(--mu);}
-/* BOTTOM NAV BAR (mobile only) */
+/* ===== BOTTOM NAV BAR (mobile only) ===== */
 .bnav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(10,10,18,.97);backdrop-filter:blur(20px);border-top:1px solid var(--brd);height:60px;padding:0 4px;padding-bottom:env(safe-area-inset-bottom);}
 .bnav-inner{display:flex;align-items:stretch;height:100%;}
 .bntab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:none;border:none;cursor:pointer;color:var(--mu);transition:color .2s;padding:6px 2px;font-family:var(--fth);}
@@ -226,6 +205,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
 .bntab.active{color:var(--ac);}
 .bntab.active .bn-icon{filter:drop-shadow(0 0 6px var(--ac));}
 /* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:900px){.ntab-x{display:none;}}
+@media(pointer:coarse){.tinp,.fi{font-size:16px;}.frow .fi{min-width:130px;}}
 @media(max-width:600px){
   /* hide desktop nav tabs, show only logo + xp */
   .ntab{display:none;}
@@ -264,8 +245,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
   <button class="ntab" onclick="showPage('stats',this)">&#128202; Stats</button>
   <button class="ntab" onclick="showPage('manage',this)">&#9881; จัดการ</button>
   <button class="ntab" onclick="showPage('daily',this)" id="daily-tab">&#127775; Daily</button>
-  <button class="ntab" onclick="showPage('grammar',this)" id="grammar-tab">&#128218; Grammar</button>
-  <button class="ntab" onclick="showPage('ram',this)" id="ram-tab">&#127891; RAM 1111</button>
+<a class="ntab ntab-x" href="exam.html" style="text-decoration:none">&#9997;&#65039; ข้อสอบ</a>
+<a class="ntab ntab-x" href="tenses.html" style="text-decoration:none">&#128221; Tenses</a>
   <div class="xpn"><span class="xplv" id="nlv">Lv.1</span><div class="xptr"><div class="xpfi" id="nxp" style="width:0%"></div></div></div>
 </nav>
 
@@ -310,16 +291,21 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
         <div class="home-card-name">จัดการ Vocab</div>
         <div class="home-card-desc">เลือก Chapter · เพิ่มคำเอง</div>
       </div>
-      <div class="home-card" style="--hc:linear-gradient(90deg,#f76a6a,#f7c76a);grid-column:span 2" onclick="showPage('grammar',document.getElementById('grammar-tab'))">
-        <span class="home-card-icon">&#128218;</span>
-        <div class="home-card-name">Grammar Mode ใหม่!</div>
-        <div class="home-card-desc">Tenses · Modals · Causative · Gerund/Inf · Articles · Pronouns พร้อมข้อสอบ 35+ ข้อ</div>
-      </div>
-      <div class="home-card" style="--hc:linear-gradient(90deg,#f7c76a,#f76a6a);grid-column:span 2" onclick="showPage('ram',document.getElementById('ram-tab'))">
-        <span class="home-card-icon">&#127891;</span>
-        <div class="home-card-name">แนวข้อสอบ RAM 1111</div>
-        <div class="home-card-desc">แนวข้อสอบไล่ภาค ปี 2568 · 163 ข้อ · Structure · Modals · Connectors พร้อมเฉลยอธิบาย</div>
-      </div>
+      <a class="home-card" style="--hc:linear-gradient(90deg,#7c6af7,#3dd68c);text-decoration:none" href="exam.html">
+        <span class="home-card-icon">&#9997;&#65039;</span>
+        <div class="home-card-name">ทำข้อสอบ</div>
+        <div class="home-card-desc">ข้อสอบ 3 ชุด · เฉลย + คำอธิบาย</div>
+      </a>
+      <a class="home-card" style="--hc:linear-gradient(90deg,#f76a8c,#7c6af7);text-decoration:none" href="tenses.html">
+        <span class="home-card-icon">&#128221;</span>
+        <div class="home-card-name">แบบฝึก Tenses</div>
+        <div class="home-card-desc">12 Tenses · Modal · Irregular Verbs</div>
+      </a>
+      <a class="home-card" style="--hc:linear-gradient(90deg,#f7c76a,#f76a8c);text-decoration:none" href="dashboard.html">
+        <span class="home-card-icon">&#128200;</span>
+        <div class="home-card-name">สถิติข้อสอบ</div>
+        <div class="home-card-desc">คะแนน · จุดอ่อนแต่ละหัวข้อ</div>
+      </a>
     </div>
 
     <div class="home-section">สถิติวันนี้</div>
@@ -460,11 +446,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
   </div>
 </div>
 
-<!-- GRAMMAR MODE PAGE -->
-<div id="page-grammar" class="page">
-  <div id="gr-main"><!-- filled by JS --></div>
-</div>
-
 <!-- BOTTOM NAV BAR (mobile) -->
 <div class="bnav" id="bnav">
   <div class="bnav-inner">
@@ -497,21 +478,19 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
     <button onclick="showPage('daily',document.getElementById('daily-tab'));toggleMoreMenu()" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;">
       <span style="font-size:20px;">&#127775;</span> Daily
     </button>
-    <button onclick="showPage('grammar',document.getElementById('grammar-tab'));toggleMoreMenu()" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;">
-      <span style="font-size:20px;">&#128218;</span> Grammar
-    </button>
-    <button onclick="showPage('ram',document.getElementById('ram-tab'));toggleMoreMenu()" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;">
-      <span style="font-size:20px;">&#127891;</span> RAM 1111
-    </button>
     <button onclick="showPage('manage',document.getElementById('bnt-more'));toggleMoreMenu()" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;">
       <span style="font-size:20px;">&#9881;</span> จัดการ
     </button>
+    <a href="exam.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
+      <span style="font-size:20px;">&#9997;&#65039;</span> ทำข้อสอบ
+    </a>
+    <a href="tenses.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
+      <span style="font-size:20px;">&#128221;</span> แบบฝึก Tenses
+    </a>
+    <a href="dashboard.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
+      <span style="font-size:20px;">&#128200;</span> สถิติข้อสอบ
+    </a>
   </div>
-</div>
-
-<!-- RAM 1111 PAGE -->
-<div id="page-ram" class="page">
-  <div id="ram-main"><!-- filled by JS --></div>
 </div>
 
 <!-- DAILY CHALLENGE PAGE -->
@@ -656,7 +635,7 @@ const BASE=[
 {word:"popular",pron:"ป็อพพิวเลอร์",answer:"เป็นที่นิยม",chapter:6},
 {word:"audience",pron:"ออดิเอ้นซ์",answer:"ผู้ชม, ผู้ฟัง",chapter:6},
 {word:"explore",pron:"เอ็กซ์พลอร์",answer:"สำรวจ",chapter:7},
-{word:"determine",pron:"ดีเทอร์มิน",answer:"กำหนด",chapter:7},
+{word:"determine",pron:"ดีเทอร์มิน",answer:"กำหนด, ตัดสินใจ",chapter:7},
 {word:"destination",pron:"เดสทิเนชั่น",answer:"จุดหมาย",chapter:7},
 {word:"mention",pron:"เมนชั่น",answer:"กล่าวถึง",chapter:7},
 {word:"infinite",pron:"อินฟินิท",answer:"ไม่มีที่สิ้นสุด",chapter:7},
@@ -1241,7 +1220,7 @@ function renderTbl(){
 // --- NAV ---
 const PAGE_TO_BNT = {
   home:'bnt-home', quiz:'bnt-quiz', flash:'bnt-flash',
-  stats:'bnt-stats', daily:'bnt-more', manage:'bnt-more', grammar:'bnt-more', ram:'bnt-more'
+  stats:'bnt-stats', daily:'bnt-more', manage:'bnt-more'
 };
 
 // showPage(id, el) = เปลี่ยนหน้าที่แสดง
@@ -1267,8 +1246,6 @@ function showPage(id, el) {
   if(id==='flash') initFlash();
   if(id==='daily') renderDailyPage();
   if(id==='home')  renderHome();
-  if(id==='grammar') renderGrammar();
-  if(id==='ram') renderRAM();
   if(id!=='quiz')  clrTmr();
 }
 
@@ -1734,1080 +1711,6 @@ updPills = function() {
   _origUpdPills();
   if(document.getElementById('page-home').classList.contains('active')) renderHome();
 };
-
-// ============================================================
-// GRAMMAR MODE — ข้อมูลและ logic ทั้งหมด
-// ============================================================
-
-// --- ข้อมูลไวยากรณ์แต่ละหัวข้อ ---
-const GRAMMAR_TOPICS = [
-  {
-    id:'tenses', label:'Tenses', icon:'🕐',
-    sections:[
-      { title:'Present Simple', color:'#7c6af7',
-        formula:['(+) S + V1(s/es)','(-) S + do/does + not + V1','(?) Do/Does + S + V1?'],
-        uses:['ความจริงสากล: The sun rises in the east.','นิสัย/กิจวัตร: She drinks coffee every morning.','Keyword: always, usually, every day, never'],
-        examples:[['Water boils at 100°C.','น้ำเดือดที่ 100 องศา'],['He doesn\'t eat meat.','เขาไม่กินเนื้อ'],['Do you speak English?','คุณพูดภาษาอังกฤษได้ไหม?']],
-        rules:['V1+s/es เฉพาะ He/She/It: go→goes, study→studies','State verbs ไม่ใช้ Continuous: know, want, love, need']
-      },
-      { title:'Present Continuous', color:'#3dd68c',
-        formula:['(+) S + is/am/are + V-ing','(-) S + is/am/are + not + V-ing','(?) Is/Am/Are + S + V-ing?'],
-        uses:['กำลังเกิดขึ้นขณะพูด: Look! It is raining now.','แผนอนาคตที่วางไว้แล้ว: I am meeting Tom tomorrow.','Keyword: now, at the moment, look!, currently'],
-        examples:[['They are watching TV now.','ตอนนี้พวกเขากำลังดูทีวี'],['I am not working today.','วันนี้ฉันไม่ได้ทำงาน']],
-        rules:['run→running, sit→sitting, write→writing','ไม่ใช้กับ State verbs: ❌ am knowing → ✓ know']
-      },
-      { title:'Past Simple', color:'#f76a8c',
-        formula:['(+) S + V2 / was/were','(-) S + did not + V1','(?) Did + S + V1?'],
-        uses:['เหตุการณ์เกิดขึ้นและสิ้นสุดในอดีต','ลำดับเหตุการณ์ในอดีต','Keyword: yesterday, ago, last, in 1990, in the past'],
-        examples:[['She visited Paris last year.','เธอไปปารีสปีที่แล้ว'],['He didn\'t call me yesterday.','เขาไม่ได้โทรเมื่อวาน']],
-        rules:['Irregular: go→went, come→came, take→took, make→made, see→saw']
-      },
-      { title:'Past Continuous', color:'#f7c76a',
-        formula:['(+) S + was/were + V-ing','Pattern: While S+was/were+V-ing, S+V2','Pattern: S+V2 when S+was/were+V-ing'],
-        uses:['กำลังทำในช่วงเวลาหนึ่งในอดีต','ใช้คู่กับ Past Simple'],
-        examples:[['I was studying when she called.','ฉันกำลังเรียนอยู่เมื่อเธอโทรมา'],['While he was sleeping, the phone rang.','ขณะที่เขากำลังนอน โทรศัพท์ดัง']],
-        rules:['while + Continuous, when + Simple','while = ระหว่างเวลา, when = จุดเวลา']
-      },
-      { title:'Present Perfect', color:'#f76a6a',
-        formula:['(+) S + have/has + V3','(-) S + have/has + not + V3','(?) Have/Has + S + V3?'],
-        uses:['ประสบการณ์ (ever/never): Have you ever been to Japan?','เพิ่งเสร็จ (just): She has just finished.','ยังทำอยู่ (for/since): I have lived here for 10 years.','Keyword: just, already, yet, ever, never, for, since'],
-        examples:[['He has never eaten sushi.','เขาไม่เคยกินซูชิเลย'],['She has already left.','เธอออกไปแล้ว'],['They haven\'t finished yet.','พวกเขายังทำไม่เสร็จ']],
-        rules:['for + ระยะเวลา (for 3 years)', 'since + จุดเริ่มต้น (since 2010)','already ประโยคบอกเล่า, yet ปฏิเสธ/คำถาม']
-      },
-      { title:'Future Simple', color:'#7c6af7',
-        formula:['(+) S + will + V1','(-) S + will not / won\'t + V1','(?) Will + S + V1?'],
-        uses:['สัญญา/ตัดสินใจทันที: I\'ll take this one.','ทำนาย: It will rain tomorrow.','ความจริงในอนาคต: She will be 20 next year.','Keyword: tomorrow, next week, soon, in the future'],
-        examples:[['I will call you tonight.','ฉันจะโทรหาคุณคืนนี้'],['She won\'t come to the party.','เธอจะไม่มางาน']],
-        rules:['will = ตัดสินใจทันที / ทำนาย','be going to = แผนที่วางไว้แล้ว']
-      }
-    ]
-  },
-  {
-    id:'modals', label:'Modals', icon:'⚡',
-    sections:[
-      { title:'shall / should / should have', color:'#7c6af7',
-        formula:['shall + V1 = เสนอ/ถาม (Shall we...?)','should + V1 = ควรจะ (คำแนะนำ)','should have + V3 = ควรจะทำแต่ไม่ได้ทำ (เสียใจ)'],
-        uses:['Shall we start? = เราเริ่มกันเลยไหม?','You should rest. = คุณควรพัก','You should have called. = คุณควรโทรมา (แต่ไม่ได้โทร)'],
-        examples:[['Should I bring anything?','ฉันควรนำอะไรมาไหม?'],['She should have studied harder.','เธอควรตั้งใจเรียนมากกว่านี้']],
-        rules:['should have + V3 = พูดถึงอดีตที่น่าเสียใจ','Shall ใช้กับ I/We เป็นส่วนใหญ่']
-      },
-      { title:'may / might', color:'#3dd68c',
-        formula:['may + V1 = อาจจะ (โอกาส ~50%)','might + V1 = อาจจะ (โอกาส ~30%, สุภาพกว่า)'],
-        uses:['It may rain tonight.','He might be late.','May I come in? = ขออนุญาตเข้ามาได้ไหม?'],
-        examples:[['It may/might snow tomorrow.','พรุ่งนี้อาจจะมีหิมะตก'],['She may not come to the party.','เธออาจจะไม่มางาน']],
-        rules:['may > might ในแง่ความเป็นไปได้','Might สุภาพกว่า may เมื่อขอร้อง']
-      },
-      { title:'can / could', color:'#f7c76a',
-        formula:['can + V1 = สามารถ (ปัจจุบัน)','could + V1 = สามารถ (อดีต) / สุภาพกว่า can','could have + V3 = สามารถจะทำแต่ไม่ได้ทำ'],
-        uses:['Can you swim? = คุณว่ายน้ำเป็นไหม?','Could you help me? = คุณช่วยได้ไหม? (สุภาพ)','She could have won. = เธอสามารถชนะได้ (แต่ไม่ได้ชนะ)'],
-        examples:[['I can speak three languages.','ฉันพูดได้สามภาษา'],['Could you pass the salt, please?','ช่วยส่งเกลือให้หน่อยได้ไหม?']],
-        rules:['could สุภาพกว่า can','could have + V3 = โอกาสที่พลาดไปในอดีต']
-      },
-      { title:'must / ought to', color:'#f76a6a',
-        formula:['must + V1 = ต้อง (obligation) / น่าจะ (deduction)','ought to + V1 = ควรจะ (ทางศีลธรรม/หน้าที่)','must have + V3 = น่าจะเป็น (สรุปอดีต)'],
-        uses:['You must wear a helmet. = คุณต้องสวมหมวก (กฎหมาย)','He must be tired. = เขาต้องเหนื่อยแน่ๆ (สรุป)','You ought to apologize. = คุณควรขอโทษ (ทางศีลธรรม)'],
-        examples:[['She must have forgotten.','เธอต้องลืมแน่ๆ'],['You ought to respect your parents.','คุณควรเคารพพ่อแม่']],
-        rules:['must = บังคับ (ไม่มีทางเลือก)','ought to ≈ should แต่เน้นทางศีลธรรม','must have + V3 = สรุปจากหลักฐาน']
-      }
-    ]
-  },
-  {
-    id:'causative', label:'Causative', icon:'🔧',
-    sections:[
-      { title:'make someone do something', color:'#f76a8c',
-        formula:['S + make + Object + V1 (bare infinitive)','ไม่ใช้ to ตามหลัง make'],
-        uses:['บังคับ / ทำให้ (ไม่มีทางเลือก)','The teacher made us write 100 words.'],
-        examples:[['The boss made us work overtime.','หัวหน้าบังคับให้เราทำงานล่วงเวลา'],['Don\'t make me cry.','อย่าทำให้ฉันร้องไห้'],['What made you change your mind?','อะไรทำให้คุณเปลี่ยนใจ?']],
-        rules:['make + O + V1 (ไม่มี to)','❌ made him to go → ✓ made him go']
-      },
-      { title:'have/get something done', color:'#3dd68c',
-        formula:['S + have + Object + V3 (past participle) — ทางการ','S + get + Object + V3 (past participle) — ไม่ทางการ'],
-        uses:['จ้าง/ให้คนอื่นทำให้ (ผู้พูดไม่ทำเอง)','I had my car repaired. = ฉันเอารถไปซ่อม (จ้างช่าง)'],
-        examples:[['I had my hair cut yesterday.','ฉันตัดผมเมื่อวาน (ช่างตัดให้)'],['She is getting her house painted.','เธอกำลังจ้างให้คนทาบ้าน'],['He had his photo taken.','เขาให้คนถ่ายรูปให้']],
-        rules:['have/get + O + V3: ผู้พูดไม่ได้ทำเอง','have = ทางการกว่า, get = ใช้ทั่วไป','❌ had my car repair → ✓ had my car repaired']
-      },
-      { title:'let / make / have / get เปรียบเทียบ', color:'#7c6af7',
-        formula:['make + O + V1 (บังคับ)','let  + O + V1 (อนุญาต)','have + O + V3 (จ้าง — ทางการ)','get  + O + V3 (จ้าง — ไม่ทางการ)'],
-        uses:['He made her apologize. = บังคับ','She let him go. = อนุญาต','I had the document printed. = จ้างพิมพ์','I got my phone fixed. = จ้างซ่อม'],
-        examples:[['My mom lets me stay up late.','แม่อนุญาตให้ฉันนอนดึก'],['The noise made me wake up.','เสียงทำให้ฉันตื่น']],
-        rules:['make/let ตามด้วย V1 (bare infinitive)','have/get ตามด้วย V3 (past participle)']
-      }
-    ]
-  },
-  {
-    id:'gerund', label:'Gerund & Inf.', icon:'📌',
-    sections:[
-      { title:'Gerund (V-ing) — กริยาที่ตามด้วย V-ing เท่านั้น', color:'#3dd68c',
-        formula:['enjoy, finish, stop, avoid, keep, mind','suggest, consider, deny, admit, practice','imagine, look forward to + V-ing'],
-        uses:['I enjoy swimming. = ฉันชอบว่ายน้ำ','He avoids eating junk food.','I look forward to meeting you.','Imagine living in Paris!'],
-        examples:[['She finished writing the report.','เธอเขียนรายงานเสร็จแล้ว'],['They kept talking during class.','พวกเขาคุยตลอดเวลาในชั้นเรียน'],['I look forward to seeing you soon.','ฉันตั้งตารอพบคุณ']],
-        rules:['look forward to + V-ing (ไม่ใช่ to+V1)','imagine + V-ing: Imagine being rich!','stop + V-ing = หยุดทำ (ถาวร)']
-      },
-      { title:'Infinitive (to+V1) — กริยาที่ตามด้วย to+V1 เท่านั้น', color:'#7c6af7',
-        formula:['want, hope, plan, decide, promise, need','would like, agree, refuse, manage, fail','in order to + V1 (เพื่อที่จะ)','promise to + V1'],
-        uses:['She promised to call me.','He decided to quit his job.','She studies hard in order to pass.','I need to study harder.'],
-        examples:[['They agreed to help us.','พวกเขาตกลงจะช่วยเรา'],['She refused to answer.','เธอปฏิเสธที่จะตอบ'],['He studies in order to pass the exam.','เขาเรียนเพื่อผ่านการสอบ']],
-        rules:['promise to + V1: I promise to be on time.','in order to + V1 = เพื่อที่จะ','stop + to+V1 = หยุด เพื่อทำสิ่งใหม่']
-      },
-      { title:'ทั้งสองได้ — ความหมายต่างกัน!', color:'#f76a6a',
-        formula:['stop doing  = หยุดทำ (ถาวร)','stop to do  = หยุด (เพื่อไปทำอีกอย่าง)','remember doing = จำได้ว่าเคยทำ (อดีต)','remember to do = จำว่าต้องทำ (อนาคต)','forget doing = ลืมว่าเคยทำ','forget to do = ลืมทำ','try doing    = ลองทำดู','try to do    = พยายามทำ'],
-        uses:['He stopped smoking. = เลิกสูบบุหรี่','He stopped to smoke. = หยุด(พักเดิน) เพื่อสูบบุหรี่'],
-        examples:[['I remember meeting her before.','ฉันจำได้ว่าเคยเจอเธอมาก่อน'],['Remember to lock the door.','อย่าลืมล็อคประตู'],['Try eating less sugar.','ลองกินน้ำตาลน้อยลงดู']],
-        rules:['ความต่างอยู่ที่เวลา: doing = อดีต, to do = อนาคต','stop, remember, forget, try ต้องระวังเป็นพิเศษ']
-      }
-    ]
-  },
-  {
-    id:'articles', label:'Articles', icon:'📝',
-    sections:[
-      { title:'a / an / the / ∅', color:'#f7c76a',
-        formula:['a  = นับได้เอกพจน์ เสียงพยัญชนะ','an = นับได้เอกพจน์ เสียงสระ','the = เจาะจง / unique / รู้กันแล้ว','∅  = ทั่วไป / ชื่อเฉพาะ / ไม่นับได้'],
-        uses:['a book, a car, a university (/j/ = เสียงพยัญชนะ)','an apple, an hour (h ไม่ออกเสียง), an egg','the sun, the moon, the best student','I love music. (ไม่ใช้ article กับสิ่งที่ชอบทั่วไป)'],
-        examples:[['She is an engineer.','เธอเป็นวิศวกร'],['The earth orbits the sun.','โลกโคจรรอบดวงอาทิตย์'],['I need a pen. The pen is on the table.','ฉันต้องการปากกา ปากกา(อันนั้น)อยู่บนโต๊ะ']],
-        rules:['a university (/j/) ไม่ใช่ an university','an hour (/aʊ/) ไม่ใช่ a hour','the + superlative: the best, the tallest','ชื่อประเทศ/เมือง/ภาษา ส่วนใหญ่ไม่ใช้ article']
-      }
-    ]
-  },
-  {
-    id:'pronouns', label:'Pronouns', icon:'👤',
-    sections:[
-      { title:'ตารางสรรพนามทั้งหมด', color:'#7c6af7',
-        formula:['Subject / Object / Possessive Adj. / Possessive Pro. / Reflexive'],
-        uses:['I / me / my / mine / myself','you / you / your / yours / yourself','he / him / his / his / himself','she / her / her / hers / herself','it / it / its / its / itself','we / us / our / ours / ourselves','they / them / their / theirs / themselves'],
-        examples:[['She hurt herself.','เธอทำตัวเองบาดเจ็บ'],['He did it by himself.','เขาทำมันคนเดียว'],['This book is mine.','หนังสือเล่มนี้เป็นของฉัน']],
-        rules:['Possessive Adj. + noun: my book, her car','Possessive Pro. อยู่คนเดียว: This is mine.','Reflexive: เน้น (himself did it) หรือ ทำเองโดยลำพัง (by himself)']
-      }
-    ]
-  }
-];
-
-// --- Grammar Quiz Questions ---
-const GRAMMAR_QUIZ = [
-  // ===== PRESENT SIMPLE =====
-  {tense:'Present Simple', q:'Water _____ at 100 degrees Celsius.', type:'mc',
-   opts:['boil','is boiling','boils','boiled'], ans:2, hint:'ความจริงสากล → V1+s/es'},
-  {tense:'Present Simple', q:'เติมกริยาให้ถูก: She _____ (study) every night.', type:'fill',
-   ans:'studies', hint:'He/She/It → study → studies'},
-  {tense:'Present Simple', q:'He _____ not like coffee.', type:'mc',
-   opts:['is','do','does','did'], ans:2, hint:'ปฏิเสธ He/She/It → does not'},
-  {tense:'Present Simple', q:'เติมกริยาให้ถูก: The bus _____ (leave) at 7 AM every day.', type:'fill',
-   ans:'leaves', hint:'ตารางเวลาประจำ → Present Simple'},
-  {tense:'Present Simple', q:'_____ he speak French?', type:'mc',
-   opts:['Is','Do','Does','Did'], ans:2, hint:'คำถาม He/She/It → Does'},
-  {tense:'Present Simple', q:'เติมกริยาให้ถูก: My father _____ (work) at a hospital.', type:'fill',
-   ans:'works', hint:'My father = He → works'},
-
-  // ===== PRESENT CONTINUOUS =====
-  {tense:'Present Continuous', q:'Look! It _____ outside right now.', type:'mc',
-   opts:['rain','rains','is raining','rained'], ans:2, hint:'look! / right now → กำลังเกิดขึ้น'},
-  {tense:'Present Continuous', q:'เติมกริยาให้ถูก: They _____ (play) football at the moment.', type:'fill',
-   ans:'are playing', hint:'they → are + V-ing'},
-  {tense:'Present Continuous', q:'She _____ her friend this afternoon. (แผนวางไว้แล้ว)', type:'mc',
-   opts:['meet','meets','is meeting','met'], ans:2, hint:'แผนที่นัดหมายไว้ → is/am/are + V-ing'},
-  {tense:'Present Continuous', q:'เติมกริยาให้ถูก: He _____ (sit) next to me right now.', type:'fill',
-   ans:'is sitting', hint:'sit → sitting (ตัดตัวสุดท้ายซ้ำ)'},
-  {tense:'Present Continuous', q:'Why _____ you smiling?', type:'mc',
-   opts:['do','does','are','did'], ans:2, hint:'คำถาม Present Continuous → are/is/am'},
-  {tense:'Present Continuous', q:'เติมกริยาให้ถูก: I _____ (not/use) my phone right now.', type:'fill',
-   ans:"am not using", hint:'ปฏิเสธ → am not + V-ing'},
-
-  // ===== PAST SIMPLE =====
-  {tense:'Past Simple', q:'She _____ to Paris last summer.', type:'mc',
-   opts:['go','goes','went','has gone'], ans:2, hint:'last summer → อดีต → V2'},
-  {tense:'Past Simple', q:'เติมกริยาให้ถูก: He _____ (not/call) me yesterday.', type:'fill',
-   ans:"didn't call", hint:'ปฏิเสธอดีต → did not + V1'},
-  {tense:'Past Simple', q:'_____ you finish the report last night?', type:'mc',
-   opts:['Do','Does','Did','Have'], ans:2, hint:'คำถามอดีต → Did'},
-  {tense:'Past Simple', q:'เติมกริยาให้ถูก: They _____ (win) the championship in 2020.', type:'fill',
-   ans:'won', hint:'win → won (irregular verb)'},
-  {tense:'Past Simple', q:'I _____ very tired after the long trip.', type:'mc',
-   opts:['am','is','was','were'], ans:2, hint:'อดีต เอกพจน์ → was'},
-  {tense:'Past Simple', q:'เติมกริยาให้ถูก: She _____ (take) a taxi to the airport.', type:'fill',
-   ans:'took', hint:'take → took (irregular verb)'},
-
-  // ===== PAST CONTINUOUS =====
-  {tense:'Past Continuous', q:'I _____ dinner when you called.', type:'mc',
-   opts:['cook','cooked','was cooking','have cooked'], ans:2, hint:'when + Past Simple → Past Continuous ดำเนินอยู่ก่อน'},
-  {tense:'Past Continuous', q:'เติมกริยาให้ถูก: While she _____ (read), the lights went out.', type:'fill',
-   ans:'was reading', hint:'while → was/were + V-ing'},
-  {tense:'Past Continuous', q:'They _____ football at 4 PM yesterday.', type:'mc',
-   opts:['played','were playing','have played','are playing'], ans:1, hint:'at 4 PM yesterday = ช่วงเวลาในอดีต'},
-  {tense:'Past Continuous', q:'เติมกริยาให้ถูก: It _____ (rain) when I left home.', type:'fill',
-   ans:'was raining', hint:'when + left → Past Continuous ดำเนินอยู่แล้ว'},
-  {tense:'Past Continuous', q:'_____ she sleeping when you arrived?', type:'mc',
-   opts:['Did','Was','Were','Is'], ans:1, hint:'คำถาม Past Continuous เอกพจน์ → Was'},
-  {tense:'Past Continuous', q:'เติมกริยาให้ถูก: We _____ (not/watch) TV; we were studying.', type:'fill',
-   ans:"weren't watching", hint:'ปฏิเสธ Past Continuous → were not + V-ing'},
-
-  // ===== PRESENT PERFECT =====
-  {tense:'Present Perfect', q:'I _____ never tried sushi before.', type:'mc',
-   opts:['did','do','have','has'], ans:2, hint:'never + ประสบการณ์ → have/has + V3'},
-  {tense:'Present Perfect', q:'เติมกริยาให้ถูก: She _____ (live) here since 2015.', type:'fill',
-   ans:'has lived', hint:'since → Present Perfect → has + V3'},
-  {tense:'Present Perfect', q:'Have you _____ your homework yet?', type:'mc',
-   opts:['finish','finishing','finished','finishes'], ans:2, hint:'have/has + V3 (past participle)'},
-  {tense:'Present Perfect', q:'เติมกริยาให้ถูก: He _____ just _____ (eat) lunch.', type:'fill',
-   ans:'has just eaten', hint:'just → have/has + just + V3'},
-  {tense:'Present Perfect', q:'They _____ worked here for five years.', type:'mc',
-   opts:['did','do','have','are'], ans:2, hint:'for + ระยะเวลา → Present Perfect'},
-  {tense:'Present Perfect', q:'เติมกริยาให้ถูก: I _____ (not/see) that movie yet.', type:'fill',
-   ans:"haven't seen", hint:'yet ปฏิเสธ → have not + V3'},
-  {tense:'Present Perfect', q:'_____ he ever been to London?', type:'mc',
-   opts:['Did','Has','Have','Was'], ans:1, hint:'he → Has + ever + V3?'},
-
-  // ===== FUTURE SIMPLE =====
-  {tense:'Future Simple', q:'It _____ probably rain tomorrow.', type:'mc',
-   opts:['is','does','will','would'], ans:2, hint:'ทำนาย → will + V1'},
-  {tense:'Future Simple', q:'เติมกริยาให้ถูก: I promise I _____ (help) you with that.', type:'fill',
-   ans:'will help', hint:'promise + will = สัญญา'},
-  {tense:'Future Simple', q:'"The phone is ringing." — "OK, I _____ answer it."', type:'mc',
-   opts:['am going to','will','would','shall'], ans:1, hint:'ตัดสินใจทันที → will'},
-  {tense:'Future Simple', q:'เติมกริยาให้ถูก: She _____ (not/be) at home tonight.', type:'fill',
-   ans:"won't be", hint:'ปฏิเสธ → will not / won\'t + V1'},
-  {tense:'Future Simple', q:'_____ you help me move this table?', type:'mc',
-   opts:['Do','Are','Will','Have'], ans:2, hint:'ขอความช่วยเหลือ → Will you...?'},
-  {tense:'Future Simple', q:'เติมกริยาให้ถูก: They _____ (open) a new branch next year.', type:'fill',
-   ans:'will open', hint:'next year → อนาคต → will + V1'},
-
-  // ===== MIXED — เลือก tense ที่ถูก =====
-  {tense:'Mixed Tenses', q:'เมื่อวานขณะที่ Tom กำลังทำอาหาร ไฟดับ → While Tom _____ (cook), the power went out.', type:'fill',
-   ans:'was cooking', hint:'While + Past Continuous, Past Simple'},
-  {tense:'Mixed Tenses', q:'ฉันอาศัยอยู่ที่นี่มา 10 ปีแล้ว → I _____ here for 10 years.', type:'mc',
-   opts:['live','lived','am living','have lived'], ans:3, hint:'for + ระยะเวลา → Present Perfect'},
-  {tense:'Mixed Tenses', q:'เธอเพิ่งออกไป → She _____ just _____ (leave).', type:'fill',
-   ans:'has just left', hint:'just → Present Perfect'},
-  {tense:'Mixed Tenses', q:'เขาไม่อยู่ที่นี่เมื่อวาน → He _____ not here yesterday.', type:'mc',
-   opts:['is','are','was','has been'], ans:2, hint:'yesterday → Past Simple → was'},
-  {tense:'Mixed Tenses', q:'ดูสิ! พวกเขากำลังวิ่งอยู่! → Look! They _____ (run)!', type:'fill',
-   ans:'are running', hint:'Look! → Present Continuous'},
-  {tense:'Mixed Tenses', q:'ฉันจะโทรหาคุณพรุ่งนี้ → I _____ call you tomorrow.', type:'mc',
-   opts:['am','do','will','have'], ans:2, hint:'tomorrow → Future Simple → will'},
-];
-
-// --- Grammar State ---
-let grMode = 'learn'; // 'learn' | 'quiz'
-let grTopic = 'tenses';
-let grQIdx = 0, grQCorrect = 0, grQTotal = 0;
-let grQAns = false;
-let grQPool = [];
-
-// --- Render Grammar Page ---
-function renderGrammar() {
-  const el = document.getElementById('gr-main');
-  if(grMode === 'learn') renderGrammarLearn(el);
-  else renderGrammarQuiz(el);
-}
-
-function renderGrammarLearn(el) {
-  // ถ้ายังไม่ได้เลือก topic ให้ default เป็น tenses
-  if(!grTopic) grTopic = 'tenses';
-  const topic = GRAMMAR_TOPICS.find(t => t.id === grTopic) || GRAMMAR_TOPICS[0];
-
-  const tenseNames = ['Present Simple','Present Continuous','Past Simple','Past Continuous','Present Perfect','Future Simple'];
-  const TENSE_COLORS = {
-    'Present Simple':'#7c6af7','Present Continuous':'#3dd68c',
-    'Past Simple':'#f76a8c','Past Continuous':'#f7c76a',
-    'Present Perfect':'#f76a6a','Future Simple':'#38bdf8','Mixed Tenses':'#a78bfa'
-  };
-  const isTensesTopic = topic.id === 'tenses';
-
-  // นับจำนวนข้อแยก MC / Fill
-  const countMC   = GRAMMAR_QUIZ.filter(q=>q.type==='mc').length;
-  const countFill = GRAMMAR_QUIZ.filter(q=>q.type==='fill').length;
-
-  let html = `<div class="gr-wrap">
-    <!-- HERO -->
-    <div class="gr-hero">
-      <span class="gr-hero-icon">🕐</span>
-      <div class="gr-hero-title">Grammar — Tenses</div>
-      <div class="gr-hero-sub">ข้อสอบ MC + เติมคำสลับกัน · ${GRAMMAR_QUIZ.length} ข้อ · ครอบคลุม 6 Tenses</div>
-    </div>
-
-    <!-- TOPIC TABS -->
-    <div class="gr-tabs">`;
-  GRAMMAR_TOPICS.forEach(t => {
-    html += `<button class="gr-tab${t.id===grTopic?' active':''}" onclick="setGrTopic('${t.id}')">${t.icon} ${t.label}</button>`;
-  });
-  html += `</div>`;
-
-  // ===== TENSES TOPIC: แสดงปุ่มเลือก + overview =====
-  if(isTensesTopic) {
-
-    // ปุ่มทดสอบ
-    html += `
-    <div style="background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:16px;margin-bottom:16px;">
-      <div style="font-size:12px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;">
-        ⚡ เลือกทดสอบ
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:7px;">
-        <button onclick="startGrQuiz('tenses')"
-          style="background:linear-gradient(135deg,var(--ac),var(--ac2));border:none;border-radius:10px;padding:9px 16px;color:white;font-family:var(--fth);font-size:13px;font-weight:700;cursor:pointer;">
-          ⚡ ทุก Tense (${GRAMMAR_QUIZ.length} ข้อ — MC ${countMC} + เติม ${countFill})
-        </button>`;
-    tenseNames.forEach(t => {
-      const mc   = GRAMMAR_QUIZ.filter(q=>q.tense===t&&q.type==='mc').length;
-      const fill = GRAMMAR_QUIZ.filter(q=>q.tense===t&&q.type==='fill').length;
-      const c    = TENSE_COLORS[t]||'var(--ac)';
-      html += `<button onclick="startGrQuiz('${t}')"
-        style="background:var(--card);border:1px solid ${c}50;border-radius:10px;padding:7px 12px;color:${c};font-family:var(--fth);font-size:12px;cursor:pointer;font-weight:600;">
-        ${t.replace(' ','&nbsp;')} <span style="opacity:.6;font-size:10px;">(MC ${mc}+เติม ${fill})</span>
-      </button>`;
-    });
-    html += `</div>
-      <div style="font-size:11px;color:var(--mu);margin-top:10px;">
-        💡 ข้อสอบ <b style="color:var(--ac)">MC เลือกตอบ</b> และ <b style="color:var(--yw)">เติมคำ</b> สลับกันอัตโนมัติ พร้อม hint ทุกข้อ
-      </div>
-    </div>`;
-
-    // ตารางสรุป 6 Tenses
-    html += `
-    <div class="gr-card">
-      <div class="gr-card-title">📊 ตารางสรุป Tense ทั้ง 6</div>
-      <div style="overflow-x:auto;">
-        <table class="gr-tbl">
-          <thead><tr>
-            <th>Tense</th><th>โครงสร้าง (+)</th><th>Keyword</th><th>ตัวอย่าง</th>
-          </tr></thead>
-          <tbody>
-            <tr><td style="color:#7c6af7;font-weight:700;">Present Simple</td><td style="font-family:var(--fen);font-size:11px;">S + V1(s/es)</td><td>always, every, usually, never</td><td>She <b>drinks</b> coffee every day.</td></tr>
-            <tr><td style="color:#3dd68c;font-weight:700;">Present Cont.</td><td style="font-family:var(--fen);font-size:11px;">S + is/am/are + V-ing</td><td>now, at the moment, look!</td><td>They <b>are playing</b> now.</td></tr>
-            <tr><td style="color:#f76a8c;font-weight:700;">Past Simple</td><td style="font-family:var(--fen);font-size:11px;">S + V2 / was/were</td><td>yesterday, ago, last, in 1990</td><td>She <b>went</b> to Paris last year.</td></tr>
-            <tr><td style="color:#f7c76a;font-weight:700;">Past Continuous</td><td style="font-family:var(--fen);font-size:11px;">S + was/were + V-ing</td><td>while, when + Past Simple</td><td>I <b>was studying</b> when she called.</td></tr>
-            <tr><td style="color:#f76a6a;font-weight:700;">Present Perfect</td><td style="font-family:var(--fen);font-size:11px;">S + have/has + V3</td><td>just, already, yet, ever, never, for, since</td><td>She <b>has lived</b> here for 10 years.</td></tr>
-            <tr><td style="color:#38bdf8;font-weight:700;">Future Simple</td><td style="font-family:var(--fen);font-size:11px;">S + will + V1</td><td>tomorrow, next, soon, in the future</td><td>I <b>will call</b> you tomorrow.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>`;
-
-    // ตาราง Irregular Verbs — อ้างอิงจากการวิเคราะห์ RAM 1111
-    html += `
-    <div class="gr-card">
-      <div class="gr-card-title">📋 Irregular Verbs ที่ออกบ่อยใน RAM 1111</div>
-      <div style="font-size:11px;color:var(--mu);margin-bottom:8px;">เรียงตามความถี่ที่พบในแนวข้อสอบ — <span style="color:var(--rd)">สีแดง = V2 Past Simple</span> · <span style="color:var(--gn)">สีเขียว = V3 Past Participle</span></div>
-      <div style="overflow-x:auto;">
-        <table class="gr-tbl">
-          <thead><tr><th>V1 (base)</th><th style="color:var(--rd);">V2 (Past)</th><th style="color:var(--gn);">V3 (Participle)</th><th>V1</th><th style="color:var(--rd);">V2</th><th style="color:var(--gn);">V3</th></tr></thead>
-          <tbody>
-            <tr><td><b>go</b></td><td style="color:var(--rd);font-weight:700;">went</td><td style="color:var(--gn);font-weight:700;">gone</td><td><b>come</b></td><td style="color:var(--rd);font-weight:700;">came</td><td style="color:var(--gn);font-weight:700;">come</td></tr>
-            <tr><td><b>see</b></td><td style="color:var(--rd);">saw</td><td style="color:var(--gn);">seen</td><td><b>take</b></td><td style="color:var(--rd);">took</td><td style="color:var(--gn);">taken</td></tr>
-            <tr><td><b>know</b></td><td style="color:var(--rd);">knew</td><td style="color:var(--gn);">known</td><td><b>give</b></td><td style="color:var(--rd);">gave</td><td style="color:var(--gn);">given</td></tr>
-            <tr><td><b>write</b></td><td style="color:var(--rd);">wrote</td><td style="color:var(--gn);">written</td><td><b>speak</b></td><td style="color:var(--rd);">spoke</td><td style="color:var(--gn);">spoken</td></tr>
-            <tr><td><b>win</b></td><td style="color:var(--rd);">won</td><td style="color:var(--gn);">won</td><td><b>eat</b></td><td style="color:var(--rd);">ate</td><td style="color:var(--gn);">eaten</td></tr>
-            <tr><td><b>say</b></td><td style="color:var(--rd);">said</td><td style="color:var(--gn);">said</td><td><b>think</b></td><td style="color:var(--rd);">thought</td><td style="color:var(--gn);">thought</td></tr>
-            <tr><td><b>buy</b></td><td style="color:var(--rd);">bought</td><td style="color:var(--gn);">bought</td><td><b>bring</b></td><td style="color:var(--rd);">brought</td><td style="color:var(--gn);">brought</td></tr>
-            <tr><td><b>leave</b></td><td style="color:var(--rd);">left</td><td style="color:var(--gn);">left</td><td><b>feel</b></td><td style="color:var(--rd);">felt</td><td style="color:var(--gn);">felt</td></tr>
-            <tr><td><b>sit</b></td><td style="color:var(--rd);">sat</td><td style="color:var(--gn);">sat</td><td><b>meet</b></td><td style="color:var(--rd);">met</td><td style="color:var(--gn);">met</td></tr>
-            <tr><td><b>break</b></td><td style="color:var(--rd);">broke</td><td style="color:var(--gn);">broken</td><td><b>read</b></td><td style="color:var(--rd);">read</td><td style="color:var(--gn);">read</td></tr>
-            <tr><td><b>make</b></td><td style="color:var(--rd);">made</td><td style="color:var(--gn);">made</td><td><b>find</b></td><td style="color:var(--rd);">found</td><td style="color:var(--gn);">found</td></tr>
-            <tr><td><b>have</b></td><td style="color:var(--rd);">had</td><td style="color:var(--gn);">had</td><td><b>do</b></td><td style="color:var(--rd);">did</td><td style="color:var(--gn);">done</td></tr>
-            <tr><td><b>tell</b></td><td style="color:var(--rd);">told</td><td style="color:var(--gn);">told</td><td><b>get</b></td><td style="color:var(--rd);">got</td><td style="color:var(--gn);">got/gotten</td></tr>
-            <tr><td><b>lose</b></td><td style="color:var(--rd);">lost</td><td style="color:var(--gn);">lost</td><td><b>send</b></td><td style="color:var(--rd);">sent</td><td style="color:var(--gn);">sent</td></tr>
-            <tr><td><b>cut</b></td><td style="color:var(--rd);">cut</td><td style="color:var(--gn);">cut</td><td><b>put</b></td><td style="color:var(--rd);">put</td><td style="color:var(--gn);">put</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
-        <div class="gr-rule" style="flex:1;min-width:200px;">V2 → Past Simple: She <b>went</b> there yesterday.</div>
-        <div class="gr-rule" style="flex:1;min-width:200px;">V3 → have/has/had + V3: She <b>has gone</b> home.</div>
-      </div>
-      <div style="margin-top:8px;padding:8px 10px;background:rgba(247,106,140,.08);border-radius:8px;font-size:12px;color:var(--tx);">
-        ⚠️ ระวัง: <b>cut/put/read</b> — สามช่องใช้รูปเดิม · <b>have/had/had</b> พบบ่อยใน Causative (have something done)
-      </div>
-    </div>`;
-
-    // จุดสำคัญ — อ้างอิงจาก RAM 1111 analysis
-    html += `
-    <div class="gr-card">
-      <div class="gr-card-title" style="color:var(--yw)">⚠️ จุดสำคัญที่ออกบ่อยใน RAM 1111</div>
-      <div style="font-size:11px;color:var(--mu);margin-bottom:12px;">วิเคราะห์จาก 5 ชุด 600+ ข้อ · เรียงตามความถี่</div>
-
-      <!-- 1. Modal verbs — อันดับ 1 ออกมากที่สุด -->
-      <div style="background:rgba(247,106,140,.08);border-left:3px solid var(--ac2);border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:10px;">
-        <div style="font-size:12px;font-weight:700;color:var(--ac2);margin-bottom:6px;">🥇 Modal Verbs — ออกเฉลี่ย 15 ข้อ/ชุด (มากที่สุด!)</div>
-        <div class="gr-formula">should → ควรจะ (advice) | shouldn't → ไม่ควร
-must → ต้อง (obligation) | mustn't → ห้ามเด็ดขาด
-can → สามารถ | can't → ไม่สามารถ
-could → สามารถ (สุภาพ/อดีต) | couldn't → ไม่สามารถ (อดีต)
-may/might → อาจจะ | needn't → ไม่จำเป็นต้อง
-ought to → ควร (ทางศีลธรรม)</div>
-        <div class="gr-rule">Modal + have + V3 = พูดถึงอดีต: should have studied, could have won</div>
-        <div class="gr-rule">ระวัง needn't ≠ mustn't : needn't = ไม่จำเป็น, mustn't = ห้ามทำเด็ดขาด</div>
-      </div>
-
-      <!-- 2. Present Perfect — อันดับ 2 -->
-      <div style="background:rgba(247,106,106,.08);border-left:3px solid var(--rd);border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:10px;">
-        <div style="font-size:12px;font-weight:700;color:var(--rd);margin-bottom:6px;">🥈 Present Perfect — ออกเฉลี่ย 12 ข้อ/ชุด</div>
-        <div class="gr-formula">S + have/has + V3</div>
-        <table class="gr-tbl" style="margin-top:6px;">
-          <thead><tr><th>Keyword</th><th>ตำแหน่ง</th><th>ตัวอย่าง</th></tr></thead>
-          <tbody>
-            <tr><td style="color:var(--gn);font-weight:700;">just</td><td>บอกเล่า (หน้า V3)</td><td>She has <b>just</b> arrived.</td></tr>
-            <tr><td style="color:var(--gn);font-weight:700;">already</td><td>บอกเล่า</td><td>He has <b>already</b> eaten.</td></tr>
-            <tr><td style="color:var(--yw);font-weight:700;">yet</td><td>ปฏิเสธ/คำถาม (ท้ายประโยค)</td><td>Have you finished <b>yet</b>?</td></tr>
-            <tr><td style="color:var(--ac);font-weight:700;">ever</td><td>คำถาม (หน้า V3)</td><td>Have you <b>ever</b> been to Japan?</td></tr>
-            <tr><td style="color:var(--rd);font-weight:700;">never</td><td>บอกเล่า = ความหมายปฏิเสธ</td><td>I have <b>never</b> tried it.</td></tr>
-            <tr><td style="color:var(--ac);font-weight:700;">for</td><td>+ ระยะเวลา</td><td>for 3 years / for a long time</td></tr>
-            <tr><td style="color:var(--ac);font-weight:700;">since</td><td>+ จุดเริ่มต้น</td><td>since 2015 / since Monday</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 3. while vs when -->
-      <div style="background:rgba(247,199,106,.08);border-left:3px solid var(--yw);border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:10px;">
-        <div style="font-size:12px;font-weight:700;color:var(--yw);margin-bottom:6px;">⏱ While vs When (Past Continuous) — ออกทุกชุด</div>
-        <div class="gr-formula">While + S + was/were + V-ing, S + V2
-→ While I was sleeping, the phone rang.</div>
-        <div class="gr-formula">S + V2 + when + S + was/were + V-ing
-→ I was cooking when she arrived.</div>
-        <div class="gr-rule">while = ตลอดระหว่างนั้น (ใช้กับ Continuous) | when = จุดเวลา (ใช้กับ Simple)</div>
-      </div>
-
-      <!-- 4. Gerund vs Infinitive -->
-      <div style="background:rgba(61,214,140,.08);border-left:3px solid var(--gn);border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:10px;">
-        <div style="font-size:12px;font-weight:700;color:var(--gn);margin-bottom:6px;">📌 Gerund vs Infinitive — ออกเฉลี่ย 6 ข้อ/ชุด</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <div style="flex:1;min-width:180px;">
-            <div style="font-size:11px;color:var(--mu);margin-bottom:4px;">V + V-ing เท่านั้น</div>
-            <div style="font-size:12px;color:var(--tx);line-height:1.7;">enjoy, avoid, finish, keep<br>mind, suggest, practice<br><b style="color:var(--ac);">look forward to</b>, imagine</div>
-          </div>
-          <div style="flex:1;min-width:180px;">
-            <div style="font-size:11px;color:var(--mu);margin-bottom:4px;">V + to + V1 เท่านั้น</div>
-            <div style="font-size:12px;color:var(--tx);line-height:1.7;">want, hope, plan, decide<br>promise, need, agree<br><b style="color:var(--ac);">in order to</b>, refuse</div>
-          </div>
-        </div>
-        <div class="gr-rule" style="margin-top:8px;">look forward to + V-ing (ไม่ใช่ to+V1!) | in order to + V1</div>
-        <div class="gr-rule">stop + V-ing = หยุดถาวร | stop + to V1 = หยุด เพื่อทำอีกอย่าง</div>
-      </div>
-
-      <!-- 5. Connectors -->
-      <div style="background:rgba(124,106,247,.08);border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:10px;">
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:6px;">🔗 Connectors/Conjunctions — ออกเฉลี่ย 6 ข้อ/ชุด</div>
-        <table class="gr-tbl">
-          <thead><tr><th>คำเชื่อม</th><th>ความหมาย</th><th>โครงสร้าง</th></tr></thead>
-          <tbody>
-            <tr><td style="color:var(--ac);font-weight:700;">because</td><td>เพราะว่า</td><td>+ ประโยค (S+V)</td></tr>
-            <tr><td style="color:var(--ac);font-weight:700;">because of / due to</td><td>เนื่องจาก</td><td>+ คำนาม/วลี</td></tr>
-            <tr><td style="color:var(--yw);font-weight:700;">although / even though</td><td>แม้ว่า</td><td>+ ประโยค</td></tr>
-            <tr><td style="color:var(--yw);font-weight:700;">however</td><td>อย่างไรก็ตาม</td><td>ขึ้นต้นประโยค + ,</td></tr>
-            <tr><td style="color:var(--gn);font-weight:700;">therefore / so</td><td>ดังนั้น</td><td>ผล/สรุป</td></tr>
-            <tr><td style="color:var(--gn);font-weight:700;">moreover / furthermore</td><td>นอกจากนี้</td><td>เพิ่มเติม</td></tr>
-            <tr><td style="color:var(--rd);font-weight:700;">unless</td><td>ยกเว้นว่า = if...not</td><td>Unless you study, you will fail.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- 6. Passive Voice -->
-      <div style="background:rgba(56,189,248,.08);border-left:3px solid #38bdf8;border-radius:0 8px 8px 0;padding:10px 12px;margin-bottom:10px;">
-        <div style="font-size:12px;font-weight:700;color:#38bdf8;margin-bottom:6px;">🔄 Passive Voice (be + V3) — ออกทุกชุด</div>
-        <div class="gr-formula">Active:  S + V + Object
-Passive: S + is/am/are/was/were + V3 + (by ...)</div>
-        <div class="gr-example"><div class="gr-en">The police arrested Kelly. → Kelly was arrested by the police.</div><div class="gr-th">เปลี่ยน Object เป็น Subject + was/were + V3</div></div>
-        <div class="gr-rule">Present: is/am/are + V3 | Past: was/were + V3 | Perfect: has/have been + V3</div>
-      </div>
-
-      <!-- 7. will vs be going to -->
-      <div style="background:rgba(124,106,247,.06);border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:10px 12px;">
-        <div style="font-size:12px;font-weight:700;color:var(--ac);margin-bottom:6px;">🔮 will vs be going to</div>
-        <div class="gr-formula">will → ตัดสินใจทันที / ทำนาย / สัญญา</div>
-        <div class="gr-formula">be going to → แผนที่วางไว้ล่วงหน้าแล้ว / ทำนายจากหลักฐาน</div>
-        <div class="gr-example"><div class="gr-en">"The phone is ringing!" — "I'll get it."</div><div class="gr-th">ตัดสินใจตอนนั้น → will</div></div>
-        <div class="gr-example"><div class="gr-en">Look at those clouds! It's going to rain.</div><div class="gr-th">เห็นหลักฐาน (เมฆ) → be going to</div></div>
-      </div>
-    </div>`;
-
-  } else {
-    // non-tenses topics: ปุ่มไปทดสอบ tenses
-    html += `<button onclick="startGrQuiz('tenses')" style="width:100%;background:linear-gradient(135deg,var(--ac),var(--ac2));border:none;border-radius:12px;padding:12px;color:white;font-family:var(--fth);font-size:14px;font-weight:700;cursor:pointer;margin-bottom:18px;">
-      ⚡ ทดสอบ Tense ทั้งหมด (${GRAMMAR_QUIZ.length} ข้อ)
-    </button>`;
-  }
-
-  // เนื้อหา sections ของ topic
-  topic.sections.forEach(sec => {
-    html += `<div class="gr-card">
-      <div class="gr-card-title" style="color:${sec.color}">■ ${sec.title}</div>`;
-    html += `<div style="font-size:11px;color:var(--mu);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;">โครงสร้าง</div>`;
-    sec.formula.forEach(f => { html += `<div class="gr-formula">${f}</div>`; });
-    if(sec.uses && sec.uses.length) {
-      html += `<div style="font-size:11px;color:var(--mu);margin:10px 0 4px;text-transform:uppercase;letter-spacing:.5px;">การใช้</div>`;
-      sec.uses.forEach(u => { html += `<div style="font-size:12px;color:var(--tx);padding:3px 0 3px 12px;border-left:2px solid ${sec.color}40;margin:3px 0;">${u}</div>`; });
-    }
-    html += `<div style="font-size:11px;color:var(--mu);margin:10px 0 4px;text-transform:uppercase;letter-spacing:.5px;">ตัวอย่าง</div>`;
-    sec.examples.forEach(([en, th]) => {
-      html += `<div class="gr-example"><div class="gr-en">${en}</div><div class="gr-th">${th}</div></div>`;
-    });
-    if(sec.rules && sec.rules.length) {
-      html += `<div style="margin-top:8px;">`;
-      sec.rules.forEach(r => { html += `<div class="gr-rule">${r}</div>`; });
-      html += `</div>`;
-    }
-    html += `</div>`;
-  });
-  html += `</div>`;
-  el.innerHTML = html;
-}
-
-function setGrTopic(id) {
-  grTopic = id;
-  renderGrammar();
-}
-
-function startGrQuiz(topicId) {
-  grMode = 'quiz';
-  // กรองเฉพาะ Tense ตาม topicId หรือทั้งหมดถ้าเลือก tenses/all
-  const tenseMap = {
-    'tenses': null, // ทุก tense
-    'Present Simple': 'Present Simple',
-    'Present Continuous': 'Present Continuous',
-    'Past Simple': 'Past Simple',
-    'Past Continuous': 'Past Continuous',
-    'Present Perfect': 'Present Perfect',
-    'Future Simple': 'Future Simple',
-  };
-  const filterTense = tenseMap[topicId];
-  grQPool = (filterTense
-    ? GRAMMAR_QUIZ.filter(q => q.tense === filterTense)
-    : GRAMMAR_QUIZ
-  ).slice().sort(() => Math.random() - .5);
-
-  if(grQPool.length === 0) grQPool = GRAMMAR_QUIZ.slice().sort(() => Math.random() - .5);
-  grQIdx = 0; grQCorrect = 0; grQTotal = 0; grQAns = false;
-  renderGrammar();
-}
-
-function renderGrammarQuiz(el) {
-  if(grQIdx >= grQPool.length) {
-    // จบ
-    const pct = Math.round(grQCorrect / grQPool.length * 100);
-    const grade = pct>=80 ? '🏆 ยอดเยี่ยม!' : pct>=60 ? '👍 ดีมาก!' : pct>=40 ? '📚 ต้องทบทวน' : '💪 ฝึกต่อไป!';
-    el.innerHTML = `<div class="wrap"><div class="qcard" style="max-width:480px;width:100%;text-align:center;">
-      <div style="font-size:52px;margin-bottom:12px">${pct>=80?'🏆':pct>=60?'🎉':'📚'}</div>
-      <div style="font-size:22px;font-weight:700;margin-bottom:6px">${grade}</div>
-      <div style="font-size:14px;color:var(--mu);margin-bottom:20px">คะแนน: ${grQCorrect}/${grQPool.length} (${pct}%)</div>
-      <div style="display:flex;gap:10px;">
-        <button onclick="startGrQuiz('${grTopic}')" style="flex:1;background:var(--ac);border:none;border-radius:10px;padding:11px;color:white;font-family:var(--fth);font-size:14px;font-weight:600;cursor:pointer;">🔄 ทำใหม่</button>
-        <button onclick="grMode='learn';renderGrammar()" style="flex:1;background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:11px;color:var(--tx);font-family:var(--fth);font-size:14px;cursor:pointer;">📖 กลับเรียน</button>
-      </div>
-    </div></div>`;
-    addXP(Math.round(grQCorrect * 8));
-    return;
-  }
-
-  const q = grQPool[grQIdx];
-  const pct = grQPool.length ? Math.round(grQIdx / grQPool.length * 100) : 0;
-  const isFill = q.type === 'fill';
-  // สีตาม tense
-  const tenseColors = {
-    'Present Simple':'#7c6af7','Present Continuous':'#3dd68c',
-    'Past Simple':'#f76a8c','Past Continuous':'#f7c76a',
-    'Present Perfect':'#f76a6a','Future Simple':'#7c6af7','Mixed Tenses':'#f76a8c'
-  };
-  const tenseColor = tenseColors[q.tense] || 'var(--ac)';
-
-  el.innerHTML = `<div class="wrap" style="gap:12px;">
-    <div class="gr-score-bar">
-      <div class="gr-stat"><span class="gr-stat-n" style="color:var(--gn)">${grQCorrect}</span><div class="gr-stat-l">ถูก</div></div>
-      <div class="gr-stat"><span class="gr-stat-n" style="color:var(--rd)">${grQIdx - grQCorrect}</span><div class="gr-stat-l">ผิด</div></div>
-      <div class="gr-stat"><span class="gr-stat-n" style="color:var(--yw)">${grQIdx+1}/${grQPool.length}</span><div class="gr-stat-l">ข้อ</div></div>
-    </div>
-    <div style="max-width:480px;width:100%;">
-      <div style="height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-bottom:4px;">
-        <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:2px;transition:width .3s;"></div>
-      </div>
-    </div>
-    <div class="gr-quiz-wrap">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-        <div class="gr-q-topic" style="border-color:${tenseColor}40;color:${tenseColor}">${q.tense}</div>
-        <div style="font-size:11px;color:var(--mu);background:${isFill?'rgba(247,199,106,.1)':'rgba(124,106,247,.1)'};border-radius:6px;padding:2px 8px;">
-          ${isFill ? '✏️ เติมคำ' : '🔤 เลือกตอบ'}
-        </div>
-      </div>
-      <div class="gr-q-text">${q.q.replace('_____','<span class="gr-blank">_____</span>')}</div>
-      ${q.hint ? `<div class="gr-hint">💡 ${q.hint}</div>` : ''}
-      ${isFill ? `
-        <input id="gr-fill-inp" class="tinp" placeholder="พิมพ์คำตอบ..." autocomplete="off"
-          style="margin-top:8px;" />
-        <button id="gr-submit" class="sbtn" onclick="grSubmitFill()">ยืนยัน ✓</button>
-      ` : `
-        <div class="cgrid" id="gr-choices"></div>
-      `}
-      <div class="rrow"><div class="rtxt" id="gr-rt"></div>
-        <button class="nbtn" id="gr-nb" onclick="grNext()" style="display:none;">ต่อไป →</button>
-      </div>
-    </div>
-    <button onclick="grMode='learn';renderGrammar()" style="background:none;border:none;color:var(--mu);font-family:var(--fth);font-size:12px;cursor:pointer;">← กลับไปอ่าน</button>
-  </div>`;
-
-  if (isFill) {
-    // focus input และ Enter submit
-    const inp = document.getElementById('gr-fill-inp');
-    setTimeout(() => inp && inp.focus(), 100);
-    inp && inp.addEventListener('keydown', e => {
-      if(e.code === 'Enter') { e.preventDefault(); grSubmitFill(); }
-    });
-  } else {
-    // สร้างปุ่ม MC
-    const grid = document.getElementById('gr-choices');
-    q.opts.forEach((opt, i) => {
-      const b = document.createElement('button');
-      b.className = 'cbtn'; b.textContent = opt;
-      b.onclick = () => grAnswerMC(i, q.ans, q.opts[q.ans]);
-      grid.appendChild(b);
-    });
-  }
-}
-
-// ตอบ MC
-function grAnswerMC(chosen, correct, correctText) {
-  if(grQAns) return;
-  grQAns = true;
-  const ok = chosen === correct;
-  document.querySelectorAll('#gr-choices .cbtn').forEach((b, i) => {
-    b.disabled = true;
-    if(i === correct) b.classList.add('correct');
-  });
-  const rt = document.getElementById('gr-rt');
-  if(ok) {
-    grQCorrect++;
-    rt.textContent = '✅ ถูกต้อง!'; rt.className = 'rtxt ok';
-    playOk();
-  } else {
-    document.querySelectorAll('#gr-choices .cbtn')[chosen].classList.add('wrong');
-    rt.textContent = '❌ ' + correctText; rt.className = 'rtxt no';
-    playNg();
-  }
-  document.getElementById('gr-nb').style.display = 'block';
-}
-
-// ตอบ Fill-in
-function grSubmitFill() {
-  if(grQAns) return;
-  const inp = document.getElementById('gr-fill-inp');
-  if(!inp) return;
-  const typed = inp.value.trim();
-  if(!typed) return;
-  grQAns = true;
-  inp.disabled = true;
-  document.getElementById('gr-submit').disabled = true;
-
-  const q = grQPool[grQIdx];
-  // normalize: lowercase, trim spaces, allow ' or '
-  const norm = s => s.toLowerCase().replace(/['']/g,"'").replace(/\s+/g,' ').trim();
-  // รองรับคำตอบหลายรูปแบบ (คั่นด้วย /)
-  const accepted = q.ans.split('/').map(a => norm(a.trim()));
-  const ok = accepted.includes(norm(typed));
-
-  inp.className = 'tinp ' + (ok ? 'ok' : 'no');
-  if(!ok) {
-    // แสดงคำตอบที่ถูก
-    inp.value = q.ans;
-  }
-  const rt = document.getElementById('gr-rt');
-  if(ok) {
-    grQCorrect++;
-    rt.textContent = '✅ ถูกต้อง!'; rt.className = 'rtxt ok';
-    playOk();
-  } else {
-    rt.textContent = '❌ ' + q.ans; rt.className = 'rtxt no';
-    playNg();
-  }
-  document.getElementById('gr-nb').style.display = 'block';
-}
-
-// ตอบแบบเก่า (compat)
-function grAnswer(chosen, correct, correctText) {
-  grAnswerMC(chosen, correct, correctText);
-}
-
-
-// ============================================================
-// RAM 1111 MODE — แนวข้อสอบไล่ภาค ปี 2568
-// RAM1111_QUIZ = array ข้อสอบ 163 ข้อ จาก 5 ชุด
-// แต่ละข้อ: q=คำถาม, opts=ตัวเลือก[4], ans=index(0-3), hint=คำอธิบาย, topic=หมวด
-// ============================================================
-const RAM1111_QUIZ = [
-  {q:"The clouds are getting darker. It _______ soon.",opts:["would rain", "was raining", "is going to rain", ""],ans:1,hint:"คำที่ให้เลือกตอบในตัวเลือกล้วนเป็ นกริ ยำประเภท linking verb ที่ตำมด้วยคำคุณศัพท์ (adj. ใน",topic:"Structure"},
-  {q:"Don’t get nervous. ________calm and carry on.",opts:["Sound", "Keep", "Feel", "Turn"],ans:3,hint:"คำที่เติมนั้นทำหน้ำที่เป็ นประธำนของประโยค โดยใช้กริ ยำเป็ นประธำนต้องใช้รูป Present Participle ในรู ปของ Gerund (คือ Ving) ก็คือ Preparing (กำรเตรี ย",topic:"Gerund/Participle"},
-  {q:"______ ahead of time can help one feel relaxed when the exam time comes.",opts:["Prepare", "Be prepared", "Prepares", "Preparing"],ans:0,hint:"",topic:"Modals"},
-  {q:"If Maria ________ late, the teacher will send her to the principal.",opts:["arrives", "arrived", "is arriving", "had arrived"],ans:0,hint:"",topic:"Structure"},
-  {q:"The little boy wants _______ by his father when crossing a brook.",opts:["to carry", "carry", "to be carried", "carried"],ans:1,hint:"ประโยคกำลังพูดถึง สถำนกำรณ์ปัจจุบนั (Ben ไม่อยูท่ ี่ทำงำน) และผูพ้ ูดคำดว่ำเขำ “ไปแล้วและยัง",topic:"Structure"},
-  {q:"The weather _______ be warmer next week.",opts:["will", "ought", "must", "could"],ans:1,hint:"โครงสร้ำง “one of + the + ขั้นสุ ด + นำมพหูพจน์” เพรำะกล่ำวถึงหนึ่งในบรรดำหลำย ๆ จึงต้อง",topic:"Structure"},
-  {q:"This is one of _______internet search engines.",opts:["fast", "the fastest", "more fast", "the more fast"],ans:0,hint:"ให้เติมคำเชื่อมควำม ประโยคนี้มีเหตุผลตำมมำหลังจำกกำรกระทำ (เก็บเงิน) “เพรำะฉันอยำกได้ แล็ปท็อปใหม่” ต้องกำรคำเชื่อมเหตุผล ใช้ because แต่ไม่มีในข้อนี้",topic:"Connectors"},
-  {q:"I saved my money for months, _________ I wanted to buy a new laptop.",opts:["for", "although", "so", "therefore"],ans:0,hint:"ให้เติมคำเชื่อมควำม ประโยคนี้มีเหตุผลตำมมำหลังจำกกำรกระทำ (เก็บเงิน) “เพรำะฉันอยำกได้ แล็ปท็อปใหม่” ต้องกำรคำเชื่อมเหตุผล ใช้ because แต่ไม่มีในข้อนี้",topic:"Connectors"},
-  {q:"Susan enjoys ______ alone in Japan.",opts:["travel", "to travel", "travelling", "travelled"],ans:1,hint:"ประโยคหน้ำมีกล่ำวถึง Steve (สตีฟ ชื่อคนเพศชำย) เมื่อประโยคต่อไปกล่ำวถึงสตีฟ ก็ตอ้ งใช้คำ",topic:"Structure"},
-  {q:"I have ________ dog. ________ dog is very friendly.",opts:["a; The", "an; A", "the; The", ""],ans:0,hint:"ดูคำอธิบำยข้อ 16. ประกอบ ใช้ “a” นำหน้ำคำนำมนับได้เอกพจน์แสดงถึง จำนวนหนึ่ง อย่ำงหนึ่ง สิ่ งหนึ่ง อย่ำงเช่นข้อนี้ ฉันมีสุนชั ตัวหนึ่ง (a dog) ประโยคต่",topic:"Structure"},
-  {q:"(blank), The สิ่ งหนึ่ง อย่ำงเช่นข้อนี้ ฉันมีสุนชั ตัวหนึ่ง (a dog) ประโยคต่อไปกล่ำวนำมคำนี้ซ้ ำสองเป็ นกำรย้ำกล่ำวซ้ ำ ถือว่ำ เป็ นกำรชี้เฉพำะ หมำยถึง สุ นชั ตัวนั้นที่กล่ำวถึง ต้องใช้ “the” นำหน้ำ เมื่อกล่ำวซ้ ำสอง 25. ________ the excellent reviews, many people decided to try the new restaurant.",opts:["Since", "Because of", "Consequently", "Therefore"],ans:1,hint:"ประโยคต้องกำรคำเชื่อมที่แสดงเหตุผลว่ำ “เพรำะรี วิวดี คนเลยตัดสิ นใจไปลองร้ำนอำหำรใหม่” หลังคำที่ให้เติมคือ the excellent reviews เป็ นคำนำมวลี ดังนั้น",topic:"Connectors"},
-  {q:"Adam was ________ first man.",opts:["a", "an", "the", "(blank)"],ans:1,hint:"ประโยคหน้ำมีคำนำม “The mangoes” เป็ นนำมพหูพจน์ จึงต้องใช้สรรพนำมรู ปพหูพจน์ และ",topic:"Structure"},
-  {q:"_______ in the stadium, Nick saw his favorite movie star.",opts:["Exercise", "Exercising", "Exercised", ""],ans:1,hint:"ให้สังเกตหลังเครื่ องหมำยคอมม่ำ ( , ) เป็ น Nick (นิค ชื่อคน) แสดงกำลังทำบำงอย่ำงในขณะที่ เขำเห็นดำรำคนโปรด ต้องใช้รูป Present Participle (Ving) เพื่อ",topic:"Gerund/Participle"},
-  {q:"Yeaji, from South Korea, doesn’t like spicy food, ________?",opts:["does she", "doesn’t Yeaji", "does not she", ""],ans:0,hint:"เป็ นเรื่ อง tag ส่วนหำง มีหลักดังนี้ กำหนดว่ำถ้ำข้ำงหน้ำเป็ นประโยคบอกเล่ำข้ำงหลังจะต้องเป็ นรู ป ปฏิเสธรู ปย่อ มี 2 จุด ที่ตอ้ งดูนนั่ คือ 1. เรื่ อ",topic:"Structure"},
-  {q:"It was ________ than I had expected.",opts:["expensive", "more expensive", "the more expensive", "the most expensive"],ans:2,hint:"เมื่อเรำเห็น by… (โดย) ทำให้เรำคำดเดำได้วำ่ ประธำนจะต้องถูกกระทำ แล้วดูประธำนเป็ นสิ่ งของ (book = หนังสื อ) ก็ยงิ่ มัน",topic:"Structure"},
-  {q:"The book ______ by Narong won a National Book Foundation Award.",opts:["write", "wrote", "written", "writing"],ans:1,hint:"",topic:"Structure"},
-  {q:"How _______ did you pay for the tickets?",opts:["a lot", "much", "many", ""],ans:1,hint:"",topic:"Structure"},
-  {q:"She has a new antivirus program _______ in her computer every two years.",opts:["install", "to install", "installing", "installed"],ans:3,hint:"",topic:"Structure"},
-  {q:"I met Tom, _______ just returned from Belgium.",opts:["who", "what", "where", ""],ans:0,hint:"ให้เติมประพันธ์สรรพนำมโดยให้สังเกตจำกข้ำงหน้ำคำที่ให้เติมช่องว่ำงว่ำเป็ นคนหรื อ สิ่ งของหรื อ สถำนที่เรำดูคำนำมข้ำงหน้ำก่อนว่ำเป็ นอะไร คน who + verb",topic:"Structure"},
-  {q:"How many brothers ________ Cindy have?",opts:["has", "have", "do", ""],ans:3,hint:"ประโยคเป็ นคำถำมเกี่ยวกับจำนวน ใช้โครงสร้ำง How many + คำนำม + does + ประธำน +",topic:"Structure"},
-  {q:"Missing too many classes may ______ in lower grades and missed opportunities for learning.",opts:["cause", "create", "result", "produce"],ans:1,hint:"ประโยคแรก เป็ นสำเหตุ และประโยคหลังเป็ นผลลัพธ์ คำเชื่อมที่ใช้เชื่อมประโยคแบบ เหตุ ไปสู่ผล",topic:"Modals"},
-  {q:"Amy forgot to set an alarm; _______, she missed her morning class.",opts:["so", "consequently", "for", "since"],ans:2,hint:"ดูคำอธิบำยข้อ 40. ประกอบ ใช้กบั ประโยคคำถำมได้ เช่น How many, How much ใน",topic:"Structure"},
-  {q:"How ______ people are in your family?",opts:["lots", "great deal of", "many", "much"],ans:0,hint:"เห็น than ก็เดำตอบขั้นกว่ำได้เลย (เจอแบบนี้ เป็ นข้อที่ 3 แล้ว) จำกคุณศัพท์ good ทำเป็ นขั้นกว่ำ",topic:"Structure"},
-  {q:"Many heads are _______ than one.",opts:["better", "the better", "best", "the best"],ans:2,hint:"ดูคำอธิบำยข้อ 35. ประกอบ เรำเห็นส่วนหน้ำให้มำแล้ว had studies = had V3 ส่ วนหลังก็ตอบ would have V3 = would have passed",topic:"Structure"},
-  {q:"If Sara had studied harder, she ______ the course last semester.",opts:["passes", "passes", "would have passed", ""],ans:1,hint:"ดูคำอธิบำยข้อ 37. ประกอบ เป็ นเรื่ อง tag (ส่วนหำง) ประธำน I’m ย่อมำจำก I am เมื่อทำ tag",topic:"Structure"},
-  {q:"I’m early for the appointment, _______?",opts:["am not I", "aren’t I", "have not I", "haven’t I"],ans:3,hint:"เป็ น If ในสูตรที่ 3 ดังนี้",topic:"Structure"},
-  {q:"Are you ______ than Sally?",opts:["old", "older", "most old", "more old"],ans:3,hint:"กริ ยำ “loves” ตำมด้วย Ving หรื อ to + V1 ก็ได้ และในที่น้ ีเรำเห็นข้ำงหลังมี by.. (โดย) แสดง",topic:"Structure"},
-  {q:"Madeline loves _______ to amusement parks by her parents.",opts:["to take", "taking", "to be taking", "being taken"],ans:1,hint:"เป็ นสู ตร If สูตรที่ 1 โดยติวเตอร์กุง้ ดังนี้",topic:"Structure"},
-  {q:"A careful bus driver ______ talk while driving.",opts:["might not", "cannot", "shall not", ""],ans:3,hint:"ประโยคนี้กล่ำวถึง “ข้อห้ำมหรื อสิ่ งที่ไม่ควรทำ” โดยเฉพำะสำหรับคนที่ “รอบคอบ” กริ ยำช่วยที่ ถูกต้องเข้ำกับโจทย์ที่สุดคือ “must not” ใช้แสดง “ข้อห้ำมโด",topic:"Modals"},
-  {q:"_______ the new fitness routine, he felt heathier and more energetic.",opts:["As a result of", "Because", "For", "In order to"],ans:0,hint:"ต้องกำรคำเชื่อมที่แสดงว่ำ “เพรำะผลจำกโปรแกรมฟิ ตเนสใหม่น้ ี เขำจึงรู ้สึกสุ ขภำพดีข้ นึ ” หลังคำที่ให้เติมนั้น “the new fitness routine” เป็ นคำนำมวลี",topic:"Connectors"},
-  {q:"Economic instability, inflation, and disruption of trade can be the ______ of war.",opts:["cause", "outcome", "reason", "root"],ans:3,hint:"หลังคำว่ำ “needs” สำมำรถตำมได้ 2 อย่ำงคือ",topic:"Modals"},
-  {q:"The carpet in the main hall needs ______ once every month.",opts:["shampooing", "shampoo", "to be shampooed", "Both 1 and 3 are correct"],ans:2,hint:"ตัวเชื่อม Unless เหมือน If ในกำรตอบกริ ยำทั้งสองส่ วน แต่ควำมหมำยต่ำงกัน Unless = If….not",topic:"Connectors"},
-  {q:"Unless you ________ your application by Friday, you won’t qualify for the scholarship.",opts:["don’t’ submit", "submitted", "submit", "will submit"],ans:2,hint:"ตัวเชื่อม Unless เหมือน If ในกำรตอบกริ ยำทั้งสองส่ วน แต่ควำมหมำยต่ำงกัน Unless = If….not",topic:"Connectors"},
-  {q:"Next year, a church ______ at the back of our school.",opts:["will be built", "is built", "builds", "has built"],ans:3,hint:"เมื่อเห็นคำว่ำ “Whenever” (เมื่อไรก็ตำม) บอกถึงสิ่ งที่เกิดเป็ นประจำ ใช้ Present Simple (S + V1) แต่เนื่องจำก the soccer match (กำรแข่งขันฟุตบอล) เป็",topic:"Present Simple"},
-  {q:"Whenever it rains. the soccer match _______.",opts:["cancels", "was canceling", "", "gets canceled"],ans:2,hint:"ประโยคนี้ ตอ้ งกำรคำเชื่อมที่แสดง ผลลัพธ์ จำกนโยบำยใหม่ คำว่ำ “so” เป็ นคำเชื่อมที่ใช้บ่อยใน",topic:"Connectors"},
-  {q:"The new policy aims to created safer working conditions, ______ employees will feel more secure and satisfied.",opts:["for", "because", "so", "thus"],ans:3,hint:"เป็ นเรื่ อง If แต่ตดั if ออกไปมีสูตร 3 และ 4",topic:"Structure"},
-  {q:"________ the unexpected traffic, Henry arrived late at the meeting.",opts:["Due to", "Owing to", "In order to", ""],ans:0,hint:"ประโยคมีคำว่ำ “At the moment” ใช้ Present Continuous Tense (S + is/am/are +Ving) และประธำน Daniel เป็ นผูถ้ ูกสอน หรื อดูขำ้ งหลังมี by.. (โดย) ทำให้เ",topic:"Present Continuous"},
-  {q:"At the moment, Daniel ______ how to get maple sap from a maple tree by his uncle in the backyard.",opts:["is being taught", "teaches", "taught", "is teaching"],ans:1,hint:"มีคำว่ำ “yet” ซึ่งมักใช้ในรู ปของ Present Perfect Tense (has/have + V3) หรื อ กริ ยำช่วย",topic:"Present Perfect"},
-  {q:"Jack isn’t around. He _________ his exams yet.",opts:["may not finish", "might not have finished", "shouldn’t finish", "couldn’t have finished"],ans:0,hint:"เป็ นกำร ขอบคุณ และแสดงว่ำ “ถ้ำไม่ได้คุณ ฉันคงทำไม่ได้” เหตุกำรณ์น้ ี เป็ นอดีตที่ไม่ได้เกิดขึ้นจริ ง โดยใช้โครงสร้ำง “couldn’t have + V3” เพื่อแสดงคว",topic:"Modals"},
-  {q:"Thank you very much for your help. I _______ it without you.",opts:["couldn’t have managed", "needn’t have managed", "shouldn’t have managed", "might not have managed"],ans:0,hint:"เป็ นกำร ขอบคุณ และแสดงว่ำ “ถ้ำไม่ได้คุณ ฉันคงทำไม่ได้” เหตุกำรณ์น้ ี เป็ นอดีตที่ไม่ได้เกิดขึ้นจริ ง โดยใช้โครงสร้ำง “couldn’t have + V3” เพื่อแสดงคว",topic:"Modals"},
-  {q:"Follow me. I ______ show you to your room.",opts:["must", "might", "will", ""],ans:2,hint:"ประโยคนี้เป็ นคำพูดในกำรเสนอควำมช่วยเหลือหรื อบอกเจตนำของผูพ้ ูดแสดงควำมตั้งใจจะทำใน อนำคตอันใกล้ ใช้ will",topic:"Structure"},
-  {q:"I don’t like tea, but I _______ like coffee.",opts:["do", "have", "ought", ""],ans:0,hint:"เรำเห็นกริ ยำ like เป็ นกริ ยำช่องที่ 1 สำมำรถในกริ ยำช่วยที่สำมำรถตำมด้วยกริ ยำช่องที่ 1 ได้คือ do ซึ่ง do + V1 (like) ได้ โดย do/does/did นำหน้ำกริ ",topic:"Structure"},
-  {q:"She sings better than I ________.",opts:["have", "do", "will", "am"],ans:3,hint:"A: มำร์ค คุณไปทำงำนยังไงเหรอ?",topic:"Structure"},
-  {q:"A: _____________. B: I love pizza most!",opts:["Why did you buy it?", "What’s your favorite food?", "Which restaurant should we go to this evening?", "How was the pizza you brought home last night?"],ans:2,hint:"A: เจน เคยไปโอซำก้ำหรื อเปล่ำ?",topic:"Structure"},
-  {q:"foreign ถาม คุณสำมำรถพูดภำษำต่างประเทศได้ไหม?",opts:["คุน้ เคย", "คล่องแคล่ว", "ค่อนข้ำง", "ต่ำงประเทศ"],ans:0,hint:"1. พัฒนำ",topic:"Structure"},
-  {q:"It is important to _________ good study skills.",opts:["develop", "become", "pronounce", ""],ans:0,hint:"1. พัฒนำ",topic:"Structure"},
-  {q:"Would you help me correct my _______?",opts:["commute", "difference", "pronunciation", ""],ans:2,hint:"1. กำรเดินทำง 2. ควำมแตกต่ำง",topic:"Structure"},
-  {q:"I hope this will _________ you to change your mind.",opts:["admit", "convince", "regret", ""],ans:1,hint:"1. ยอมรับ",topic:"Structure"},
-  {q:"The movie didn’t ______ as well as the critics had predicted.",opts:["curl up", "drop off", "put down", "turn out"],ans:3,hint:"1. ขดตัว 2. หลับ, ลดลง หย่อน 3. วำงลง",topic:"Structure"},
-  {q:"Wanchai ______ to write a new novel next year.",opts:["intends", "warns", "strikes", ""],ans:0,hint:"1. ตั้งใจ 2. เตือน",topic:"Structure"},
-  {q:"My ________ food is fish and vegetables.",opts:["tasty", "normal", "favorite", ""],ans:2,hint:"1. อร่ อย",topic:"Structure"},
-  {q:"Last night, Nicha had a(n) _____ sleep. That’s why this morning she looks very fresh.",opts:["indescribable", "daring", "uninterrupted", "limited"],ans:2,hint:"",topic:"Structure"},
-  {q:"It’s _______ to take a shower or bath when there’s a lightning storm.",opts:["worth", "inadvisable", "convincing", "unbelievable"],ans:1,hint:"",topic:"Structure"},
-  {q:"We would appreciate an early ________.",opts:["reply", "mind", "fight", ""],ans:0,hint:"1. กำรตอบกลับ 2. จิตใจ",topic:"Structure"},
-  {q:"He’s in treatment for cocaine _________.",opts:["gain", "diet", "notice", ""],ans:3,hint:"",topic:"Structure"},
-  {q:"The _______ of getting up early is that you will have more time during the day to do things.",opts:["spot", "fair", "benefit", "structure"],ans:2,hint:"",topic:"Structure"},
-  {q:"He couldn’t get to sleep because he was too _______.",opts:["tough", "excited", "fast", ""],ans:1,hint:"",topic:"Modals"},
-  {q:"The most annual meeting was very _______. It lasted for only an hour.",opts:["popular", "fortunate", "heartbreaking", ""],ans:3,hint:"1. เป็ นที่นิยม",topic:"Structure"},
-  {q:"have exercised ดูคำอธิบำยข้อ 1. ประกอบ เมื่อเรำเห็นคำบอกใบ้คือ usually (โดยปกติ) ทำเป็ นประจำ ใช้ Present Simple Tense (S + V1) ได้เลย ก็คือ exercise 5. Mark’s mother makes him _________ up his room once a week.",opts:["to tidy", "tidied", "tidy", "tidying"],ans:2,hint:"",topic:"Present Simple"},
-  {q:"were celebrating (S+ was/were + Ving) เช่น (at) this time last year (เวลำนี้ เมื่อปี ที่แล้ว มี at ก็ได้ไม่มี at ก็ได้) , at 6 o’clock last night, at 5 p.m. yesterday เป็ นต้น ฉะนั้นข้อนี้ มี at this time last Friday จึงตอบ were celebrating 7. If the weather clears up, we ________ for a hike tomorrow.",opts:["goes", "will go", "had gone", ""],ans:1,hint:"",topic:"Structure"},
-  {q:"were knowing Tense (S + has/have been + Ving) แสดง เหตุกำรณ์ที่ เกิดติดต่อกันตั้งแต่อดีตจนถึงปั จจุบน ั และจะ ดำเนินต่อไปในอนำคต ออกสอบทุกเทอมนะคะจำคำบอกเวลำไว้ เช่น for (เป็ นเวลำ), since (ตั้งแต่), just (เพิง่ จะ), recently (เร็ว ๆนี้ ), lately, yet, already, ever, never, how long , all day (ตลอดวัน), all evening (ตลอดเย็น) สำหรับข้อนี้ มีคำบอกเวลำคือ for years (เป็ นเวลำหลำยปี ) จึงตอบ have known 9. _________ that he has got a big bonus from his office, Tim couldn’t help smiling all day.",opts:["To know", "Knowing", "Know", "Known"],ans:1,hint:"คำที่เติมนั้นทำหน้ำที่เป็ น Present Participle ในรู ปของ Gerund (คือ Ving) ทำหน้ำที่เป็ นกริ ยำ วิเศษณ์มกั ไว้หน้ำประโยคและตำมด้วยเครื่ องหมำยคอมม่ำ (",topic:"Modals"},
-  {q:"ใช้ the นำหน้ำคำนำมที่มีส่วนขยำยชี้เฉพำะตำมหลังคำนำมเช่นเป็ นบุพบท (in, on, at, under) หรื ออนุ ประโยคขยำยที่มี that, which, who, whom เป็ นต้น สำหรับข้อนี้ใช้ The นำหน้ำชื่อประเทศที่มีคำว่ำ United จึงตอบ The United States of America 12. My brother will have his jeans _________ about 2 inches.",opts:["shorten", "shortened", "shortening", ""],ans:1,hint:"เป็ นโครงสร้ำงในเรื่ อง Passive Voice โดยใช้ในรู ปของ Verb to have have/ has/had มีออกบ่อย 2 แบบคือ ดูสูตร",topic:"Structure"},
-  {q:"Which ข้อนี้เป็ นคำถำมแบบ Who-question ดังนี้ Who + Verb + obj, = ถำมถึงคน Whom + Verb + S. = ถำมถึงบุคคลที่ 3 Whose + คำนำม + Verb + S…? = ถำมถึงกำรเป็ นเจ้ำของ? ว่ำของใคร Which + Verb + S = ถำมถึงกำรเลือกของชิ้นใด? Which + คำนำม + V + S..? = ถำมถึงของใดชิ้นหนึ งแบบเจำะจง? What + Verb + S…? = ถำมถึงสิ่ งของ? When + Verb + S….? = ถำมหำเวลำ? Where + Verb + S….? = ถำมถึงสถำนที่? How + adj./adv. + V + S…? = ถำมลักษณะ/จำนวน? How/how to + Verb + S…? = ถำมถึงควำมรู ้สึก/วิธีกำร? โจทย์ตอ้ งกำรถำมกำรเป็ นเจ้ำของ Whose + คำนำม + Verb + S = Whose turn is it…? ถึงคิวใครที่จะเลือกหนังสำหรับกำรดูหนังคืนนี้ ? 15. I forgot to turn off the light, is _______ still on?",opts:["them", "it", "itself", ""],ans:1,hint:"ส่วนหลังให้ตอบเป็ นคำถำมและต้องกำรถำมโดยใช้คำสรรพนำม (Pronoun) และใช้เป็ นประธำน ของประโยคคำถำม? โดยคำที่ให้เติมกล่ำวซ้ ำคำนำมที่เอ่ยในประโยคหน้ำ นัน่",topic:"Pronouns"},
-  {q:"Natalie ____________ scared of being left alone at night.",opts:["stays", "tastes", "feels", "wounds "],ans:2,hint:"จำกตัวเลือกเป็ นกริ ยำที่ต่ำงควำมหมำยกัน ก็ตอ้ งเลือกกริ ยำที่เข้ำกับโจทย์ได้ ซึ่งกริ ยำทั้ง 4 ตัวเลือกเป็ น กริ ยำที่มีควำมหมำยต่ำงกัน ที่โจทย์ scare",topic:"Structure"},
-  {q:"(Blank) บท (in, on, at, under) หรื ออนุประโยคขยำยที่มี that, which, who, whom เป็ นต้น อย่ำงเช่นข้อนี้ ถ้ำใช้ a young man หมำยถึง คนหนุ่มคนหนึ่ง แต่มีคำว่ำ who is …….. ขยำยต่อ เป็ นกำรชี้เฉพำะว่ำเป็ นหนุ่มที่กำลัง ร้องเพลงนะ ไม่ใช่คนอื่นใด จึงเป็ นกำรชี้เฉพำะใช้ the นำหน้ำ 26. I can’t find Bob here. He _________ already.",opts:["will leave", "could have left", "ought to leave", "must have left"],ans:3,hint:"ใช้ must have + V3 เป็ นรู ปอดีต บอกถึงสิ่ งที่เชื่อว่ำน่ำจะเกิดขึ้นในอดีต เพรำะจำกโจทย์ “ผมหำ บ๊อบไม่เจอที่นี่ เขำต้องออกจำกที่นี่ไปแล้ว” เทียบตัวอย่",topic:"Modals"},
-  {q:"_________ we call on Amily this afternoon?",opts:["May", "Shall", "Would", "Could"],ans:3,hint:"",topic:"Structure"},
-  {q:"Why อยูใ่ นรู ปคำถำมประเภท Wh-question ดูคำอธิบำยข้อ 14 ประกอบ เมื่อต้องกำรถำมถึงสิ่ งของ ใช้ What มำตั้งคำถำม? ว่ำ “อะไรคือควำมสำเร็ จที่ภำคภูมิใจมำกที่สุดของคุณ?” 34. I’m eligible for the sum of 10,000, ________?",opts:["am I", "do I", "aren’t I", ""],ans:2,hint:"เป็ นเรื่ อง tag ส่วนหำง มีหลักดังนี้ กำหนดว่ำถ้ำข้ำงหน้ำเป็ นประโยคบอกเล่ำข้ำงหลังจะต้องเป็ นรู ป ปฏิเสธรู ปย่อ มี 2 จุด ที่ตอ้ งดูนนั่ คือ 1. เรื่ อ",topic:"Structure"},
-  {q:"don’t I ปฏิเสธรู ปย่อ มี 2 จุด ที่ตอ้ งดูนนั่ คือ 1. เรื่ องกริ ยำกับเรื่ องคำสรรพนำม เรำเห็นประโยคให้ขอ้ นี้มี ‘m ย่อมำจำก am ทำ tag บอกเล่ำ ทำส่ วนหลังต้องเป็ นปฏิเสธรู ปย่อ am not มีแต่ตวั เต็มไม่มีรูปย่อ จึงใช้ aren’t แทน และ ประโยคมีคำสรรพนำม I มำแล้วก็ใช้ตวั เดิมคือ I ดูตวั อย่ำงอื่นประกอบ - Jane will be here soon, won’t she? - There was a lot of rain, wasn’t there? - Maggi won’t be late, will she? - I am late, aren’t I? กรณี ถำ้ เป็ น am ทำเป็ นปฏิเสธส่ วนหลังต้องใช้ aren’t I - I am not late, am I? กรณียกเว้ น ถ้ำขึ้นต้นประโยคมี 2 กรณีนะคะ ให้ตอบส่วนหลังคงที่ เช่น (ออกบ่อยเหมือนกัน) - Let’s go home, shall we? ขึ้นต้นด้วย Let’s ให้ ตอบ shall we - Clean the table, will you? ขึ้นต้นด้วย กริยาช่ องที่ 1 ให้ ตอบ will you ฉะนั้น ประธำน I’m ย่อมำจำก I am ส่วนหำง จึงตอบเป็ น aren’t I 35. If I ________ more free time, I would do some outdoor activities.",opts:["have", "had", "will have", ""],ans:1,hint:"",topic:"Modals"},
-  {q:"has given ลงท้ำยด้วยกริ ยำช่องที่ 3 เสมอไม่วำ่ จะในรู ปกำล Tense ใดก็ตำม สำหรับข้อนี้เรำรู ้วำ่ เป็ นถูกกระทำเพรำะ ประธำนเป็ นสิ่ งของคือ ไอแพด ซึ่งให้เองไม่ได้ จะต้องถูกให้กบั ลินดำ ฉะนั้นกริ ยำ ถูกให้ (เมื่อแปลควำมออกมำ ก็คือได้รับ) จึงใช้รูป verb to be + V3 = was given ส่วน has given เป็ นรู ป Present Perfect Tense ไม่ใช่รูปถูกกระทำ (ถ้ำถูกกระทำของ Tense นี้จะเป็ น has been given) 38. His three dogs _________ care of by his uncle for about two weeks.",opts:["take", "have been taken", "", "could be taken"],ans:1,hint:"เมื่อเจอข้อ 37 ก็มำอธิบำยต่อว่ำรู ปกระทำบำงโจทย์เรำสังเกตจำกคำว่ำ by …. (โดย) ก็ได้วำ่ ถูกกระทำ โดย และประธำนเป็ นสุนชั ก็ถูกได้รับกำรดูแลโดยลุง และมี",topic:"Present Perfect"},
-  {q:"singing โดยขยำยคำนำมมีควำมหมำยเป็ น ผูก้ ระทำเอง แบบนี้มีออกทุกเทอม 1 -2 ข้อ เทียบตัวอย่ำงอื่น - The crying girl is Sue’s younger sister. (เด็กผูห้ ญิงที่ร้องไห้คือน้องสำวของซู) - The man standing in the field will be our new teacher. (ผูช้ ำยที่ยนื อยูใ่ นสนำมจะเป็ นครู คนใหม่ของเรำ) - The woman talking with Mr. Benson will be our new manager. โดย talking อยูห่ ลังคำนำม ขยำยคำนำม The woman ว่ำเป็ นผูห้ ญิงที่กำลังคุย ข้อนี้ก็เช่นกันใช้ singing ขยำยคำนำม The man แสดงถึง ผูช้ ำยที่กำลังร้องเพลง 43. The book is ________ than the move we saw.",opts:["funnier", "the funny", "funniest", ""],ans:0,hint:"ดูคำอธิบำยข้อ 16. ประกอบ ที่วำ่ เห็น than ให้ตอบขั้นกว่ำได้เลย ออกข้อสอบทุกเทอมนะ แล้วมำดูให้คำอะไรเอำตัวดั้งเดิมคือ funny เมื่อทำเป็ นขั้นกว่ำต้องเปล",topic:"Structure"},
-  {q:"the funniest แล้วมำดูให้คำอะไรเอำตัวดั้งเดิมคือ funny เมื่อทำเป็ นขั้นกว่ำต้องเปลี่ยน y เป็ น i ก่อนแล้วจึงเติม -er ดังนั้นเมื่อ ผันจะเป็ น funny funnier funniest เรำตอบขั้นกว่ำ จึงเป็ น funnier 44. Ought I to ________ a bouquet of flowers to her?",opts:["sends", "send", "sending", ""],ans:1,hint:"ข้อนี้ไม่ยำกนะ กริ ยำช่วย ought มี to + V1 ตำมในรู ปปัจจุบนั เมื่อทำเป็ นคำถำมยก Ought ไว้หน้ำ",topic:"Structure"},
-  {q:"sent ประธำน และหลังประธำน มี to + V1 คำว่ำ V1 เป็ นกริ ยำช่องที่ 1 ไม่ตอ้ งเติมอะไรทั้งสิ้ นจึงตอบ send 45. Dan had made some big mistakes; _______, the entire team had to work overtime to meet the project deadline.",opts:["since", "for", "owing to", "as a result"],ans:3,hint:"ดูคำอธิบำยข้อ 39. ประกอบ เดำจำกเครื่ องหมำย ; _____, ใช้ได้คือตัวเชื่อม as a result = ผลที่ ตำมมำ ดังนั้น จำกประโยค “แดนได้ทำข้อผิดพลำดครั้งใหญ่ ส่ งผ",topic:"Connectors"},
-  {q:"the finest ให้ตอบขั้นสุ ด จำก fine ทำขั้นสุ ดเป็ น finest และใส่ the นำหน้ำ จึงตอบ the finest 48. When I was young, all my clothes ________by my mother.",opts:["were sewed", "sew", "sewed", ""],ans:0,hint:"ดูคำอธิบำยข้อ 6 /20 ประกอบ เมื่อเห็น by …… แสดงประธำนถูกกระทำ (passive voice) ใช้โครงสร้ำง verb to be + V3 = were sewed",topic:"Structure"},
-  {q:"were sewing ใช้โครงสร้ำง verb to be + V3 = were sewed 49. People cut down trees, _______ the natural habitats of many animals are destroyed.",opts:["for", "so", "but", "or"],ans:1,hint:"เติมตัวเชื่อมควำม ประโยคทั้งสองเป็ นเหตุ-เป็ นผล ซึ่งประโยคที่ 2 เป็ นผลที่ตำมมำจำกประโยค ที่ 2 “ผูค้ นโค่นต้นไม้ลง ดังนั้นแหล่งที่อยู่อำศัย (habitats",topic:"Connectors"},
-  {q:"many แต่มีจำนวนมำกไม่ตอบรับ” คำที่เติมช่องว่ำงได้เข้ำกับประโยคคือ many แสดงจำนวนมำก ส่วนตัวเลือกอื่นไม่ เข้ำกับโจทย์ เช่น 1. เป็ นสรรพนำมสะท้อนตัวคุณเอง ใช้กบั ประธำน I ไม่ได้ และ 2. them เป็ นรู ปกรรม ไม่ ถูกต้อง เพรำะประโยคมีกริ ยำ didn’t respond ใช้รูปกรรมไม่ได้ ต้องใช้รูปประธำน ส่วนตัวเลือก 3. one หมำยถึง หนึ่งคน หรื อคนใดคนหนึ่งที่ไม่ได้เจำะจง ไม่เข้ำกับประโยค 51. She’s made many friends since _________ moved to the new neighborhood.",opts:["hers", "her", "she", "herself"],ans:2,hint:"เป็ นเรื่ องคำสรรพนำมดูได้จำกตัวเลือก 1. รู ปแสดงควำมเป็ นเจ้ำของที่ไม่มีคำนำมนำม 2. รู ปแสดง ควำมเป็ นเจ้ำของ ตำมด้วยคำนำม ตัวเลือกที่ 3 she รู ปประธ",topic:"Structure"},
-  {q:"Will; be to ได้ เมื่อทำเป็ นประโยคคำถำม จึงยก Will ไว้หน้ำประธำน (you) และ be อยูห ่ ลังประธำน จึงเป็ น Will you be able to work 54. In Sweden, all workers must adjust to _________ in all kinds of weather.",opts:["work", "working", "worked", "be working"],ans:1,hint:"ดูคำอธิบำยข้อ 26. ประกอบ กลุ่มคำ adjust to + Ving จึงตอบ working",topic:"Modals"},
-  {q:"would be กำรใช้ If ตรงกับสูตรที่ 4 ดูสูตรโดยติวเตอร์กุง้ 4 If 68. S + had V3 , S + would have V3 ให้มำ had rained Let’s go inside __________ it’s getting dark now.",opts:["because", "since", "while", "Both 1 and 2 are correct"],ans:3,hint:"เติมคำเชื่อมในประโยคที่มีควำมหมำยเป็ นเหตุ-ผล กัน คำเชื่อมบอกสำเหตุ คือ because = since = เพรำะว่ำ เนื่องจำก มีควำมหมำยเดียวกัน ส่วน while (ในขณะที่) ",topic:"Connectors"},
-  {q:"more young 70. If Nancy ___________harder, she would get better grades.",opts:["studied", "studying", "had studied", ""],ans:0,hint:"เป็ นเรื่ อง If สู ตร 3",topic:"Structure"},
-  {q:"(blank) ดูคำอธิบำยข้อ 24. ประกอบ ใช้ “a” นำหน้ำคำนำมนับได้ แสดง จำนวนหนึ่ง บ้ำนหลังหนึ่ง _______ people will go to the concert at MBK Hall.",opts:["A lot", "Much", "Many", ""],ans:2,hint:"ดูคำอธิบำยเพิ่มเติมในข้อ 63. much + คำนำมนับไม่ได้ เช่น much money, much time เป็ นต้น many + คำนำมพหู พจน์ เช่น people เป็ นคำนำมรู ปพหู พจน์ many pe",topic:"Structure"},
-  {q:"เหนื่อยล้ำ หมดแรง 4. ประหลำดใจ สังเกตจำกกลุ่มคำว่ำ they collapsed on the coach = พวกเขำล้มลงบนโซฟำ 86. Sunee looks very fresh this morning. She must have had a(n) ______ sleep.",opts:["rolling", "frightening", "uninterrupted", "protected"],ans:2,hint:"1. กำรกลิ้ง ม้วน 2. น่ำกลัว ตื่นตกใจ 3. ต่อเนื่อง ไม่มีกำรรบกวน 4. ได้รับปกป้ อง",topic:"Modals"},
-  {q:"ต่ำงประเทศ 3. สำเหตุ ก่อให้เกิด 4. ขับรถ ผลักดัน สังเกตจำกคำว่ำ subtitle = คำบรรยำยใต้เรื่ อง 89. Be careful when using a phone during a thunderstorm, for it can__________ the electricity from the lightning.",opts:["conduct", "known", "strike", "occur"],ans:0,hint:"1. นำพำ พำหะ 2. รับรู ้",topic:"Structure"},
-  {q:"ยุติธรรม 3. กำรเปลี่ยน สังเกตจำกคำว่ำ police arrived = ตำรวจมำถึง ... 93. She’ll ________ her new song in the studio.",opts:["encourage", "follow", "record", ""],ans:2,hint:"",topic:"Structure"},
-  {q:"_________ can be a difficult struggle to overcome.",opts:["Addiction", "Control", "Attention", "Habit ถาม _______ อำจเป็ นกำรต่อสู ้ที่ยำกต่อกำรเอำชนะ"],ans:3,hint:"",topic:"Modals"},
-  {q:"effect ถาม การตอบกลับของแนนซี่เกิดขึ้นมำทำงข้อควำมอย่ำงรวดเร็ว",opts:["กำรตอบกลับ", "มุมมอง", "ควำมวิตกกังวล reply = กำรตอบกลับ คำตอบ", ""],ans:3,hint:"",topic:"Structure"},
-  {q:"ought to ก็เช่นกันทำเป็ นคำถำมยกไว้หน้ำประธำนทั้งดุน้ ไม่ได้ ถ้ำยกๆ ได้แต่ ought เช่น What ought you to do ……..? เป็ นต้น 9. A bus to Omaha _________ every three hours.",opts:["departs", "departed", "is departing", ""],ans:0,hint:"ใช้ Present Simple Tense (S + V1) กับตำรำงกำรเดินทำงที่ทำตำมกำหนดเวลำประจำ เช่น",topic:"Present Simple"},
-  {q:"was departing รถประจำทำงออกทุก 3 ชัว่ โมงเป็ นประจำทุกวัน ก็ตอบกริ ยำช่องที่ 1 ในข้อนี้ตอบ V1 เอกพจน์คือ departs 10. When I arrived, I didn’t see _________ in the classroom.",opts:["some", "anybody", "none", ""],ans:1,hint:"เป็ นเรื่ องคำสรรพนำม some (บำงจำนวน) นิยมใช้ในประโยคบอกเล่ำ แต่โจทย์น้ ีมี didn’t = did not เป็ นปฏิเสธ ซึ่ ง anybody = “ใครก็ตำม” มักนิ ยมใช้ในประโย",topic:"Structure"},
-  {q:"Past Participle (V3) ทำหน้ำที่เป็ นคุณศัพท์วำงไว้หน้ำคำนำมหรื อหลังคำนำมที่มนั ขยำย มีควำมหมำย เป็ น ผูถ้ ูกกระทำหรื อบอกสภำพ เช่น - Beware of the fallen trees. (ระวังต้นไม้ลม ้) - The meeting canceled yesterday was about next year’s budget. (กำรประชุมที่ถูกยกเลิกเมื่อวำนเป็ นเรื่ องเกี่ยวกับงบประมำณปี หน้ำ) 13. Do you want ________ out tonight, Shawn?",opts:["go", "to go", "going", ""],ans:1,hint:"",topic:"Gerund/Participle"},
-  {q:"gone ดูคำอธิบำยข้อ 2. ประกอบ กริ ยำ want เป็ นกริ ยำที่มี to ตำม จึงตอบ want to go Joey _______ to see a doctor this afternoon.",opts:["went", "was going", "has gone", ""],ans:3,hint:"ที่โจทย์มี to คำอยู่ ต้องหำกริ ยำที่อยูข่ ำ้ งหน้ำที่มำติดกับ to ได้นนั่ คือ is going to + V1 ที่เรำมีเรี ยน เป็ นกำรแสดง “กำลังจะ” เป็ นเหตุกำรณ์ที่ก",topic:"Structure"},
-  {q:"is going เป็ นกำรแสดง “กำลังจะ” เป็ นเหตุกำรณ์ที่กำลังจะเกิดขึ้นในอนำคตอันใกล้และค่อนข้ำงแน่นอน ก็คือใช้ is going to แทน will ได้ ในกำรแสดงอนำคตที่มีคำบอกเวลำ เช่น tomorrow, soon (ในไม่ชำ้ ), this afternoon (บ่ำยนี้) เช่น - Mary is going to see her mother next weekend. (แมรี่ กำลังจะไปหำแม่ของเธอสัปดำห์หน้ำ) เหมือน = Mary will see her mother next weekend. 15. We ________ have trusted them. They’re scammers!",opts:["needn’t", "can’t", "shouldn’t", ""],ans:2,hint:"จะเห็นที่โจทย์มี have trusted (have V3) หำคำที่นำหน้ำได้ ซึ่งถ้ำข้ำงหลังเป็ น have V3 แสดงถึง รู ปอดีตที่น่ำจะได้ทำ หรื อไม่ได้ก็คือ should have V3 = ",topic:"Modals"},
-  {q:"won’t รู ปอดีตที่น่ำจะได้ทำ หรื อไม่ได้ก็คือ should have V3 = should have trusted ซึ่ง - should + have V3 มีควำมหมำยว่ำ “ควรทำ” (แต่ควำมจริ งไม่ได้ทำในอดีต) - shouldn’t + have V3 มีควำมหมำยว่ำ “ไม่ควรทำ” (แต่ควำมจริ งได้ทำไปแล้วในอดีต) = We shouldn’t have trusted them. They’re scammers! (เรำไม่ควรไว้ใจพวกเขำ พวกเขำเป็ นพวกหลอกลวง! ส่วน needn’t = need not + V1 ใช้แสดง “ไม่จำเป็ นต้อง” และ can’t / won’t + V1 16. Amanda is very busy with work. She doesn’t have ________ time to relax.",opts:["many", "much", "several", "a number of"],ans:1,hint:"ดูตวั เลือกให้เติมคำบอกปริ มำณ นำหน้ำคำนำม ก่อนให้ให้ดูวำ่ เป็ นคำนำมนับได้หรื อนับไม่ได้ - many / several / a number of + คำนำมพหูพจน์ เช่น many/seve",topic:"Modals"},
-  {q:"need แสดง “สำมำรถ” เช่น - Mary can speak Thai. (แมรี่ พูดภำษำไทยได้) - Uncooked food can harm your health. (อำหำรดิบอำจเป็ นอันตรำยต่อสุ ขภำพของคุณได้) ส่วน does ถึงแม้จะตำมด้วยกริ ยำช่องที่ 1 เพื่อแสดงกำรเน้นย้ำ แต่ขอ้ นี้ใช้เป็ นกำรแสดง “สำมำรถ” และ is ตำมด้วย Ving หรื อ V3 ได้ แต่ V1 ไม่ได้ และ need ตำมด้วย Ving หรื อ to V1 ได้ 22. ______Janet ________ very busy with school lately?",opts:["Is ; being", "Will ; be", "Was ; being", ""],ans:3,hint:"",topic:"Modals"},
-  {q:"were enjoying โดยติวเตอร์กุง้ ออกทุกเทอมในกำรเชื่อม while หรื อ as มีท้ งั ปัจจุบนั และอดีต 1. S + V2 while as 2. S + was/were Ving while S + was/were Ving as 3. S + is/am/are +Ving while S + is/am/are Ving 4. While S + was/were Ving , 5. While/As + S + was/were Ving, S + V2 S + was/were Ving S + was/were Ving ให้มำ fainted หรื อนึกเมื่อเห็นคำเชื่อม While หรื อ As นึกถึงกริ ยำรู ป -ing เช่นข้อนี้ ตอบ were enjoying 31. We haven’t heard about Teera ________ he left the Line group.",opts:["for", "consequently", "so", ""],ans:3,hint:"ให้เติมคำเชื่อมควำม ดูแต่ละคำเชื่อมว่ำเข้ำกับประโยคที่ให้มำตัวไหน",topic:"Connectors"},
-  {q:"Have; picked ดูคำอธิบำยข้อ 19. ประกอบ เมื่อเรำเห็นคำบอกเวลำ tomorrow (พรุ่ งนี้) แสดงถึงอนำคต ใช้ตอบ will + V1 = will pick ทำเป็ นคำถำม ยก Will ไว้หน้ำ you จึงตอบตัวเลือกข้อ 3 35. Brian gets used to _______ out at the city’s recreation center.",opts:["work", "worked", "works", ""],ans:3,hint:"สำนวนต่อไปนี้ ให้ตำมด้วย Ving ได้แก่ can’t bear can’t stand can’t resist can’t help",topic:"Structure"},
-  {q:"to write คำนำม the play (ละคร) ที่ถกู เขียนโดย.... (by) ใช้ V3 คือ written เทียบดูตวั อย่ำงอื่น ทำนองเดียวกัน เช่น - The meeting canceled yesterday was about next year’s budget. canceled เป็ นกริ ยำช่องที่ 3 ในรู ป past participle ที่ขยำยคำนำม the meeting = กำรประชุมถูกยกเลิก 41. Doris and Tom have known each other for a long time. ________ were classmates in ________ college years.",opts:["We ; our", "They ; their", "We ; their", "They ; our"],ans:1,hint:"",topic:"Gerund/Participle"},
-  {q:"will be transforming - Kelly was arrested yesterday by the police. (แคลี่ถูกจับเมื่อวำนโดยตำรวจ) - Cleo was transformed by the experience of living alone in Thailand (คลีโอได้รับกำรเปลี่ยนแปลงจำกประสบกำรณ์กำรใช้ชีวิตคนเดียวในประเทศไทย) 47. We _______ Warren Buffett if we _______ to the campus today.",opts:["are seeing ; will go", "would see ; had gone", "will see ; go", "have seen ; are going"],ans:2,hint:"",topic:"Structure"},
-  {q:"making S + get + something + V3 (ถ้ าตามด้ วยสิ่ งของ + V3) S + get/got + คน + to V1 - Jack gets his elder sister to wash his clothes. คน - Jack gets his clothes washed by his elder sister. สิ่ งของ ตอบ V3 ข้อนี้ got his housemaid (แม่บำ้ น เป็ นคน) ตำมด้วย to + V1 จึงตอบ to make 49. Tipping less than 20 percent ________ not proper nowadays.",opts:["is considering", "is considered", "will consider", ""],ans:1,hint:"ใช้ในรู ป passive voice ( S + is/am/are + V3) = is considered ประธำนเป็ นผูก้ ระทำ ใช้ is เพรำะท้ำยประโดยมี nowadays (ปัจจุบนั ) ตัวเลือกที่ 4 ไม่ถูก ",topic:"Structure"},
-  {q:"were considered เพรำะท้ำยประโดยมี nowadays (ปัจจุบนั ) ตัวเลือกที่ 4 ไม่ถูก เพรำะประธำนเป็ นเอกพจน์ใช้ were ไม่ได้อยู่ แล้ว - Switzerland is considered (to be) the most beautiful country by many visitors. - The general was considered by many (to be) a great leader. (นำยพลผูน้ ้ ีมีผคู ้ นมำกมำยนับถือว่ำเป็ นผูน้ ำที่ยงิ่ ใหญ่) 50. I would travel around the world if I _________ a millionaire.",opts:["am", "was", "were", ""],ans:2,hint:"ดูคำอธิบำยข้อ 37. ประกอบ",topic:"Structure"},
-  {q:"have been 3. 51. S + would V1 ให้ มา would travel if/unless S + V2 were Teera can recall the day _________ he went to see his advisor.",opts:["that", "which", "how", ""],ans:3,hint:"ให้เติมประพันธ์สรรพนำมโดยให้สังเกตจำกข้ำงหน้ำคำที่ให้เติมช่องว่ำงว่ำเป็ นคนหรื อ สิ่ งของหรื อสถำนที่เรำดูคำนำมข้ำงหน้ำก่อนว่ำเป็ นอะไร คน who + verb ",topic:"Modals"},
-  {q:"when ให้เติมประพันธ์สรรพนำมโดยให้สังเกตจำกข้ำงหน้ำคำที่ให้เติมช่องว่ำงว่ำเป็ นคนหรื อ สิ่ งของหรื อสถำนที่เรำดูคำนำมข้ำงหน้ำก่อนว่ำเป็ นอะไร คน who + verb (คำกริยำ) ในทีน่ ้คี อื is คน whose + คำนำม + V คน whom + S + Verb คำว่ำ S มักเป็ นคำสรรพนำมเช่น I saw, you met สิง่ ของ which + Verb หรือ which + S + V. สถำนที่ where + S + V. เช่น where I live เวลำ when + S + V the reason why + S + V ประโยคมี the day (วัน) จึงตอบ when 52. Poor time management can _______ failure.",opts:["do", "lead to", "make", ""],ans:1,hint:"กริ ยำที่เข้ำกับประโยคได้คือ lead to (นำไปสู่, ก่อให้เกิด) - Poor time management can lead to failure. (กำรจัดกำรเวลำที่ไม่ดีอำจนำไปสู่ควำมล้มเหลวได้)",topic:"Modals"},
-  {q:"whose who ได้เลย เพรำะ who + กริ ยำเสมอ ถ้ำ whom + S + Verb ส่ วน whose + คำนำม เสมอ 55. _________ I couldn’t attend the meeting yesterday was that I had a family emergency.",opts:["The reason why", "In accordance with", "As a result of", "Because"],ans:0,hint:"",topic:"Modals"},
-  {q:"had known ดูเรื่ องสูตรที่ 4 ของ If 4 If S + had V3 , S + would/could have V3 ให้มำ would have made 57. Ice cream can _______ the blood vessels in the roof of your mouth to shrink.",opts:["cause", "owe to", "reason", "show"],ans:0,hint:"ดูคำอธิบำยข้อ 45. ประกอบ - Ice cream can cause the blood vessels in the roof of your mouth to shrink. (ไอศกรี มอำจทำให้หลอดเลือดบนเพดำนปำกหดตัวได้)",topic:"Modals"},
-  {q:"Had S + V3 , S + would have V3 ข้อนี้ตรงกับกำรตัด if ออกในสูตรที่ 3 เรำสังเกตจำกส่วนหลังมี would V1 ก็ได้ เทียบตัวอย่ำงอื่น - If I were a bird, I would fly to New York. = Were I a bird, I would fly to New York. (ตัด If ออก แล้วยก Were ไว้หน้ำประธำนส่ วนหลังเหมือนเดิม) - If I were to study science, I would study hard. = Were I to study science, I would study hard. 59. That lady is our new manager. We enjoy working with _______.",opts:["she", "hers", "her", ""],ans:2,hint:"ดูตำรำงในข้อ 41. ประกอบ เป็ นเรื่ องคำสรรพนำมที่จะใช้รูปไหน ในข้อนี้ให้เติมท้ำยประโยคและ",topic:"Structure"},
-  {q:"herself ตำมหลังบุพบท (with) จะตำมด้วยรู ปกรรมเสมอ ดังนั้นจำกประธำน she รู ปกรรมจะเป็ น her จึงตอบตัวเลือก ข้อ 3 - He seemed to recognized me. (me เป็ นรู ปกรรมตำมหลังกริ ยำ) 60. Nick is _______guitarist; he can play ________guitar very well.",opts:["a ; an", "a ; the", "an ; a", ""],ans:1,hint:"ดูคำอธิบำยข้อ 7. ประกอบ ใช้ “a/an” นำหน้ำคำนำมแสดงอำชีพ เช่น a guitarist (นักเล่มกีตำร์) และส่วนหลังเป็ นเครื่ องดนตรี ใช้ “the” นำหน้ำ เช่น the guita",topic:"Modals"},
-  {q:"the ; a และส่วนหลังเป็ นเครื่ องดนตรี ใช้ “the” นำหน้ำ เช่น the guitar, the violin, the piano, the flute (ขลุย่ ), the trumpet, the xylophone (ระนำด), the saxophone ฯลฯ 61. The ________man is a professional basketball player.",opts:["six feet", "six foot", "six-feet", ""],ans:3,hint:"คุณศัพท์ประสม (Compound Adjectives) เป็ นโครงสร้ำงของคำจำนวน 2 คำขึ้นไปมำรวมกัน โดยมีเครื่ องหมำย hyphen (-) คัน่ ระหว่ำงคำ เช่น - a ten-pound baby - ",topic:"Adj/Adv"},
-  {q:"Whose + คำนำม เสมอ ส่วน When, Why, Where ใช้ตำมแบบที่ 2 - Whose book are you reading? - Why did he go home? - When will you do? - Where do you come from? - How + adj. ใช้ถำมเกี่ยวกับ ระดับต่ำง ๆ เช่น - How old is she? ข้อนี้ถำมเป็ น What is your hometown like, Lisa? (บ้ำนเกิดของคุณเป็ นยังไงบ้ำง ลิซ่ำ?) 67. Sue bought me _________ blouse from Thailand.",opts:["beautiful a pink silk", "silk beautiful a pink", "pink silk a beautiful", "a beautiful pink silk"],ans:3,hint:"เป็ นกำรเรี ยงคุณศัพท์ที่มีคุณศัพท์มำขยำยคำนำมหลำยตัว โดยวำงไว้หน้ำคำนำม คือ คำนำมหลักจะอยูข่ วำมือของเรำ ส่วนหน้ำคำนำมจะเป็ นคุณศัพท์เรี ยงลำดับ ดังน",topic:"Structure"},
-  {q:"If S + V1 ให้มำ add 70. , S + V1 ________ a lack of exercise, weight gain and health issues arose.",opts:["As a result", "Through", "Because", "Due to"],ans:3,hint:"คำเชื่อม due to / owing to มีควำมหมำยว่ำ “เนื่องจำก เพรำะว่ำ” ตำมด้วยคำนำมหรื อกลุ่มคำนำม ส่วน because เพรำะว่ำ ตำมด้วยประโยค จึงผิด เพรำะที่โจทย์มีกล",topic:"Connectors"},
-  {q:"Had S + V3 72. , S + would/could have V3 ให้มำ could have gone ________ you brush your teeth, you get cavities.",opts:["If", "Unless", "When", ""],ans:1,hint:"คำเชื่อม If not = unless (ถ้ำ ไม่) ดูเปรี ยบเทียบ - If you do not brush your teeth, you get cavities. = Unless you brush your teeth, you g",topic:"Modals"},
-  {q:"Whether - If you do not brush your teeth, you get cavities. = Unless you brush your teeth, you get cavities. 73. A : ______________. B : Not yet. She’s graduating next semester, I believe.",opts:["What has Sue been doing in LA?", "Will Sue finish it in the future?", "Is Sue back to her post?", "Has Sue graduated yet?"],ans:3,hint:"กำรสนทนำ A: B: แบบนี้จะมีออกทุกเทอมเช่นกัน ดูจำกที่ B ตอบว่ำ ยังไม่ แต่ฉันเชื่อว่ำ เธอจะจบใน เทอมหน้ำนะ? แสดงว่ำ A ถำมว่ำ “ซูได้เรี ยนจบหรื อยัง? โดยก",topic:"Structure"},
-  {q:"had injured จึงตอบ was injured (ได้รับบำดเจ็บ)ในรู ปของ was + V3 หลังประธำน 75. Doug had his hair ________ by a professional barber last week.",opts:["cut", "cuts", "cutting", ""],ans:0,hint:"เป็ นเรื่ องของ has/have/had",topic:"Structure"},
-  {q:"to cut S + have + someone + V1 + O Has/have/had + คน + V1 (อย่ำลืมถ้ำตำมด้วยคน ตอบ V1) S + have + something + V3 (ก็คือ have + สิ่ งของ + V3) สำหรับโจทย์น้ ี have your hair (ผม) เป็ นสิ่ งของตอบกริ ยำช่องที่ ง คือ cut กริ ยำตัวนี้ผนั สำมช่องใช้รูปเดิม cut cut cut เรำตอบ cut ได้เลยเป็ นที่รู้กนั ว่ำคือช่องที่ 3 76. Anita is trying to get her work _________ before leaving the office.",opts:["do", "did", "doing", "done"],ans:3,hint:"ดูคำอธิบำยข้อ 48. ประกอบ",topic:"Structure"},
-  {q:"เดินทำง Siripha is ___________ in English and Spanish.",opts:["fluent", "brave", "diligent", ""],ans:0,hint:"1. คล่องแคล่ว 2. กล้ำหำญ",topic:"Structure"},
-  {q:"ประสบกำรณ์ She gave me a(n) _______ answer when I asked her about her plans for the weekend.",opts:["small", "unaware", "vague", "jam-packed"],ans:2,hint:"1. เล็ก",topic:"Structure"},
-  {q:"Popular I’ll _________ her child when she’s on her business trip.",opts:["stand out", "look after", "conduct", ""],ans:3,hint:"1. เป็ นอันตรำยถึงแก่ชีวิต 2. เกี่ยวกับกำรหำยใจ 3. เรื้ อรัง",topic:"Structure"},
-  {q:"เด่น She ______ not taking the opportunity to travel when she was younger.",opts:["regretted", "adapted", "evaluated", "analyzed"],ans:0,hint:"1. เสียใจ",topic:"Structure"},
-  {q:"tract It’ s true that fine _______ are linked to respiratory problems.",opts:["creatures", "routes", "particles", ""],ans:1,hint:"1. ขยิบตำ",topic:"Structure"},
-  {q:"ประหลำดใจ She purchased a set of _______ tools to handle minor fixes around the house.",opts:["real", "certain", "conditional", "home-repair"],ans:3,hint:"",topic:"Structure"},
-  {q:"กำรลงทุน Whey buying things on sale, no ________ or exchanges are allowed.",opts:["crusts", "goals", "refunds", "strategies"],ans:2,hint:"1. เปลือกโลก",topic:"Structure"},
-  {q:"Just by _______, Amy unexpectedly met her old schoolmate 40 years later.",opts:["bunch", "coincidence", "refund", "shelter"],ans:1,hint:"1. ช่อ (ดอกไม้) 2. ควำมบังเอิญ",topic:"Structure"},
-  {q:"แสดงทางเลือก or (หรื อ มิฉะนั้น) however, instead, whereas, nevertheless, otherwise furthermore, moreover, meanwhile, besides, also, similarly accordingly, finally, consequently, therefore, thus because “จิมไปทำงำนสำยเสมอ ดังนั้นเจ้ำนำยของเขำไล่เขำออก” จึงตอบ so = ดังนั้น 8. If she ______ a car, she could drive to work.",opts:["had", "has", "had had", ""],ans:0,hint:"",topic:"Modals"},
-  {q:"If S S + V1 if/unless S + V1 + will/can V1 if/unless S + V1 + would V1 if/unless S + V2 + would have V3 if/unless S + had V3 S + V2 9. , S + would/could + V1 could drive Tony __________ me. He was looking at the other side of the street.",opts:["mustn’t have seen", "couldn’t have seen", "shall not have seen", "wouldn’t have seen"],ans:0,hint:"เป็ นเรื่ องกริ ยำช่วยในรู ปอดีตเรำรู ้เพรำะมี was looking แสดงว่ำส่วนหน้ำก็ตอ้ งใช้เป็ นอดีต สำหรับ กริ ยำช่วยรู ปอดีตจะลงท้ำย have V3 กริ ยำช่วยที่เ",topic:"Modals"},
-  {q:"touch ก็ได้จึงตอบ to be touched 15. The cat licked its paws to clean ________.",opts:["those", "it", "itself", ""],ans:2,hint:"ดูคำอธิบำยข้อ 1 ประกอบ เป็ นเรื่ องสรรพนำมที่สะท้อนตัวเอง จำกประโยคมีประธำนคือ The cat",topic:"Structure"},
-  {q:"were punished ลงท้ำยด้วยกริ ยำช่องที่ 3 เสมอ คือ verb to be + V3 = were punished ถูกลงโทษ ใช้เป็ นอดีตเพรำะเรำเห็น cheated เป็ นอดีตด้วย จึงใช้ were ส่ วน have punished เป็ นรู ป have + V3 ในรู ป Present Perfect ไม่ใช่รูปถูกกระทำ ถ้ำถูกกระทำจะเป็ น have been V3 ฉะนั้นโครงสร้ำงถูกกระทำที่ถูกต้องคือ were punished 22. __________ you come early tomorrow? A visitor is arriving at 8 a.m.",opts:["Can", "Must", "Need", ""],ans:0,hint:"เป็ นเรื่ องกริ ยำช่วยในกำรขอร้องที่สุภำพใช้ข้ นึ ต้นด้วย Can you หรื อ May you ส่วน must (ต้อง) และ need เป็ นกำรบังคับไม่สุภำพ และ shall นิยมใช้กบั ",topic:"Present Perfect"},
-  {q:"bored, bored (รู ้สึกประหลำดใจ) และลงท้ำยด้วย -ing เช่น boring (น่ำเบื่อ), interesting (น่ำสนใจ), surprising (น่ำ ประหลำดใจ) จำกโจทย์ช่องแรก the teacher is boring (ครู ทำตัวน่ำเบื่อ) the students are bored (นักเรี ยนก็รู้สึกเบื่อ) 28. A: _______about some good deals on produce? B: The mangoes are on sale today.",opts:["Do you know", "Where are", "Can you tell me", "Which of these"],ans:2,hint:"เอถำม คุณพอจะบอกฉันเกี่ยวกับกำรซื้อขำยดี ๆ ในผลิตผลได้ไหม?",topic:"Structure"},
-  {q:"to work - She gave the kitten something to eat. - He wants a book to write on. ก็คือ กริ ยำ want + กรรม + to V1 เช่นเดียวกับข้อนี้ กริ ยำ want + กรรม (a notebook computer) + to V1 จึงตอบ to work 30. Bob didn’t change his field of study ______ the new report on future career trends.",opts:["because of", "through", "for", "since"],ans:0,hint:"ให้ตอบคำเชื่อมควำมก็ตอ้ งดีควำมโจทย์วำ่ จะใช้คำเชื่อมไหนที่เข้ำกันได้ because of = เพรำะ ตำมด้วยวลี through = ผ่ำน โดย for = because ตำมด้วยประโยคแต่ต",topic:"Connectors"},
-  {q:"Have - There _______ a photocopier machine in the library. จะเห็นชัดว่ำเรำอำจเคยชินกับคำว่ำ There is/There are / There was/There were หมำยถึง มี และกริ ยำจะผันตำมคำนำมด้ำนขวำคือ a photocopier เป็ นนำมเอกพจน์ ฉะนั้นกริ ยำก็ตอ้ งเป็ นเอกพจน์นนั่ คือตอบ is ทำเป็ นคำถำมก็ยก is ไว้หน้ำ there จึงตอบข้อ 2 ส่วน does กับ have ไม่ถกู ต้อง 37. Which way _______ I to go? This way or that way?",opts:["will", "might", "ought", ""],ans:2,hint:"ดูจำกตัวเลือกจะรู ้วำ่ เป็ นเรื่ องของกริ ยำช่วย แล้วดูวำ่ แต่ละตัวตำมด้วยอะไร เช่น will, might, shall ตำมด้วยกริ ยำช่องที่ 1 ไม่มี to แต่ที่โจทย์มี t",topic:"Modals"},
-  {q:"shall ตำมด้วยกริ ยำช่องที่ 1 ไม่มี to แต่ที่โจทย์มี to เห็นจำกหลังประธำน I นัน่ คือ I to go ยกมำเป็ นบอกเล่ำจะเป็ น I ____ to go เห็นชัดกว่ำ ต้องตอบ ought to เพรำะ ought มี to ตำมเสมอ ทำเป็ นคำถำมก็ ought I to go? 38. The police made the gunman ________ the gun down and step back.",opts:["put", "to put", "putting", "puts"],ans:0,hint:"กริ ยำ make/made หรื อ let สองตัวนี้เป็ นที่นิยมออกสอบออกมำให้ตอบกริ ยำช่องที่ 1 ไม่ตอ้ งมี to ตำม เช่น - The sad movie always makes me cry. - Let us ",topic:"Modals"},
-  {q:"isn’t it เป็ นรู ปปฏิเสธรู ปย่อ มี 2 จุด ที่ตอ้ งดูนนั่ คือ 1. เรื่ องกริ ยำกับเรื่ องคำสรรพนำม เรำเห็นประโยคให้ขอ้ นี้มี don’t like เป็ นปฏิเสธรู ปย่อ ทำ tag ต้องเป็ นบอกเล่ำคือ do และ 2. ดูประธำนเ ถ้ำให้คำนำมมำเป็ นเพศชำย เช่น ชื่อ John ก็เปลี่ยนเป็ นสรรพนำม he แต่ถำ้ ให้สรรพนำมมำตัวไหนก็ยกตัวนั้นมำเลยในรู ปประธำน ตัวอย่ำงอื่นเช่น - Jane will be here soon, won’t she? - There was a lot of rain, wasn’t there? - Maggi won’t be late, will she? - I am late, aren’t I? กรณี ถำ้ เป็ น am ทำเป็ นปฏิเสธส่ วนหลังต้องใช้ aren’t I - I am not late, am I? กรณียกเว้ น ถ้ำขึ้นต้นประโยคมี 2 กรณีนะคะ ให้ตอบส่วนหลังคงที่ เช่น (ออกบ่อยเหมือนกัน) - Let’s go home, shall we? ขึ้นต้นด้วย Let’s ให้ ตอบ shall we - Clean the table, will you? ขึ้นต้นด้วย กริยาช่ องที่ 1 ให้ ตอบ will you ข้อนี้มีกริ ยำ is ทำส่วนหำงเป็ นปฏิเสธรู ปย่อคือ isn’t และประธำนคือ The black and white cat (แมวขำว ดำ) เป็ นสัตว์เอกพจน์ใช้คำสรรพนำมแทนคือ it จึงตอบ isn’t it 40. The house is rather _______ than we thought.",opts:["bigger", "the bigger", "biggest", ""],ans:0,hint:"เดำได้เลยเห็น than ให้ตอบขั้นกว่ำ จำกคุณศัพท์ big ทำเป็ นขั้นกว่ำคือ bigger ไม่ตอ้ งมี the สำหรับ ขั้นกว่ำ ที่อยูห่ น้ำ than เป็ น bigger than",topic:"Modals"},
-  {q:"the biggest ขั้นกว่ำ ที่อยูห่ น้ำ than เป็ น bigger than 41. We should do what we can _______ help reduce global warming.",opts:["due to", "in order to", "owing to", "for"],ans:1,hint:"“เรำควรทำสิ่ งที่เรำสำมำรถทำได้เพื่อช่วยลดภำวะโลกร้อน” ตอบคำเชื่อม in order to + V1 (help) หมำยถึง เพื่อที่จะ เพื่อ.... เป็ นกำรบอกวัตถุประสงค์ ส่วน d",topic:"Modals"},
-  {q:"repainted S + get + something + V3 (ถ้ าตามด้ วยสิ่ งของ + V3) S + get/got + คน + to V1 - Jack gets his elder sister to wash his clothes. คน - Jack gets his clothes washed by his elder sister. สิ่ งของ ตอบ V3 ข้อนี้ getting the auditorium (หอประชุม เป็ นสิ่ งของป จึงตอบกริ ยำช่องที่ 3 = repainted 49. Mary illnesses are _________ by poor diet and lack of exercise.",opts:["brought about", "resulted", "due to", ""],ans:0,hint:"",topic:"Structure"},
-  {q:"knitted ประโยคเต็มมำจำก The scarf was knitted by Joan สำมำรถลดรู ปโดยตัด verb to be คือ was ออกได้ คงไว้แต่กริ ยำช่องที่ 3 ได้ 56. Your office is not in that brick building, _______?",opts:["is your office", "is it not", "is it", ""],ans:2,hint:"เป็ นเรื่ องส่วนหำง (tag) กริ ยำให้ is not ปฏิเสธ ส่วนหำงทำเป็ นบอกเล่ำคือ is และประธำนคือ Your office (สำนักงำนของคุณ) ใช้สรรพนำม it เพรำะเป็ นสิ่ งข",topic:"Structure"},
-  {q:"is not the office Your office (สำนักงำนของคุณ) ใช้สรรพนำม it เพรำะเป็ นสิ่ งของ 57. _________her report before the due date. Nora is very proud of herself.",opts:["Finish", "Having finished", "Finished", "Being finished"],ans:1,hint:"ใช้รูป Perfect Participle (Having + V3) ทำหน้ำที่เป็ นคุณศัพท์ของประธำนหลักที่ตำมมำ เพื่อ ขยำยควำมว่ำกำรกระทำหนึ่งในประโยคหลักเกิดตำมอีกกำรกระทำที่เป็",topic:"Gerund/Participle"},
-  {q:"cutting กระทำว่ำกำลังถูกตัดตอนนี้ มำจำก The tree is being cut right now สำมำรถลดรู ปตัด is ออกเป็ น The tree being cut right now 59. We _______ leave the door unlocked before leaving the house.",opts:["couldn’t", "might not", "wouldn’t", ""],ans:3,hint:"กริ ยำช่วยที่แสดงกำรแนะนำ คือ should (ควรจะ) หรื อ should not = shouldn’t (ไม่ควรจะ) จำกประโยค “เรำไม่ควรปลดล็อคประตูทิ้งไว้ก่อนออกจำกบ้ำน” ส่วน could",topic:"Modals"},
-  {q:"shouldn’t จำกประโยค “เรำไม่ควรปลดล็อคประตูทิ้งไว้ก่อนออกจำกบ้ำน” ส่วน couldn’t = ไม่สำมำรถ, mightn’t = อำจจะและ wouldn’t = จะไม่ 60. Maria has two job offers. ________ hasn’t decided which jobs to accept.",opts:["Hers", "Her", "She", "Herself"],ans:2,hint:"คำสรรพนำมประเภทไหนที่ใส่ในช่องว่ำงได้ ให้เติมขึ้นต้นประโยคก็คือรู ปประธำน She เพรำะ ตำมด้วยกริ ยำ (hasn’t…) ได้เลย ถ้ำเป็ นตัวอื่นเช่น hers, her แสดงค",topic:"Modals"},
-  {q:"If S + V1 ให้มำ heat 71. , S + V1 You won’t cause any problem, ________ you’re informed the manager ahead of time.",opts:["so", "consequently", "for", "if"],ans:2,hint:"",topic:"Structure"},
-  {q:"would know 4 If S + had V3 , S + would have V3 75. Please answer the phone for me. It _______be John, for he said he would call me back.",opts:["would", "ought to", "need", "must"],ans:3,hint:"",topic:"Structure"},
-  {q:"one another themselves แต่ไม่มีในตัวเลือก เพรำะมีคำสรรพนำมที่ใช้เมื่อประธำนทำสิ่ งต่ำงๆ ร่ วมกับผูอ ้ ื่น ก็คือ each other = ซึ่ งกันและกันใช้กบ ั สองคน และ one another = ซึ่งกันและกัน ใช้กบั หลำยคน สองคนขึ้นไป ดู ตัวอย่ำงอื่นนะคะ - Peter and Mary love each other. (ปี เตอร์และแมรี่ รักซึ่งกันและกัน รวมสองคน) - The classmates help one another. (เพื่อนๆ ร่ วมห้องช่วยเหลือซึ่งกันและกัน) 78. When the sun sets, it ________ very dark.",opts:["gets", "would get", "had gotten", ""],ans:0,hint:"ข้อนี้ไม่ยำกนะ เรำเห็นประโยคหน้ำมีกริ ยำ sets เป็ นกริ ยำช่องที่ 1 รู ปปัจจุบนั เรำก็เดำว่ำอีกประโยค หนึ่งคู่กนั ได้จะเป็ นปัจจุบนั หรื อไม่ก็อนำคตก็ไ",topic:"Structure"},
-  {q:"got หนึ่งคู่กนั ได้จะเป็ นปัจจุบนั หรื อไม่ก็อนำคตก็ได้ที่คู่กนั ได้ แล้วมำดูตวั เลือกจะเห็นว่ำปัจจุบนั ตัวเลือกเดียวคือ gets ก็ตอบข้อ 1 ได้เลย นอกนั้น เป็ นอดีตหมด 79. I have two pens, a blue one and a red one. You can borrow ______if you need.",opts:["another", "either", "such", "other"],ans:1,hint:"“ฉันมีปำกกำ 2 ด้ำม มีสีน้ ำเงินและสี แดง คุณสำมำรถยืมอันใดอันหนึ่งได้ ถ้ำคุณต้องกำร” ใช้คำ สรรพนำมที่เจำะจง either = อย่ำงใดอย่ำงหนึ่ง ให้เลือกเอำ",topic:"Modals"},
-  {q:"ทำให้เด่น She doesn’t know what _______ happened that night.",opts:["purposely", "normally", "actually", ""],ans:2,hint:"1. อย่ำงจงใจ 2. อย่ำงปกติ",topic:"Structure"},
-  {q:"อย่ำงแท้จริ ง Ann, stop being a(n) _______. You’ve been complaining a lot lately?",opts:["passenger", "applicant", "think-tank", "grumbler"],ans:3,hint:"1. ผูโ้ ดยสำร 2. ผูส้ มัคร",topic:"Structure"},
-  {q:"คนขี้บ่น You need to _______ yourself for a long wait. It’s business as usual",opts:["explore", "prepare", "determine", "complete"],ans:1,hint:"1. สำรวจ",topic:"Structure"},
-  {q:"เป็ นลูกกลม The _______ handwritten copy of Vincent’s bestselling novel has been found in his attic.",opts:["extreme", "brief", "popular", "original"],ans:3,hint:"1. สุดโต่ง",topic:"Structure"},
-  {q:"ยุติธรรม Bob and his family were forced to ________ their home because they couldn’t pay the mortgage.",opts:["explore", "determine", "prove", "give up"],ans:3,hint:"",topic:"Modals"},
-  {q:"เดินเที่ยว เตร่ She’s proud that both her children have a _______ for music.",opts:["talent", "language", "meaning", ""],ans:0,hint:"",topic:"Structure"},
-  {q:"รู ปแบบ Take a few minutes to _______ your application to make sure that it is accurate.",opts:["repeat", "reread", "cease", "drive"],ans:1,hint:"",topic:"Structure"},
-  {q:"วำงลง Jane’s father had a ________ heart attack while he was on holiday.",opts:["spherical", "disappearing", "phenomenal", "sudden"],ans:3,hint:"1. เป็ นลูกกลม 2. หำยไป",topic:"Structure"},
-  {q:"ยอดเยีย่ ม บทที่ 8 sudden = ทันที, กะทันหัน, ฉับพลัน 103. A lot of businesses are being _______ by the current high interest rate.",opts:["hurt", "shrunk", "intended", "curled up"],ans:1,hint:"",topic:"Structure"},
-  {q:"ทำให้เจ็บปวด 2. ทำให้หดตัว ถอย 3. ตั้งใจ Repairing damaged _______ is a very delicate operation.",opts:["antennas", "nerves", "experience", ""],ans:1,hint:"",topic:"Structure"},
-  {q:"สนับสนุน It’s been a(n) _________ day. Let’s go home and get some rest.",opts:["simple", "relaxing", "wonderful", "exhausting"],ans:3,hint:"1. ง่ำย เรี ยบ 3. ผ่อนคลำย",topic:"Structure"},
-  {q:"อย่ำงประหลำดใจ reluctantly = unwillingly = อย่ำงไม่เต็มใจ 120. It took us exactly ten hours to get to Chiang Mai.",opts:["fairly", "surprisingly", "precisely", ""],ans:2,hint:"1. อย่ำงยุติธรรม",topic:"Structure"},
-  {q:"one another each other = ซึ่งกันและกัน ใช้กบ ั ของสองสิ่ ง / สองคน one another = ซึ่งกันและกัน ใช้กบ ั มำกกว่ำสองอย่ำง สองคนขึ้นไป จำกประโยค “ สิ่ งมีชีวิตทั้งหมดบนโลกล้วนพึ่งพำอำศัยซึ่ งกันและกัน” ใช้กบั หลำยอย่ำงจึงตอบ one another 15. ________dogs may overheat in the summertime.",opts:["Fur", "Furring", "Furry", "Furred"],ans:1,hint:"ถ้ำเรำเห็น as as เป็ นกำรเปรี ยบเทียบเท่ำกัน ตรงกลำงจะเป็ นคำ adj. /adv. อยูท่ ี่",topic:"Modals"},
-  {q:"If 50. S + V1 , S + will V1 rains (V1) คู่กบั will cancel Adam’s brother is ________ very kind lawyer.",opts:["a", "an", "the", "(blank)"],ans:3,hint:"เป็ นเรื่ องกริ ยำช่วย โดย might/may not = อำจจะไม่ ส่วน oughtn’t ต้องมี to ตำม แต่โจทย์ไม่",topic:"Modals"},
-  {q:"being left กริ ยำ like, love, hate (รัก ชอบ เกลียด) ตำมได้สองอย่ำงคือ to + V1 หรื อ Ving begin bother cease commence continue hate intend like love prefer start - I hate to leave/ leaving everything to the last minute. แต่ขอ้ นี้ใช้รูปถูกกระทำเพรำะ kid (เด็กๆ ) ไม่ชอบถูกปล่อยให้อยูต่ ำมลำพัง จึงใช้ hate to be left หรื อ hate being left ตะรำงกับตัวเลือกที่ 4 64. _________ you ever been to London, Lily?",opts:["Have", "Do", "Are", ""],ans:0,hint:"เป็ นประโยคคำถำม ต้องดูวำ่ ตัวไหนสำมำรถตำมด้วยกริ ยำ been ซึ่งเป็ นกริ ยำช่องที่ 3 ได้ นัน่ คือ have นัน ่ เอง นอกนั้น do + V1 , will + V1 , are + Vin",topic:"Structure"},
-  {q:"Will have นัน ่ เอง นอกนั้น do + V1 , will + V1 , are + Ving เป็ นต้น 65. We feel _________ about what happened.",opts:["bad", "badly", "worst", ""],ans:0,hint:"ได้แก่ verb to be, feel, seem, keep, look, appear, remain, taste, smell เป็ นต้น คำที่ตำมเป็ น",topic:"Structure"},
-  {q:"ผลกระทบ 83. They’re easy to make and _________ to eat.",opts:["favorite", "normal", "usual", ""],ans:3,hint:"1. โปรดปรำน 2. ปกติ ธรรมดำ",topic:"Structure"},
-  {q:"อร่ อย มีรสชำติ 84. A blue suit, white shirt, and red tie are _________ for all male workers.",opts:["essential", "fantastic", "incredible", "rolling "],ans:1,hint:"1. สำคัญ จำเป็ น 2. มหัศจรรย์ ยอดเยีย่ ม 3. เหลือเชื่อ",topic:"Structure"},
-  {q:"ม้วน กลิ้ง 85. Breakfast _________ while he was in the bathroom.",opts:["excited", "enjoyed", "arrived", ""],ans:2,hint:"1. รู ้สึกตื่นเต้น 2. สนุกสนำน ชื่นชอบ 3. มำถึง",topic:"Structure"},
-  {q:"โต้แย้ง โต้เถียง We’re glad that things _______ the way they did.",opts:["came up", "prepared", "released", ""],ans:3,hint:"1. ผุดขึ้นมำ",topic:"Structure"},
-  {q:"รวดเร็ว It’s never too late to improve your ________.",opts:["spread", "diet", "influence", ""],ans:0,hint:"1. ตื่นเต้น 2. เริ่ มต้น",topic:"Structure"},
-  {q:"โครงสร้ำง Bath, a city in England, is famous for its ________ and spas.",opts:["hot spring", "inconvenience", "", "anniversary"],ans:0,hint:"1. น้ ำพุร้อน",topic:"Structure"},
-  {q:"He _______ a new idea for increasing sales.",opts:["crouched down", "curled up", "rolled in", "came up with "],ans:3,hint:"1. หมอบลง 2. ขด/ม้วนตัว",topic:"Structure"},
-  {q:"universe The cause of the accident was not ________ apparent.",opts:["suddenly", "immediately", "privately", ""],ans:2,hint:"1. ควำมพยำยำม",topic:"Structure"},
-  {q:"ชมรมดนตรี แจ๊ส 4. จักรวำล 110. ถาม สำเหตุของอุบตั ิเหตุไม่เป็ นชัดเจนอย่างสิ้นเชิง 111. Men and women have _________ exercise rooms.",opts:["actual", "correct", "separate", ""],ans:2,hint:"1. เป็ นจริ ง",topic:"Structure"},
-  {q:"อย่ำงน่ำประหลำดใจ particularly = especially, in particular = โดยเฉพำะอย่ำงยิง่ 116. The book has the original language on the left and a Thai translation on the right.",opts:["basic", "doubtful", "primary", "tough"],ans:2,hint:"1. พื้นฐำน 2. เป็ นที่น่ำสงสัย",topic:"Structure"},
-];// หมวดข้อสอบทั้งหมดที่มี
-const RAM_TOPICS = [...new Set(RAM1111_QUIZ.map(q=>q.topic))];
-
-// State
-let ramMode = 'menu'; // 'menu' | 'quiz' | 'result'
-let ramPool = [];
-let ramIdx = 0, ramCorrect = 0, ramAns = false;
-let ramFilter = 'all';
-
-function renderRAM() {
-  const el = document.getElementById('ram-main');
-  if(ramMode === 'menu') renderRAMMenu(el);
-  else if(ramMode === 'quiz') renderRAMQuiz(el);
-}
-
-function renderRAMMenu(el) {
-  const topicCounts = {};
-  RAM_TOPICS.forEach(t => { topicCounts[t] = RAM1111_QUIZ.filter(q=>q.topic===t).length; });
-
-  const topicColors = {
-    'Structure':'#7c6af7','Modals':'#f76a8c','Connectors':'#3dd68c',
-    'Gerund/Participle':'#f7c76a','Present Simple':'#7c6af7',
-    'Present Perfect':'#f76a6a','Present Continuous':'#3dd68c',
-    'Past Simple':'#f76a8c','Pronouns':'#38bdf8','Adj/Adv':'#a78bfa'
-  };
-
-  // label ความสำคัญตาม RAM analysis
-  const topicImportance = {
-    'Modals':'🥇 ออกมากสุด ~15/ชุด',
-    'Present Perfect':'🥈 ~12/ชุด',
-    'Structure':'🔑 หลักไวยากรณ์',
-    'Connectors':'📌 ~6/ชุด',
-    'Past Simple':'⭐ ~9/ชุด',
-    'Present Continuous':'⭐ ~6/ชุด',
-  };
-
-  el.innerHTML = `<div class="gr-wrap">
-    <div class="gr-hero" style="background:linear-gradient(135deg,rgba(247,199,106,.18),rgba(247,106,140,.12));border-color:rgba(247,199,106,.4);">
-      <span class="gr-hero-icon">🎓</span>
-      <div class="gr-hero-title" style="color:var(--yw)">RAM 1111 — แนวข้อสอบ</div>
-      <div class="gr-hero-sub">แนวข้อสอบไล่ภาค 1 ปีการศึกษา 2568<br>${RAM1111_QUIZ.length} ข้อ · 5 ชุด · พร้อมคำเฉลยอธิบาย</div>
-    </div>
-
-    <button onclick="startRAM('all')"
-      style="width:100%;background:linear-gradient(135deg,#f7c76a,#f76a8c);border:none;border-radius:14px;padding:14px;color:white;font-family:var(--fth);font-size:15px;font-weight:700;cursor:pointer;margin-bottom:16px;">
-      ⚡ ฝึกทั้งหมด ${RAM1111_QUIZ.length} ข้อ — เรียงตามที่ออกบ่อยสุด
-    </button>
-
-    <div style="font-size:11px;color:var(--mu);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">เลือกหมวดที่ต้องการฝึก</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
-      ${RAM_TOPICS.map(t => {
-        const c = topicColors[t] || 'var(--ac)';
-        const cnt = topicCounts[t];
-        const imp = topicImportance[t] || '';
-        return `<button onclick="startRAM('${t}')"
-          style="background:var(--card);border:1px solid ${c}40;border-radius:12px;padding:12px 10px;text-align:left;cursor:pointer;font-family:var(--fth);">
-          <div style="font-size:13px;font-weight:700;color:${c};margin-bottom:2px;">${t}</div>
-          <div style="font-size:11px;color:var(--mu);">${cnt} ข้อ${imp ? ' · '+imp : ''}</div>
-        </button>`;
-      }).join('')}
-    </div>
-  </div>`;
-}
-
-function startRAM(filter) {
-  ramMode = 'quiz';
-  ramFilter = filter;
-
-  if(filter === 'all') {
-    // เรียงตามความถี่ที่ออกสอบจริง (จากการวิเคราะห์ RAM 1111)
-    const topicOrder = [
-      'Structure',        // 102 ข้อ — ออกมากสุด
-      'Modals',           // 34 ข้อ
-      'Past Simple',      // ออกบ่อย
-      'Present Perfect',  // ออกบ่อย
-      'Connectors',       // 13 ข้อ
-      'Present Continuous',
-      'Gerund/Participle',
-      'Present Simple',
-      'Pronouns',
-      'Adj/Adv',
-    ];
-    // ดึงตามลำดับ ไม่สุ่ม
-    const ordered = [];
-    topicOrder.forEach(t => {
-      const qs = RAM1111_QUIZ.filter(q => q.topic === t);
-      ordered.push(...qs);
-    });
-    // เพิ่มหมวดที่ไม่อยู่ใน list ต่อท้าย
-    RAM1111_QUIZ.forEach(q => {
-      if(!ordered.includes(q)) ordered.push(q);
-    });
-    ramPool = ordered;
-  } else {
-    ramPool = RAM1111_QUIZ.filter(q=>q.topic===filter);
-  }
-
-  if(!ramPool.length) ramPool = RAM1111_QUIZ;
-  ramIdx = 0; ramCorrect = 0; ramAns = false;
-  renderRAM();
-}
-
-function renderRAMQuiz(el) {
-  // จบแล้ว
-  if(ramIdx >= ramPool.length) {
-    const pct = Math.round(ramCorrect/ramPool.length*100);
-    const grade = pct>=80?'🏆 ผ่านฉลุย!':pct>=60?'👍 ดีมาก!':pct>=40?'📚 ต้องทบทวน':'💪 สู้ต่อไป!';
-    const xpEarned = Math.round(ramCorrect * 10);
-    el.innerHTML = `<div class="wrap"><div class="qcard" style="max-width:480px;width:100%;text-align:center;">
-      <div style="font-size:52px;margin-bottom:12px">${pct>=80?'🏆':pct>=60?'🎉':'📚'}</div>
-      <div style="font-size:22px;font-weight:700;margin-bottom:6px">${grade}</div>
-      <div style="font-size:14px;color:var(--mu);margin-bottom:6px">คะแนน: ${ramCorrect}/${ramPool.length} (${pct}%)</div>
-      <div style="font-size:13px;color:var(--yw);margin-bottom:20px">+${xpEarned} XP</div>
-      <div style="display:flex;gap:10px;">
-        <button onclick="startRAM('${ramFilter}')" style="flex:1;background:var(--yw);border:none;border-radius:10px;padding:11px;color:#1a1a2e;font-family:var(--fth);font-size:14px;font-weight:700;cursor:pointer;">🔄 ทำใหม่</button>
-        <button onclick="ramMode='menu';renderRAM()" style="flex:1;background:var(--card);border:1px solid var(--brd);border-radius:10px;padding:11px;color:var(--tx);font-family:var(--fth);font-size:14px;cursor:pointer;">🏠 เมนู</button>
-      </div>
-    </div></div>`;
-    addXP(xpEarned);
-    return;
-  }
-
-  const q = ramPool[ramIdx];
-  const pct = Math.round(ramIdx/ramPool.length*100);
-  const topicColor = {
-    'Structure':'#7c6af7','Modals':'#f76a8c','Connectors':'#3dd68c',
-    'Gerund/Participle':'#f7c76a','Present Simple':'#7c6af7',
-    'Present Perfect':'#f76a6a','Present Continuous':'#3dd68c',
-    'Past Simple':'#f76a8c','Pronouns':'#38bdf8'
-  }[q.topic] || 'var(--ac)';
-
-  el.innerHTML = `<div class="wrap" style="gap:12px;">
-    <!-- Score pills -->
-    <div class="gr-score-bar">
-      <div class="gr-stat"><span class="gr-stat-n" style="color:var(--gn)">${ramCorrect}</span><div class="gr-stat-l">ถูก</div></div>
-      <div class="gr-stat"><span class="gr-stat-n" style="color:var(--rd)">${ramIdx-ramCorrect}</span><div class="gr-stat-l">ผิด</div></div>
-      <div class="gr-stat"><span class="gr-stat-n" style="color:var(--yw)">${ramIdx+1}/${ramPool.length}</span><div class="gr-stat-l">ข้อ</div></div>
-    </div>
-    <!-- Progress bar -->
-    <div style="max-width:480px;width:100%;">
-      <div style="height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;">
-        <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,#f7c76a,#f76a8c);border-radius:2px;transition:width .3s;"></div>
-      </div>
-    </div>
-    <!-- Question card -->
-    <div class="gr-quiz-wrap" style="border-top-color:${topicColor};">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-        <div class="gr-q-topic" style="border-color:${topicColor}40;color:${topicColor};background:${topicColor}15;">${q.topic}</div>
-        <div style="font-size:10px;color:var(--mu);margin-left:auto;">🎓 RAM 1111</div>
-      </div>
-      <div class="gr-q-text">${q.q.replace(/_{3,}/g,'<span class="gr-blank">_____</span>')}</div>
-      <div class="cgrid" id="ram-choices" style="margin-top:14px;"></div>
-      <div class="rrow">
-        <div class="rtxt" id="ram-rt"></div>
-        <button class="nbtn" id="ram-nb" onclick="ramNext()" style="display:none;">ต่อไป →</button>
-      </div>
-      <!-- คำอธิบาย (แสดงหลังตอบ) -->
-      <div id="ram-explain" style="display:none;margin-top:12px;padding:10px 12px;background:rgba(255,255,255,.04);border-radius:10px;border-left:3px solid var(--yw);">
-        <div style="font-size:11px;color:var(--yw);font-weight:700;margin-bottom:4px;">📖 คำอธิบาย</div>
-        <div id="ram-explain-text" style="font-size:12px;color:var(--mu);line-height:1.6;"></div>
-      </div>
-    </div>
-    <button onclick="ramMode='menu';renderRAM()" style="background:none;border:none;color:var(--mu);font-family:var(--fth);font-size:12px;cursor:pointer;">← กลับเมนู</button>
-  </div>`;
-
-  // สร้างปุ่ม
-  const grid = document.getElementById('ram-choices');
-  q.opts.forEach((opt, i) => {
-    if(!opt) return;
-    const b = document.createElement('button');
-    b.className = 'cbtn';
-    b.textContent = opt;
-    b.onclick = () => ramAnswer(i, q.ans, q);
-    grid.appendChild(b);
-  });
-}
-
-function ramAnswer(chosen, correct, q) {
-  if(ramAns) return;
-  ramAns = true;
-  const ok = chosen === correct;
-
-  document.querySelectorAll('#ram-choices .cbtn').forEach((b, i) => {
-    b.disabled = true;
-    if(i === correct) b.classList.add('correct');
-    else if(i === chosen && !ok) b.classList.add('wrong');
-  });
-
-  const rt = document.getElementById('ram-rt');
-  if(ok) {
-    ramCorrect++;
-    rt.textContent = '✅ ถูกต้อง!'; rt.className = 'rtxt ok';
-    playOk();
-  } else {
-    rt.textContent = '❌ ' + (q.opts[correct]||''); rt.className = 'rtxt no';
-    playNg();
-  }
-
-  // แสดงคำอธิบาย
-  if(q.hint) {
-    const exp = document.getElementById('ram-explain');
-    const expTxt = document.getElementById('ram-explain-text');
-    // clean hint: ลบ "ตอบ X" ออกจากต้น
-    const cleanHint = q.hint.replace(/^ตอบ\s+\d\s*/,'').trim();
-    if(cleanHint.length > 5) {
-      expTxt.textContent = cleanHint;
-      exp.style.display = 'block';
-    }
-  }
-
-  document.getElementById('ram-nb').style.display = 'block';
-}
-
-function ramNext() {
-  ramIdx++;
-  ramAns = false;
-  renderRAMQuiz(document.getElementById('ram-main'));
-}
 
 // ============================================================
 // INITIALIZATION (เรียกตอนโหลดหน้าครั้งแรก)

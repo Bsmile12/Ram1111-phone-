@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vocab Master · ทำข้อสอบ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a12; --bg-2:#1a1a2e; --bg-3:#22223a;
+    --text:#f0f0ff; --text-soft:rgba(240,240,255,.55);
+    --accent:#7c6af7; --accent-hover:#9585ff; --accent-2:#f76a8c;
+    --border:rgba(255,255,255,.07); --border-light:rgba(255,255,255,.12);
+    --success:#3dd68c; --success-bg:rgba(61,214,140,.13);
+    --error:#f76a6a; --error-bg:rgba(247,106,106,.13);
+    --gold:#f7c76a;
+    --body:'Kanit',system-ui,-apple-system,sans-serif;
+    --mono:'Space Mono',ui-monospace,Consolas,monospace;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; color:var(--text); font-family:var(--body); background:var(--bg);
+    background-image:radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124,106,247,.10) 0%, transparent 60%);
+    min-height:100dvh; display:flex; flex-direction:column;
+  }
+  header{
+    padding:14px 20px; border-bottom:1px solid var(--border);
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    background:rgba(10,10,18,.85); backdrop-filter:blur(12px); position:sticky; top:0; z-index:10;
+  }
+  .logo{width:44px;height:44px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+    font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.5px;color:#fff;
+    background:var(--accent);border-radius:10px;text-align:center;line-height:1.1}
+  .head-txt{display:flex;flex-direction:column;gap:2px;flex:1 1 160px;min-width:150px}
+  .eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-soft)}
+  header h1{font-size:17px;margin:0;font-weight:600;line-height:1.2}
+  header p{font-size:12px;margin:1px 0 0;color:var(--text-soft)}
+  .head-actions{margin-left:auto;display:flex;align-items:center;gap:8px;flex:0 0 auto}
+  .nav-link{background:var(--bg-2);border:1px solid var(--border);color:var(--text);
+    padding:8px 14px;cursor:pointer;font-size:12.5px;text-decoration:none;white-space:nowrap;
+    font-family:var(--body);border-radius:8px;transition:.2s}
+  .nav-link:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  .hamburger{display:none;margin-left:auto;background:var(--bg-2);border:1px solid var(--border);
+    color:var(--text);width:40px;height:40px;border-radius:8px;cursor:pointer;font-size:18px;
+    align-items:center;justify-content:center;flex:0 0 auto}
+  @media(max-width:560px){
+    header{padding:10px 14px;gap:10px}
+    .logo{width:38px;height:38px;font-size:11px}
+    .eyebrow{display:none}
+    header p{display:none}
+    header h1{font-size:15px}
+    .hamburger{display:flex}
+    .head-actions{position:absolute;top:100%;right:10px;left:10px;margin:8px 0 0;
+      flex-direction:column;align-items:stretch;gap:8px;
+      background:var(--bg-2);border:1px solid var(--border);border-radius:12px;
+      padding:10px;box-shadow:0 12px 30px rgba(0,0,0,.45);display:none;z-index:30}
+    .head-actions.open{display:flex}
+    .head-actions .nav-link{width:100%;text-align:center;padding:12px;font-size:14px}
+  }
+  main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:24px 16px 60px}
+  h2{font-size:20px;margin:0 0 6px;font-weight:600}
+  .muted{color:var(--text-soft);font-size:13.5px;line-height:1.6}
+  .card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin:14px 0}
+  .card h3{margin:0 0 4px;font-size:16px;font-weight:600}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:560px){.grid2{grid-template-columns:1fr}}
+  label.fld{display:block;font-size:12.5px;color:var(--text-soft);margin:10px 0 5px}
+  select,input[type=number]{width:100%;background:var(--bg-3);color:var(--text);border:1px solid var(--border);
+    padding:10px 12px;border-radius:8px;font-family:var(--body);font-size:16px}
+  .seg{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  .seg button{flex:1 1 auto;background:var(--bg-3);border:1px solid var(--border);color:var(--text);
+    padding:9px 12px;border-radius:8px;cursor:pointer;font-family:var(--body);font-size:13.5px;transition:.15s;min-width:90px}
+  .seg button.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);
+    color:#fff;border:none;padding:13px 22px;font-family:var(--body);font-weight:600;cursor:pointer;
+    font-size:15px;border-radius:var(--radius);transition:.2s;width:100%}
+  .btn:hover{background:var(--accent-hover);box-shadow:0 4px 15px rgba(124,106,247,.3)}
+  .btn:disabled{opacity:.4;cursor:default;box-shadow:none}
+  .btn.ghost{background:var(--bg-2);border:1px solid var(--border);color:var(--text)}
+  .btn.ghost:hover{background:var(--bg-3);box-shadow:none}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .row>*{flex:1 1 160px}
+  /* quiz */
+  .qbar{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+  .progress{flex:1;height:8px;background:var(--bg-3);border-radius:99px;overflow:hidden;min-width:120px}
+  .progress>i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+  .pill{font-family:var(--mono);font-size:12px;color:var(--text-soft);white-space:nowrap}
+  .tag{display:inline-block;font-size:11px;font-family:var(--mono);color:var(--text-soft);
+    border:1px solid var(--border);border-radius:99px;padding:2px 9px;margin-left:6px}
+  .stem{font-size:17px;line-height:1.6;font-weight:500;margin:14px 0 16px}
+  .stem .num{color:var(--accent-hover);font-family:var(--mono);margin-right:8px}
+  .stem .kw{color:var(--accent-hover);font-weight:700;text-decoration:underline;
+    text-underline-offset:3px;text-decoration-thickness:2px;text-decoration-color:var(--accent)}
+  .opt{display:flex;align-items:flex-start;gap:11px;width:100%;text-align:left;background:var(--bg-2);
+    border:1px solid var(--border);color:var(--text);padding:13px 15px;border-radius:10px;margin:8px 0;
+    cursor:pointer;font-family:var(--body);font-size:15px;line-height:1.45;transition:.13s}
+  .opt:hover{border-color:var(--accent);background:var(--bg-3)}
+  .opt .key{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--bg-3);
+    display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:600}
+  .opt.correct{border-color:var(--success);background:var(--success-bg)}
+  .opt.correct .key{background:var(--success);color:#06301c}
+  .opt.wrong{border-color:var(--error);background:var(--error-bg)}
+  .opt.wrong .key{background:var(--error);color:#fff}
+  .opt.sel{border-color:var(--accent-hover)}
+  .opt:disabled{cursor:default}
+  .explain{background:var(--bg-3);border-left:3px solid var(--accent);border-radius:8px;
+    padding:14px 16px;margin:12px 0 2px;font-size:14px;line-height:1.72}
+  .explain .verdict{font-weight:600;display:block;margin-bottom:8px;font-size:14.5px}
+  .verdict.ok{color:var(--success)} .verdict.no{color:var(--error)}
+  .exp-body p{margin:0 0 8px} .exp-body p:last-child{margin-bottom:0}
+  .exp-body .ex-list{margin:9px 0 4px;display:flex;flex-direction:column;gap:6px}
+  .exp-body .ex-opt{display:flex;gap:10px;align-items:flex-start;
+    background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:8px 11px}
+  .exp-body .ex-opt .n{flex:0 0 auto;width:21px;height:21px;border-radius:50%;
+    background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-family:var(--mono);font-weight:600;margin-top:1px}
+  .exp-body .ex-bul{position:relative;padding-left:16px;margin:4px 0}
+  .exp-body .ex-bul::before{content:'•';position:absolute;left:3px;color:var(--accent-hover)}
+  .qtr{margin:-6px 0 14px;padding:9px 13px;background:rgba(124,106,247,.08);
+    border:1px dashed var(--border-light);border-radius:8px;font-size:14px;line-height:1.6;
+    color:var(--text-soft);display:flex;gap:8px;align-items:flex-start}
+  .qtr span{color:var(--text)}
+  .trbox{white-space:normal;margin:8px 0 10px;padding:10px 13px;background:rgba(124,106,247,.10);
+    border:1px solid var(--border-light);border-radius:8px}
+  .trbox .tr{font-size:14.5px;line-height:1.65}
+  .trbox .tr b{color:var(--accent-hover);font-weight:600}
+  .trbox .chtr{margin-top:7px;padding-top:7px;border-top:1px dashed var(--border-light);
+    display:flex;flex-wrap:wrap;gap:6px 14px}
+  .trbox .chtr span{font-size:13px;color:var(--text-soft);font-family:var(--mono)}
+  .navbtns{display:flex;gap:10px;margin-top:18px}
+  .navbtns .btn{flex:1}
+  /* results */
+  .score{text-align:center;padding:10px 0}
+  .score .big{font-size:52px;font-weight:700;font-family:var(--mono);line-height:1}
+  .score .big.pass{color:var(--success)} .score .big.fail{color:var(--gold)}
+  .score .sub{color:var(--text-soft);margin-top:6px}
+  .bars{margin:16px 0}
+  .barrow{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .barrow .lbl{flex:0 0 130px;color:var(--text-soft);font-family:var(--mono);font-size:11.5px}
+  .barrow .track{flex:1;height:7px;background:var(--bg-3);border-radius:99px;overflow:hidden}
+  .barrow .track>i{display:block;height:100%;background:var(--accent)}
+  .barrow .v{flex:0 0 auto;font-family:var(--mono);font-size:11.5px;color:var(--text-soft)}
+  .review .stem{font-size:15px;margin:6px 0 8px}
+  .rev-item{border-top:1px solid var(--border);padding:14px 0}
+  .foot-note{max-width:760px;margin:20px auto 0;text-align:center;color:var(--text-soft);font-size:11px;line-height:1.6}
+  .center{text-align:center}
+  .spin{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--accent);
+    border-radius:50%;animation:spin 1s linear infinite;margin:40px auto}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  /* Vocab Master look */
+  .vm-logo{font-family:var(--mono);font-weight:700;font-size:14px;color:var(--accent);letter-spacing:-1px;text-decoration:none;white-space:nowrap;flex:0 0 auto}
+  .vm-logo span{color:var(--accent-2)}
+  .btn:not(.ghost):not(.danger){background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .btn:not(.ghost):not(.danger):hover{background:linear-gradient(135deg,var(--accent-hover),var(--accent-2));box-shadow:0 4px 15px rgba(124,106,247,.3)}
+  @media(max-width:560px){.vm-logo{font-size:12px}.head-txt{flex:1 1 0!important;min-width:0!important}}
+</style>
+</head>
+<body>
+  <header>
+    <a class="vm-logo" href="index.html">VOCAB<span>MASTER</span></a>
+    <div class="head-txt">
+      <span class="eyebrow">RAM 1111 · ทำข้อสอบ</span>
+      <h1>คลังข้อสอบ English in Daily Life</h1>
+      <p>ฝึกทำข้อสอบจริง พร้อมเฉลย + คำอธิบายทุกข้อ</p>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="เมนู" aria-expanded="false">☰</button>
+    <div class="head-actions" id="headActions">
+      <a class="nav-link" href="index.html">🏠 หน้าหลัก</a>
+      <a class="nav-link" href="tenses.html">📝 แบบฝึก</a>
+      <a class="nav-link" href="dashboard.html">📊 สถิติ</a>
+    </div>
+  </header>
+  <main id="app"><div class="spin"></div></main>
+  <div class="foot-note">ข้อสอบคัดจากชีทสรุป RAM 1111 (แกะด้วย OCR อาจคลาดเคลื่อน) · ควรเทียบกับชีทจริงก่อนสอบ</div>
+
+<script>
+const app = document.getElementById('app');
+let DATA=null, POOL={};
+
+// mobile hamburger menu
+(function(){
+  const hb=document.getElementById('hamburger'), ha=document.getElementById('headActions');
+  hb.addEventListener('click',e=>{e.stopPropagation();
+    const open=ha.classList.toggle('open'); hb.setAttribute('aria-expanded',open?'true':'false');});
+  document.addEventListener('click',e=>{
+    if(ha.classList.contains('open')&&!ha.contains(e.target)&&e.target!==hb){
+      ha.classList.remove('open'); hb.setAttribute('aria-expanded','false');}});
+})();
+
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// For synonym questions the target word lives in the stem (q.key); underline it so
+// the reader knows which word to find a synonym for. Highlights the first match only.
+function stemHTML(q){
+  let s=esc(q.stem);
+  if(q.key){
+    const k=esc(q.key).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    s=s.replace(new RegExp('('+k+')','i'),'<span class="kw">$1</span>');
+  }
+  return s;
+}
+const KEYS=['1','2','3','4'];
+const TOPIC_TH={tense:'Tense',pronoun:'สรรพนาม',article:'Article','subject-verb-agreement':'ประธาน-กริยา',
+  preposition:'บุพบท',conjunction:'คำเชื่อม',modal:'Modal','gerund-infinitive':'Gerund/Infinitive',
+  'passive-voice':'Passive',comparison:'ขั้นกว่า/สุด','question-formation':'ประโยคคำถาม',
+  'relative-clause':'Relative','conditional':'เงื่อนไข',quantifier:'ปริมาณ','word-order':'เรียงคำ',
+  'part-of-speech':'ชนิดคำ','tag-question':'Tag Q',synonym:'คำเหมือน',antonym:'คำตรงข้าม',
+  'meaning-in-context':'ความหมายในบริบท',collocation:'คำที่ใช้คู่','idiom-phrasal':'สำนวน/Phrasal',
+  'word-choice':'เลือกคำ',other:'อื่นๆ'};
+const DIFF_TH={easy:'ง่าย',medium:'ปานกลาง',hard:'ยาก'};
+
+async function boot(){
+  try{
+    const r=await fetch('exam_data.json',{cache:'no-store'});
+    DATA=await r.json();
+    DATA.pool.forEach(q=>POOL[q.id]=q);
+    home();
+  }catch(e){ app.innerHTML='<div class="card center">โหลดข้อมูลข้อสอบไม่ได้ ลองรีเฟรชอีกครั้งครับ</div>'; }
+}
+
+// ---------- config state ----------
+const cfg={mode:'exam', setId:'set1', part:'mix', topic:'all', diff:'all', count:20, reveal:'instant'};
+
+function home(){
+  const topics=[...new Set(DATA.pool.map(q=>q.topic))].sort();
+  app.innerHTML=`
+   <h2>เลือกวิธีทำข้อสอบ</h2>
+   <p class="muted">คลังข้อสอบ ${DATA.meta.total_pool} ข้อ · คัดเป็นชุดสอบจริง 3 ชุด (ชุดละ 120 ข้อ = แกรมม่า 80 + ศัพท์ 40) หรือฝึกอิสระตามหมวด</p>
+
+   <div class="card">
+     <h3>โหมด</h3>
+     <div class="seg" id="modeSeg">
+       <button data-m="exam" class="on">📄 สอบจริง (120 ข้อ)</button>
+       <button data-m="free">🎯 ฝึกอิสระ</button>
+     </div>
+   </div>
+
+   <div class="card" id="examCfg">
+     <h3>เลือกชุดข้อสอบ</h3>
+     <div class="seg" id="setSeg">
+       ${DATA.sets.map((s,i)=>`<button data-s="${s.id}" class="${i===0?'on':''}">${esc(s.title)}</button>`).join('')}
+       <button data-s="__rand">🎲 สุ่มใหม่ 120</button>
+     </div>
+     <p class="muted" style="margin-top:10px">ทำครบ 120 ข้อ (แกรมม่า 80 + ศัพท์ 40) เหมือนห้องสอบจริง</p>
+   </div>
+
+   <div class="card" id="freeCfg" style="display:none">
+     <h3>ตั้งค่าฝึกอิสระ</h3>
+     <div class="grid2">
+       <div>
+         <label class="fld">หมวด</label>
+         <div class="seg" id="partSeg">
+           <button data-p="mix" class="on">ผสม</button>
+           <button data-p="grammar">แกรมม่า</button>
+           <button data-p="vocab">ศัพท์</button>
+         </div>
+       </div>
+       <div>
+         <label class="fld">ความยาก</label>
+         <select id="diffSel">
+           <option value="all">ทุกระดับ</option>
+           <option value="easy">ง่าย</option>
+           <option value="medium">ปานกลาง</option>
+           <option value="hard">ยาก</option>
+         </select>
+       </div>
+     </div>
+     <label class="fld">หัวข้อย่อย (เลือกเฉพาะเจาะจง)</label>
+     <select id="topicSel">
+       <option value="all">ทุกหัวข้อ</option>
+       ${topics.map(t=>`<option value="${t}">${TOPIC_TH[t]||t}</option>`).join('')}
+     </select>
+     <label class="fld">จำนวนข้อ</label>
+     <div class="seg" id="countSeg">
+       <button data-c="10">10</button>
+       <button data-c="20" class="on">20</button>
+       <button data-c="40">40</button>
+       <button data-c="60">60</button>
+     </div>
+   </div>
+
+   <div class="card">
+     <h3>การเฉลย</h3>
+     <div class="seg" id="revSeg">
+       <button data-r="instant" class="on">⚡ เฉลยทันทีทีละข้อ</button>
+       <button data-r="end">🏁 เฉลยเมื่อทำครบ</button>
+     </div>
+   </div>
+
+   <button class="btn" id="startBtn">เริ่มทำข้อสอบ →</button>
+  `;
+
+  const seg=(id,attr,fn)=>{const el=document.getElementById(id);if(!el)return;
+    el.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+      [...el.children].forEach(c=>c.classList.remove('on'));b.classList.add('on');fn(b.dataset[attr]);});};
+  seg('modeSeg','m',v=>{cfg.mode=v;
+    document.getElementById('examCfg').style.display=v==='exam'?'':'none';
+    document.getElementById('freeCfg').style.display=v==='free'?'':'none';});
+  seg('setSeg','s',v=>cfg.setId=v);
+  seg('partSeg','p',v=>cfg.part=v);
+  seg('countSeg','c',v=>cfg.count=+v);
+  seg('revSeg','r',v=>cfg.reveal=v);
+  document.getElementById('diffSel').addEventListener('change',e=>cfg.diff=e.target.value);
+  document.getElementById('topicSel').addEventListener('change',e=>cfg.topic=e.target.value);
+  document.getElementById('startBtn').addEventListener('click',start);
+}
+
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pickMix(pool,nG,nV){
+  const g=shuffle(pool.filter(q=>q.part==='grammar')).slice(0,nG);
+  const v=shuffle(pool.filter(q=>q.part==='vocab')).slice(0,nV);
+  return shuffle(g.concat(v));
+}
+
+let QS=[], answers=[], idx=0;
+
+function start(){
+  if(cfg.mode==='exam'){
+    if(cfg.setId==='__rand'){ QS=pickMix(DATA.pool,80,40); }
+    else{ const s=DATA.sets.find(x=>x.id===cfg.setId); QS=s.q.map(id=>POOL[id]); }
+  }else{
+    let pool=DATA.pool.slice();
+    if(cfg.part!=='mix') pool=pool.filter(q=>q.part===cfg.part);
+    if(cfg.diff!=='all') pool=pool.filter(q=>q.difficulty===cfg.diff);
+    if(cfg.topic!=='all') pool=pool.filter(q=>q.topic===cfg.topic);
+    pool=shuffle(pool);
+    QS=pool.slice(0,Math.min(cfg.count,pool.length));
+    if(!QS.length){ alert('ไม่มีข้อสอบตรงเงื่อนไขนี้ ลองปรับตัวกรอง'); return; }
+  }
+  answers=new Array(QS.length).fill(null);
+  idx=0;
+  renderQ();
+}
+
+function renderQ(){
+  const q=QS[idx];
+  const answered=answers[idx]!=null;
+  const showAns = cfg.reveal==='instant' && answered;
+  app.innerHTML=`
+    <div class="qbar">
+      <div class="progress"><i style="width:${(idx)/QS.length*100}%"></i></div>
+      <span class="pill">ข้อ ${idx+1}/${QS.length}</span>
+    </div>
+    <div class="stem"><span class="num">${idx+1}.</span>${stemHTML(q)}
+      <span class="tag">${q.part==='grammar'?'แกรมม่า':'ศัพท์'}</span>
+      <span class="tag">${TOPIC_TH[q.topic]||q.topic}</span>
+    </div>
+    <div id="opts"></div>
+    <div class="navbtns">
+      ${idx>0?'<button class="btn ghost" id="prev">← ก่อนหน้า</button>':''}
+      <button class="btn" id="next">${idx===QS.length-1?'ส่งคำตอบ / ดูผล':'ถัดไป →'}</button>
+    </div>
+    <div id="exp"></div>
+  `;
+  const opts=document.getElementById('opts');
+  q.choices.forEach((c,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    const chosen=answers[idx]===i+1;
+    if(showAns){
+      if(i+1===q.answer) b.classList.add('correct');
+      else if(chosen) b.classList.add('wrong');
+      b.disabled=true;
+    } else if(chosen){ b.classList.add('sel'); }
+    b.innerHTML=`<span class="key">${KEYS[i]}</span><span>${esc(c)}</span>`;
+    b.addEventListener('click',()=>choose(i+1));
+    opts.appendChild(b);
+  });
+  if(showAns) renderExplain(q);
+  const nx=document.getElementById('next');
+  nx.disabled = cfg.reveal==='instant' && !answered;
+  nx.addEventListener('click',()=>{
+    if(idx===QS.length-1) finish(); else {idx++; renderQ();}
+  });
+  const pv=document.getElementById('prev'); if(pv) pv.addEventListener('click',()=>{idx--;renderQ();});
+}
+
+// Shown in the reveal box (after answering): the Thai translation of the question
+// (blank kept, so it mirrors the real question) plus per-choice glosses for vocab.
+function trBlock(q){
+  if(!q.tr && !(q.chtr&&q.chtr.length)) return '';
+  let h='<div class="trbox">';
+  if(q.tr) h+='<div class="tr">📖 <b>แปลโจทย์:</b> '+esc(q.tr)+'</div>';
+  if(q.chtr&&q.chtr.length) h+='<div class="chtr">'+q.chtr.map((t,i)=>
+    '<span>'+KEYS[i]+' '+esc(q.choices[i])+' = '+esc(t)+'</span>').join('')+'</div>';
+  return h+'</div>';
+}
+
+// Turn a raw sheet explanation into readable HTML: choice-by-choice analysis
+// ("ตัวเลือกที่ 1 …", "1. …") becomes a numbered list, "- …" becomes bullets,
+// everything else stays as short paragraphs.
+function fmtExplain(raw){
+  if(!raw) return '<i style="color:var(--text-soft)">— ชีทไม่ได้ให้คำอธิบายข้อนี้ —</i>';
+  let t=esc(raw).replace(/\r/g,'');
+  // start a new line before an inline choice marker so each choice-analysis stands out
+  t=t.replace(/\s*(?:ส่วน)?(ตัวเลือกที่|ข้อเลือกที่|ข้อที่)\s*([1-4])/g,'\n$1 $2');
+  // split inline numbered glosses "1. .. 2. .. 3. .." onto separate lines, but ONLY
+  // when it's a real enumeration (both a "2." and a "3." appear) to avoid breaking a
+  // lone reference like "ข้อ 3.".
+  const inlineNums=[...t.matchAll(/(?:^|\s)([1-4])[.)]\s/g)].map(m=>+m[1]);
+  if(inlineNums.includes(2)&&inlineNums.includes(3)){
+    t=t.replace(/[ \t]+([1-4])([.)])[ \t]+/g,'\n$1$2 ');
+  }
+  const lines=t.split('\n').map(s=>s.trim()).filter(Boolean);
+  // Build blocks; PDF wrapped sentences mid-line, so a non-marker line is treated as
+  // a continuation of the previous block (rejoining the sentence) rather than a new one.
+  const blocks=[];
+  for(const line of lines){
+    let m=line.match(/^(?:ตัวเลือกที่|ข้อเลือกที่|ข้อที่)\s*([1-4])[.):\s]+(.*)$/)
+        ||line.match(/^([1-4])[.)]\s+(.*)$/);
+    if(m){ blocks.push({t:'opt',n:m[1],x:(m[2]||'').trim()}); continue; }
+    if(/^[-•]\s+/.test(line)){ blocks.push({t:'bul',x:line.replace(/^[-•]\s+/,'')}); continue; }
+    const last=blocks[blocks.length-1];
+    if(last){ last.x=(last.x+' '+line).trim(); }
+    else blocks.push({t:'p',x:line});
+  }
+  let html='',i=0;
+  while(i<blocks.length){
+    if(blocks[i].t==='opt'){
+      html+='<div class="ex-list">';
+      while(i<blocks.length && blocks[i].t==='opt'){
+        html+='<div class="ex-opt"><span class="n">'+blocks[i].n+'</span><span>'+blocks[i].x+'</span></div>'; i++;
+      }
+      html+='</div>';
+    } else if(blocks[i].t==='bul'){
+      html+='<div class="ex-bul">'+blocks[i].x+'</div>'; i++;
+    } else { html+='<p>'+blocks[i].x+'</p>'; i++; }
+  }
+  return html;
+}
+
+function renderExplain(q){
+  const chosen=answers[idx];
+  const ok=chosen===q.answer;
+  const exp=document.getElementById('exp');
+  exp.innerHTML=`<div class="explain">
+    <span class="verdict ${ok?'ok':'no'}">${ok?'✓ ถูกต้อง':'✗ ยังไม่ถูก — เฉลยคือ '+KEYS[q.answer-1]+' '+esc(q.choices[q.answer-1])}</span>
+    ${trBlock(q)}
+    <div class="exp-body">${fmtExplain(q.explanation)}</div>
+  </div>`;
+}
+
+function choose(n){
+  if(cfg.reveal==='instant' && answers[idx]!=null) return; // lock after reveal
+  answers[idx]=n;
+  if(cfg.reveal==='instant') renderQ(); else renderQ();
+}
+
+// Persist per-question / per-topic outcomes so the /dashboard page can show which
+// areas the user misses most across many practice sessions. Stored per-device.
+const STAT_KEY='ram1111_stats';
+function loadStats(){
+  try{ const s=JSON.parse(localStorage.getItem(STAT_KEY)||'{}');
+    return {v:1, sessions:s.sessions||[], topics:s.topics||{}, diff:s.diff||{},
+            parts:s.parts||{}, q:s.q||{}}; }
+  catch(e){ return {v:1, sessions:[], topics:{}, diff:{}, parts:{}, q:{}}; }
+}
+function recordSession(){
+  const S=loadStats(); let c=0;
+  const bump=(o,k,ok)=>{ o[k]=o[k]||[0,0]; o[k][0]++; if(!ok)o[k][1]++; };
+  QS.forEach((q,i)=>{
+    const ok=answers[i]===q.answer; if(ok)c++;
+    bump(S.topics,q.topic,ok); bump(S.diff,q.difficulty,ok); bump(S.parts,q.part,ok);
+    const e=S.q[q.id]||[0,0,q.stem,q.topic,q.part]; e[0]++; if(!ok)e[1]++; S.q[q.id]=e;
+  });
+  S.sessions.push({t:Date.now(), mode:cfg.mode, n:QS.length, c});
+  if(S.sessions.length>200) S.sessions=S.sessions.slice(-200);
+  try{ localStorage.setItem(STAT_KEY, JSON.stringify(S)); }catch(e){}
+}
+
+function finish(){
+  recordSession();
+  let correct=0; const byTopic={}, byPart={grammar:[0,0],vocab:[0,0]};
+  QS.forEach((q,i)=>{
+    const ok=answers[i]===q.answer; if(ok)correct++;
+    byPart[q.part][1]++; if(ok)byPart[q.part][0]++;
+    const t=q.topic; byTopic[t]=byTopic[t]||[0,0]; byTopic[t][1]++; if(ok)byTopic[t][0]++;
+  });
+  const pct=Math.round(correct/QS.length*100);
+  const pass=pct>=50;
+  const bars=Object.entries(byTopic).sort((a,b)=>b[1][1]-a[1][1]).map(([t,[c,n]])=>`
+    <div class="barrow"><span class="lbl">${TOPIC_TH[t]||t}</span>
+      <span class="track"><i style="width:${c/n*100}%"></i></span>
+      <span class="v">${c}/${n}</span></div>`).join('');
+  app.innerHTML=`
+    <div class="score">
+      <div class="big ${pass?'pass':'fail'}">${pct}%</div>
+      <div class="sub">ตอบถูก ${correct} จาก ${QS.length} ข้อ · แกรมม่า ${byPart.grammar[0]}/${byPart.grammar[1]} · ศัพท์ ${byPart.vocab[0]}/${byPart.vocab[1]}</div>
+    </div>
+    <div class="card"><h3>สรุปตามหัวข้อ</h3><div class="bars">${bars}</div></div>
+    <div class="row">
+      <button class="btn" id="again">ทำชุดใหม่</button>
+      <button class="btn ghost" id="reviewBtn">ดูเฉลยทุกข้อ</button>
+      <a class="btn ghost" href="dashboard.html" style="text-decoration:none">📊 ดูสถิติรวม</a>
+    </div>
+    <div id="review"></div>
+  `;
+  document.getElementById('again').addEventListener('click',home);
+  document.getElementById('reviewBtn').addEventListener('click',review);
+  window.scrollTo(0,0);
+}
+
+function review(){
+  const box=document.getElementById('review');
+  box.innerHTML='<div class="card review"><h3>เฉลยละเอียด</h3>'+QS.map((q,i)=>{
+    const ch=answers[i], ok=ch===q.answer;
+    const opts=q.choices.map((c,j)=>{
+      let cls=''; if(j+1===q.answer)cls='correct'; else if(j+1===ch)cls='wrong';
+      return `<div class="opt ${cls}" style="cursor:default"><span class="key">${KEYS[j]}</span><span>${esc(c)}</span></div>`;
+    }).join('');
+    return `<div class="rev-item">
+      <div class="stem"><span class="num">${i+1}.</span>${stemHTML(q)}
+        <span class="tag">${ok?'✓':'✗'}</span></div>
+      ${opts}
+      <div class="explain">${trBlock(q)}<div class="exp-body">${fmtExplain(q.explanation)}</div></div>
+    </div>`;
+  }).join('')+'</div>';
+  document.getElementById('reviewBtn').style.display='none';
+}
+
+boot();
+</script>
+</body>
+</html>
