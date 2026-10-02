@@ -206,6 +206,32 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
 .bntab.active .bn-icon{filter:drop-shadow(0 0 6px var(--ac));}
 /* ===== MOBILE RESPONSIVE ===== */
 @media(max-width:900px){.ntab-x{display:none;}}
+.fb-modal{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px;}
+.fb-modal.open{display:flex;}
+.fb-box{position:relative;width:100%;max-width:440px;max-height:calc(100dvh - 32px);overflow-y:auto;background:var(--card);border:1px solid var(--brd);border-radius:16px;padding:20px 18px;}
+.fb-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:16px 16px 0 0;}
+.fb-box h3{margin:0 34px 4px 0;font-size:17px;color:var(--tx);}
+.fb-sub{font-size:12px;color:var(--mu);margin:0 0 14px;line-height:1.5;}
+.fb-x{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:8px;border:1px solid var(--brd);background:none;color:var(--mu);font-size:16px;cursor:pointer;}
+.fb-x:hover{color:var(--tx);}
+.fb-lbl{display:block;font-size:12px;color:var(--mu);margin:12px 0 6px;}
+.fb-types{display:flex;gap:8px;}
+.fb-types label{flex:1;cursor:pointer;}
+.fb-types input{position:absolute;opacity:0;pointer-events:none;}
+.fb-types span{display:block;text-align:center;padding:10px 8px;border:1px solid var(--brd);border-radius:10px;font-size:14px;color:var(--mu);background:rgba(255,255,255,.03);transition:all .15s;}
+.fb-types input:checked+span{border-color:var(--ac);color:var(--tx);background:rgba(124,106,247,.18);}
+.fb-types input:focus-visible+span{outline:2px solid var(--ac);outline-offset:2px;}
+.fb-in{width:100%;box-sizing:border-box;background:rgba(255,255,255,.05);border:1px solid var(--brd);border-radius:10px;padding:10px 12px;color:var(--tx);font-family:var(--fth);font-size:16px;outline:none;transition:border-color .2s;}
+.fb-in:focus{border-color:var(--ac);}
+textarea.fb-in{min-height:120px;resize:vertical;line-height:1.5;}
+.fb-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.fb-send{width:100%;margin-top:16px;border:none;border-radius:11px;padding:12px;font-family:var(--fth);font-size:15px;font-weight:600;color:#fff;cursor:pointer;background:linear-gradient(135deg,var(--ac),var(--ac2));}
+.fb-send:disabled{opacity:.5;cursor:default;}
+.fb-msg{font-size:13px;margin-top:10px;min-height:1px;}
+.fb-msg.err{color:var(--rd);}
+.fb-done{text-align:center;padding:16px 0 4px;}
+.fb-done .big{font-size:40px;display:block;margin-bottom:8px;}
+.fb-done p{color:var(--mu);font-size:13px;margin:6px 0 16px;}
 .credit{position:relative;z-index:1;text-align:center;color:var(--mu);font-size:11px;font-family:var(--fen);padding:18px 14px 22px;}.credit span{white-space:nowrap}
 @media(max-width:600px){.credit{margin-top:-56px;padding-bottom:76px;}}
 @media(pointer:coarse){.tinp,.fi{font-size:16px;}.frow .fi{min-width:130px;}}
@@ -308,6 +334,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
         <div class="home-card-name">สถิติข้อสอบ</div>
         <div class="home-card-desc">คะแนน · จุดอ่อนแต่ละหัวข้อ</div>
       </a>
+      <div class="home-card" style="--hc:linear-gradient(90deg,#3dd68c,#f7c76a)" onclick="openFeedback()">
+        <span class="home-card-icon">&#128172;</span>
+        <div class="home-card-name">แจ้งปัญหา / ข้อเสนอแนะ</div>
+        <div class="home-card-desc">ส่งถึงผู้พัฒนาโดยตรง · ไม่ต้องใส่อีเมล</div>
+      </div>
     </div>
 
     <div class="home-section">สถิติวันนี้</div>
@@ -509,6 +540,38 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,10,18,.92);backdrop-fil
   </div>
 </div>
 
+
+<!-- FEEDBACK MODAL (Netlify Forms) -->
+<div class="fb-modal" id="fb-modal" onclick="if(event.target===this)closeFeedback()">
+  <div class="fb-box" role="dialog" aria-modal="true" aria-labelledby="fb-title">
+    <button type="button" class="fb-x" onclick="closeFeedback()" aria-label="ปิด">&#10005;</button>
+    <div id="fb-form-wrap">
+      <h3 id="fb-title">แจ้งปัญหา / ข้อเสนอแนะ</h3>
+      <p class="fb-sub">ข้อความจะส่งถึงผู้พัฒนาโดยตรง ไม่ต้องใส่อีเมลก็ส่งได้</p>
+      <form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="fb-form" onsubmit="submitFeedback(event)">
+        <input type="hidden" name="form-name" value="feedback"/>
+        <p class="fb-hp"><label>อย่ากรอกช่องนี้ <input name="bot-field" tabindex="-1" autocomplete="off"/></label></p>
+        <span class="fb-lbl">ประเภท</span>
+        <div class="fb-types">
+          <label><input type="radio" name="type" value="แจ้งปัญหา" checked/><span>&#128027; แจ้งปัญหา</span></label>
+          <label><input type="radio" name="type" value="ข้อเสนอแนะ"/><span>&#128161; ข้อเสนอแนะ</span></label>
+        </div>
+        <label class="fb-lbl" for="fb-text">ข้อความ</label>
+        <textarea class="fb-in" id="fb-text" name="message" required maxlength="2000" placeholder="เล่าปัญหาที่เจอ หรือสิ่งที่อยากให้ปรับปรุง..."></textarea>
+        <label class="fb-lbl" for="fb-email">อีเมล (ไม่บังคับ — ใส่ถ้าอยากให้ตอบกลับ)</label>
+        <input class="fb-in" id="fb-email" type="email" name="email" autocomplete="email" placeholder="you@example.com"/>
+        <button type="submit" class="fb-send" id="fb-send">ส่งข้อความ</button>
+        <div class="fb-msg" id="fb-msg" role="status"></div>
+      </form>
+    </div>
+    <div class="fb-done" id="fb-done" style="display:none">
+      <span class="big">&#9989;</span>
+      <h3 style="margin:0">ส่งเรียบร้อยแล้ว</h3>
+      <p>ขอบคุณสำหรับข้อความครับ</p>
+      <button type="button" class="fb-send" onclick="closeFeedback()">ปิด</button>
+    </div>
+  </div>
+</div>
 
 <!-- CREDITS -->
 <div class="credit"><span>Developed by 6601516161</span> · <span>Tested by 6654005054</span></div>
@@ -1729,6 +1792,41 @@ loadQ();                // โหลดคำถามแรก
 renderChTabs();         // สร้าง chapter checkbox ในหน้า manage
 renderTbl();            // สร้างตาราง vocab ในหน้า manage
 renderHome();           // แสดงข้อมูลหน้าหลัก
+
+// ===== FEEDBACK (Netlify Forms) =====
+function openFeedback(){
+  document.getElementById('fb-form-wrap').style.display='';
+  document.getElementById('fb-done').style.display='none';
+  document.getElementById('fb-msg').textContent='';
+  document.getElementById('fb-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>document.getElementById('fb-text').focus(),50);
+}
+function closeFeedback(){
+  document.getElementById('fb-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+async function submitFeedback(e){
+  e.preventDefault();
+  const form=e.target, btn=document.getElementById('fb-send'), msg=document.getElementById('fb-msg');
+  if(!form.message.value.trim()){msg.className='fb-msg err';msg.textContent='กรุณาพิมพ์ข้อความก่อนส่ง';return;}
+  btn.disabled=true; btn.textContent='กำลังส่ง...'; msg.className='fb-msg'; msg.textContent='';
+  try{
+    const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()});
+    if(!r.ok) throw new Error(r.status);
+    form.reset();
+    document.getElementById('fb-form-wrap').style.display='none';
+    document.getElementById('fb-done').style.display='';
+    document.querySelector('#fb-done .fb-send').focus();
+  }catch(err){
+    msg.className='fb-msg err'; msg.textContent='ส่งไม่สำเร็จ ลองใหม่อีกครั้ง หรือตรวจสอบอินเทอร์เน็ต';
+  }finally{ btn.disabled=false; btn.textContent='ส่งข้อความ'; }
+}
+// keep the app's global shortcuts (Space/Enter/1-4) from firing while typing in the form
+document.getElementById('fb-modal').addEventListener('keydown',e=>e.stopPropagation());
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&document.getElementById('fb-modal').classList.contains('open'))closeFeedback();
+},true);
 
 </script>
 </body>
