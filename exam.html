@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="th">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XM1FK5GLR1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XM1FK5GLR1');
+</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Vocab Master · ทำข้อสอบ</title>
@@ -177,7 +186,7 @@
     </div>
   </header>
   <main id="app"><div class="spin"></div></main>
-  <div class="foot-note">ข้อสอบคัดจากชีทสรุป RAM 1111 (แกะด้วย OCR อาจคลาดเคลื่อน) · ควรเทียบกับชีทจริงก่อนสอบ</div>
+  <div class="foot-note">รวบรวมจากแนวข้อสอบไล่ภาค RAM 1111 ปี 2565-2568 · อาจมีคลาดเคลื่อนบ้าง พบข้อผิดพลาดแจ้งได้ที่หน้าแรก</div>
   <div class="credit"><span>Developed by 6601516161</span> · <span>Tested by 6654005054</span></div>
 
 <script>
@@ -396,7 +405,7 @@ function trBlock(q){
 // ("ตัวเลือกที่ 1 …", "1. …") becomes a numbered list, "- …" becomes bullets,
 // everything else stays as short paragraphs.
 function fmtExplain(raw){
-  if(!raw) return '<i style="color:var(--text-soft)">— ชีทไม่ได้ให้คำอธิบายข้อนี้ —</i>';
+  if(!raw) return '<i style="color:var(--text-soft)">— ยังไม่มีคำอธิบายข้อนี้ —</i>';
   let t=esc(raw).replace(/\r/g,'');
   // start a new line before an inline choice marker so each choice-analysis stands out
   t=t.replace(/\s*(?:ส่วน)?(ตัวเลือกที่|ข้อเลือกที่|ข้อที่)\s*([1-4])/g,'\n$1 $2');

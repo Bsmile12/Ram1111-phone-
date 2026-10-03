@@ -232,6 +232,8 @@ textarea.fb-in{min-height:120px;resize:vertical;line-height:1.5;}
 .fb-done{text-align:center;padding:16px 0 4px;}
 .fb-done .big{font-size:40px;display:block;margin-bottom:8px;}
 .fb-done p{color:var(--mu);font-size:13px;margin:6px 0 16px;}
+/* exam section temporarily closed - delete this line to reopen */
+.exam-off{display:none !important;}
 .credit{position:relative;z-index:1;text-align:center;color:var(--mu);font-size:11px;font-family:var(--fen);padding:18px 14px 22px;}.credit span{white-space:nowrap}
 @media(max-width:600px){.credit{margin-top:-56px;padding-bottom:76px;}}
 @media(pointer:coarse){.tinp,.fi{font-size:16px;}.frow .fi{min-width:130px;}}
@@ -273,7 +275,7 @@ textarea.fb-in{min-height:120px;resize:vertical;line-height:1.5;}
   <button class="ntab" onclick="showPage('stats',this)">&#128202; Stats</button>
   <button class="ntab" onclick="showPage('manage',this)">&#9881; จัดการ</button>
   <button class="ntab" onclick="showPage('daily',this)" id="daily-tab">&#127775; Daily</button>
-<a class="ntab ntab-x" href="exam.html" style="text-decoration:none">&#9997;&#65039; ข้อสอบ</a>
+<a class="ntab ntab-x exam-off" href="exam.html" style="text-decoration:none">&#9997;&#65039; ข้อสอบ</a>
 <a class="ntab ntab-x" href="tenses.html" style="text-decoration:none">&#128221; Tenses</a>
   <div class="xpn"><span class="xplv" id="nlv">Lv.1</span><div class="xptr"><div class="xpfi" id="nxp" style="width:0%"></div></div></div>
 </nav>
@@ -319,7 +321,7 @@ textarea.fb-in{min-height:120px;resize:vertical;line-height:1.5;}
         <div class="home-card-name">จัดการ Vocab</div>
         <div class="home-card-desc">เลือก Chapter · เพิ่มคำเอง</div>
       </div>
-      <a class="home-card" style="--hc:linear-gradient(90deg,#7c6af7,#3dd68c);text-decoration:none" href="exam.html">
+      <a class="home-card exam-off" style="--hc:linear-gradient(90deg,#7c6af7,#3dd68c);text-decoration:none" href="exam.html">
         <span class="home-card-icon">&#9997;&#65039;</span>
         <div class="home-card-name">ทำข้อสอบ</div>
         <div class="home-card-desc">ข้อสอบ 3 ชุด · เฉลย + คำอธิบาย</div>
@@ -329,7 +331,7 @@ textarea.fb-in{min-height:120px;resize:vertical;line-height:1.5;}
         <div class="home-card-name">แบบฝึก Tenses</div>
         <div class="home-card-desc">12 Tenses · Modal · Irregular Verbs</div>
       </a>
-      <a class="home-card" style="--hc:linear-gradient(90deg,#f7c76a,#f76a8c);text-decoration:none" href="dashboard.html">
+      <a class="home-card exam-off" style="--hc:linear-gradient(90deg,#f7c76a,#f76a8c);text-decoration:none" href="dashboard.html">
         <span class="home-card-icon">&#128200;</span>
         <div class="home-card-name">สถิติข้อสอบ</div>
         <div class="home-card-desc">คะแนน · จุดอ่อนแต่ละหัวข้อ</div>
@@ -514,13 +516,13 @@ textarea.fb-in{min-height:120px;resize:vertical;line-height:1.5;}
     <button onclick="showPage('manage',document.getElementById('bnt-more'));toggleMoreMenu()" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;">
       <span style="font-size:20px;">&#9881;</span> จัดการ
     </button>
-    <a href="exam.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
+    <a class="exam-off" href="exam.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
       <span style="font-size:20px;">&#9997;&#65039;</span> ทำข้อสอบ
     </a>
     <a href="tenses.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
       <span style="font-size:20px;">&#128221;</span> แบบฝึก Tenses
     </a>
-    <a href="dashboard.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
+    <a class="exam-off" href="dashboard.html" style="background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:12px;color:var(--tx);font-family:var(--fth);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;">
       <span style="font-size:20px;">&#128200;</span> สถิติข้อสอบ
     </a>
   </div>

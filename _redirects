@@ -1,0 +1,7 @@
+# Exam section temporarily closed. Delete this file (and the .exam-off CSS line in index.html) to reopen.
+# "!" forces the rule even though the real files still exist.
+/exam              /maintenance.html  200!
+/exam.html         /maintenance.html  200!
+/dashboard         /maintenance.html  200!
+/dashboard.html    /maintenance.html  200!
+/exam_data.json    /maintenance.html  404!
