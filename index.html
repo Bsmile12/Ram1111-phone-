@@ -232,8 +232,6 @@ textarea.fb-in{min-height:120px;resize:vertical;line-height:1.5;}
 .fb-done{text-align:center;padding:16px 0 4px;}
 .fb-done .big{font-size:40px;display:block;margin-bottom:8px;}
 .fb-done p{color:var(--mu);font-size:13px;margin:6px 0 16px;}
-/* exam section temporarily closed - delete this line to reopen */
-.exam-off{display:none !important;}
 .credit{position:relative;z-index:1;text-align:center;color:var(--mu);font-size:11px;font-family:var(--fen);padding:18px 14px 22px;}.credit span{white-space:nowrap}
 @media(max-width:600px){.credit{margin-top:-56px;padding-bottom:76px;}}
 @media(pointer:coarse){.tinp,.fi{font-size:16px;}.frow .fi{min-width:130px;}}
@@ -646,11 +644,11 @@ const BASE=[
 {word:"crouching down",pron:"คราวชิ่ง เดาน์",answer:"หมอบลง",chapter:3},
 {word:"curling",pron:"เคิร์ลลิ่ง",answer:"งอตัว, ม้วนตัว",chapter:3},
 {word:"depression",pron:"ดีเพรสชั่น",answer:"ที่ลุ่ม",chapter:3},
-{word:"atenna",pron:"แอนเทนนา",answer:"เสาอากาศ",chapter:3},
+{word:"antenna",pron:"แอนเทนนา",answer:"เสาอากาศ",chapter:3},
 {word:"inadvisable",pron:"อินแอดไวซะเบิล",answer:"ไม่แนะนำ",chapter:3},
-{word:"conduct",pron:"คอนดัคท์",answer:"เหนี่ยวนำ",chapter:3},
+{word:"conduct",pron:"คอนดัคท์",answer:"นำ (ไฟฟ้า/ความร้อน)",chapter:3},
 {word:"lightning",pron:"ไลท์นิ่ง",answer:"ฟ้าแลบ",chapter:3},
-{word:"rear-end-collision",pron:"เรียร์ เอ็นด์ คอลลิชั่น",answer:"การชนท้ายรถคันอื่น",chapter:4},
+{word:"rear-end collision",pron:"เรียร์ เอ็นด์ คอลลิชั่น",answer:"การชนท้ายรถคันอื่น",chapter:4},
 {word:"side-on collision",pron:"ไซด์ ออน คอลลิชั่น",answer:"การชนด้านข้าง",chapter:4},
 {word:"reckless",pron:"เร็คเลส",answer:"ประมาท",chapter:4},
 {word:"overtake",pron:"โอเวอร์เทค",answer:"แซง",chapter:4},
@@ -662,7 +660,7 @@ const BASE=[
 {word:"wide-legged jeans",pron:"ไวด์ เล็กด์ จีนส์",answer:"กางเกงทรงหลวม",chapter:4},
 {word:"sideswipe",pron:"ไซด์สไวป์",answer:"เฉี่ยว",chapter:4},
 {word:"plough into",pron:"พลาว อินทู",answer:"กระแทก",chapter:4},
-{word:"slam on",pron:"สแลม ออน",answer:"รีบเยียบ",chapter:4},
+{word:"slam on",pron:"สแลม ออน",answer:"เหยียบ (เบรก) อย่างแรง",chapter:4},
 {word:"spun",pron:"สปัน",answer:"หมุน",chapter:4},
 {word:"flared jeans",pron:"แฟลร์ด จีนส์",answer:"กางเกงยีนส์ขาม้า",chapter:4},
 {word:"bootcut jeans",pron:"บู้ทคัท จีนส์",answer:"กางเกงยีนส์คล้ายขาม้า",chapter:4},
@@ -723,7 +721,7 @@ const BASE=[
 {word:"conspiracy",pron:"คอนสพิราซี่",answer:"การสมคบคิด",chapter:7},
 {word:"crust",pron:"ครัสท์",answer:"เปลือก",chapter:7},
 {word:"spherical",pron:"สเฟียริคัล",answer:"ทรงกลม",chapter:7},
-{word:"spinning",pron:"สปินนิ่ง",answer:"ที่หมุนกำลังหมุน",chapter:7},
+{word:"spinning",pron:"สปินนิ่ง",answer:"ที่หมุน, กำลังหมุน",chapter:7},
 {word:"particle",pron:"พาร์ทิเคิล",answer:"ส่วนเล็กๆ",chapter:8},
 {word:"respiratory",pron:"เรสพิระทอรี่",answer:"เกี่ยวกับการหายใจ",chapter:8},
 {word:"tract",pron:"แทร็คท์",answer:"ทางเดิน (อาหาร/หายใจ)",chapter:8},
@@ -774,8 +772,8 @@ const BASE=[
 {word:"incredibly",pron:"อินเครดิบลี่",answer:"อย่างมาก, อย่างน่าเหลือเชื่อ",chapter:10},
 {word:"benefit",pron:"เบ็นนิฟิท",answer:"ประโยชน์",chapter:10},
 {word:"be torn down",pron:"บี ทอร์น เดาน์",answer:"ถูกทำลาย, ถูกรื้อ",chapter:10},
-{word:"moped",pron:"โมเพด",answer:"รถมอเตอร์ไซค์พ่วงเครื่องยนต์เล็ก",chapter:10},
-{word:"accidently",pron:"แอ็คซิเด็นทลี่",answer:"โดยบังเอิญ, โดยไม่ตั้งใจ",chapter:10},
+{word:"moped",pron:"โมเพด",answer:"รถจักรยานยนต์ขนาดเล็ก",chapter:10},
+{word:"accidentally",pron:"แอ็คซิเด็นทลี่",answer:"โดยบังเอิญ, โดยไม่ตั้งใจ",chapter:10},
 {word:"struck",pron:"สตรัค",answer:"ถูกตี, โจมตี",chapter:10},
 {word:"exactly",pron:"เอ็กแซ็คลี่",answer:"อย่างแม่นยำ, เป๊ะๆ",chapter:10},
 {word:"very same",pron:"เวรี่ เซม",answer:"เหมือนกันเป๊ะๆ",chapter:10},
@@ -808,6 +806,11 @@ const BASE=[
 let custom=JSON.parse(localStorage.getItem('cv')||'[]');
 let selCh=JSON.parse(localStorage.getItem('sc')||'null');
 let st={...{c:0,w:0,ms:0,h:[],ww:{},cs:{},xp:0},...JSON.parse(localStorage.getItem('qs')||'{}')};
+// escH(s) = กัน HTML ในข้อความที่ผู้ใช้พิมพ์เอง (คำศัพท์ custom)
+const escH=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// todayStats() = สถิติของวันนี้ (เก็บใน st.day เริ่มนับใหม่เมื่อขึ้นวันใหม่)
+function todayStats(){const k=new Date().toDateString();if(!st.day||st.day.d!==k)st.day={d:k,c:0,w:0,s:0,ms:0};return st.day;}
+let filterChanged=false; // true หลังเปลี่ยน chapter → โหลดคำถามใหม่ตอนกลับไปหน้า quiz
 let sc=0,wc=0,strk=0,mstrk=st.ms||0,ans=false,curQ=null,lastQ=null,mode='mc';
 let tmr=null,tl=10;
 
@@ -1029,6 +1032,7 @@ function toAns(){
   rt.textContent='⏰ หมดเวลา! → '+curQ.answer;
   rt.className='rtxt no'; playTo();
   wc++; strk=0; st.w++; st.h.push(0);
+  {const td=todayStats(); td.w++; td.s=0;}
   st.ww[curQ.word]=(st.ww[curQ.word]||0)+1;
   const ch=String(curQ.chapter||'?');
   if(!st.cs[ch])st.cs[ch]={c:0,t:0};
@@ -1086,6 +1090,7 @@ function handle(ok,btn){
     st.w++; st.h.push(0);
     st.ww[curQ.word]=(st.ww[curQ.word]||0)+1;
   }
+  {const td=todayStats(); if(ok){td.c++; td.s++; if(td.s>td.ms)td.ms=td.s;} else {td.w++; td.s=0;}}
   const ch=String(curQ.chapter||'?');
   if(!st.cs[ch])st.cs[ch]={c:0,t:0};
   st.cs[ch].t++; if(ok)st.cs[ch].c++;
@@ -1229,6 +1234,7 @@ function applyFilter(){
   selCh=chk.length?chk:null;
   localStorage.setItem('sc',JSON.stringify(selCh));
   mcDeck=[];mcRound=0; // รีเซ็ต deck เมื่อเปลี่ยน chapter
+  filterChanged=true;
   alert('✅ บันทึกแล้ว');
 }
 // addWord() = เพิ่มคำศัพท์ใหม่เข้า custom array
@@ -1274,9 +1280,9 @@ function renderTbl(){
   tb.innerHTML=f.map(v=>{
     const ri=custom.findIndex(c=>c.word===v.word&&c.answer===v.answer);
     return '<tr>'
-      +'<td class="enc">'+v.word+(v.isC?' <span class="cbg">custom</span>':'')+'</td>'
-      +'<td class="prc">'+(v.pron||'-')+'</td>'
-      +'<td>'+v.answer+'</td>'
+      +'<td class="enc">'+escH(v.word)+(v.isC?' <span class="cbg">custom</span>':'')+'</td>'
+      +'<td class="prc">'+escH(v.pron||'-')+'</td>'
+      +'<td>'+escH(v.answer)+'</td>'
       +'<td style="color:var(--mu);font-size:11px">'+v.chapter+'</td>'
       +'<td>'+(v.isC?'<button class="db" onclick="delWord('+ri+')">✕</button>':'')+'</td>'
       +'</tr>';
@@ -1318,6 +1324,7 @@ function showPage(id, el) {
   if(id==='daily') renderDailyPage();
   if(id==='home')  renderHome();
   if(id!=='quiz')  clrTmr();
+  if(id==='quiz' && filterChanged){ filterChanged=false; loadQ(); }
 }
 
 // toggleMoreMenu() = เปิด/ปิด more menu (mobile) ที่โผล่เหนือ bottom nav
@@ -1336,10 +1343,13 @@ document.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown',e=>{
+  const lv=document.querySelector('.lvov');
+  if(lv){ if(e.code==='Enter'||e.code==='Escape'||e.code==='Space'){e.preventDefault();lv.remove();} return; }
+  if(document.getElementById('boss-overlay').style.display==='flex')return;
   const oQ=document.getElementById('page-quiz').classList.contains('active');
   const oF=document.getElementById('page-flash').classList.contains('active');
   if(e.code==='Space'&&oQ&&mode!=='type'){e.preventDefault();nextQ();}
-  if(e.code==='Enter'&&oQ&&mode==='type'){e.preventDefault();subType();}
+  if(e.code==='Enter'&&oQ&&mode==='type'){e.preventDefault();if(ans)nextQ();else subType();}
   if(e.code==='Enter'&&oQ&&mode!=='type'){e.preventDefault();nextQ();}
   if(e.code==='Space'&&oF){e.preventDefault();fcFlip();}
   if(e.code==='ArrowRight'&&oF)fcMark(false);
@@ -1351,7 +1361,7 @@ document.addEventListener('keydown',e=>{
   }
 });
 document.getElementById('ti').addEventListener('keydown',e=>{
-  if(e.code==='Enter'){e.preventDefault();subType();}
+  if(e.code==='Enter'){e.preventDefault();e.stopPropagation();subType();}
 });
 
 // ============================================================
@@ -1398,14 +1408,13 @@ let isDailyMode = false;
 // buildDailyQuestions() = สุ่มเลือก 10 คำจาก pool สำหรับวันนี้
 //   ใช้ pseudo-random seed จากวันที่
 function buildDailyQuestions() {
-  // สุ่มคำด้วย seed จากวันที่ (ทุกคนได้คำชุดเดียวกันในวันเดียวกัน)
-  const p = pool();
-  const shuffled = p.slice().sort(() => {
-    // pseudo-seed from today's date
-    const seed = parseInt(todayKey().replace(/-/g,''));
-    return Math.sin(seed * p.indexOf(p[Math.floor(Math.random()*p.length)])) - 0.5;
-  });
-  return shuffled.slice(0, Math.min(DC_TOTAL, shuffled.length));
+  // สุ่มคำด้วย seed จากวันที่ (ทุกคนได้คำชุดเดียวกันในวันเดียวกัน และไม่เปลี่ยนเมื่อออกแล้วกลับมา)
+  const p = BASE.slice().sort((a,b) => a.word < b.word ? -1 : a.word > b.word ? 1 : 0);
+  let a = parseInt(todayKey().replace(/-/g,'')) >>> 0;
+  const rnd = () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  for(let i = p.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [p[i], p[j]] = [p[j], p[i]]; }
+  return p.slice(0, Math.min(DC_TOTAL, p.length));
 }
 
 // renderDailyPage() = วาด UI หน้า Daily Challenge
@@ -1423,7 +1432,7 @@ function renderDailyPage() {
         <div class="complete-title">Daily Challenge สำเร็จ!</div>
         <div class="complete-sub">วันนี้ตอบถูก ${dcState.correct}/${DC_TOTAL} ข้อ<br>มาใหม่พรุ่งนี้นะ!</div>
         <div class="xp-badge">+${DC_BONUS_XP} XP</div><br>
-        <button class="back-btn" onclick="showPage('quiz',document.querySelector('.ntab'))">&#8592; กลับหน้าหลัก</button>
+        <button class="back-btn" onclick="showPage('home',document.getElementById('home-tab'))">&#8592; กลับหน้าหลัก</button>
       </div>`;
     return;
   }
@@ -1463,15 +1472,12 @@ function loadDailyQ() {
   const q = dcQuestions[dcIdx];
   document.getElementById('dc-wd').textContent = q.word;
   document.getElementById('dc-pr').textContent = q.pron ? '[ '+q.pron+' ]' : '';
-  document.getElementById('dc-chb').textContent = '&#128218; Chapter ' + (q.chapter||'?');
+  document.getElementById('dc-chb').textContent = '📚 Chapter ' + (q.chapter||'?');
   document.getElementById('dc-rt').textContent = '';
   document.getElementById('dc-nb').style.display = 'none';
   if(document.getElementById('dc-qnum')) document.getElementById('dc-qnum').textContent = dcIdx+1;
 
-  const ch = [q.answer];
-  const p = pool().map(v=>v.answer).filter(a=>a!==q.answer);
-  while(ch.length<4&&p.length) ch.push(p.splice(Math.floor(Math.random()*p.length),1)[0]);
-  ch.sort(()=>Math.random()-.5);
+  const ch = uniqueChoices(q.answer, BASE);
 
   const g = document.getElementById('dc-cg');
   g.innerHTML = '';
@@ -1542,7 +1548,7 @@ function completeDailyChallenge() {
       <div class="complete-title">Daily Challenge สำเร็จ!</div>
       <div class="complete-sub">วันนี้ตอบถูก ${dcCorrect}/${DC_TOTAL} ข้อ &#127775;<br>มาใหม่พรุ่งนี้นะ!</div>
       <div class="xp-badge">+${DC_BONUS_XP} XP</div><br>
-      <button class="back-btn" onclick="showPage('quiz',document.querySelectorAll('.ntab')[0])">&#8592; กลับหน้าหลัก</button>
+      <button class="back-btn" onclick="showPage('home',document.getElementById('home-tab'))">&#8592; กลับหน้าหลัก</button>
     </div>`;
   [523,659,784,1047,1319].forEach((f,i)=>setTimeout(()=>pt(f,'sine',.15,.3),i*90));
 }
@@ -1597,6 +1603,15 @@ let bossActive = false;
 let bossWord = null;
 let bossRound = 0;   // ตอบถูกไปแล้วกี่ครั้งใน boss นี้
 let bossFailed = false;
+let bossChoices = [];
+
+// uniqueChoices(answer, words) = คำตอบถูก + ตัวหลอก 3 ตัวที่ไม่ซ้ำกัน แล้วสลับลำดับ
+function uniqueChoices(answer, words) {
+  const ch = [answer];
+  const p = words.map(v=>v.answer).filter(a=>a!==answer);
+  while(ch.length<4&&p.length){ const r=p.splice(Math.floor(Math.random()*p.length),1)[0]; if(!ch.includes(r)) ch.push(r); }
+  return ch.sort(()=>Math.random()-.5);
+}
 
 // checkBossTrigger() = เช็คว่าถึงเวลา trigger boss มั้ย
 //   นับ bossCorrectTotal ทุกครั้งที่ตอบถูก
@@ -1630,8 +1645,8 @@ function showBossIntro(q) {
     <span class="boss-icon">&#128123;</span>
     <div class="boss-title">Boss Round!</div>
     <div class="boss-sub">คำนี้คุณตอบผิดบ่อย<br>ตอบให้ถูก <strong>${BOSS_ROUNDS} ครั้งติดกัน</strong> เพื่อกำจัดมัน!</div>
-    <div class="boss-word">${q.word}</div>
-    ${q.pron ? '<div class="boss-pron">[ '+q.pron+' ]</div>' : ''}
+    <div class="boss-word">${escH(q.word)}</div>
+    ${q.pron ? '<div class="boss-pron">[ '+escH(q.pron)+' ]</div>' : ''}
     <button class="boss-start" onclick="startBossRound()">&#9876; สู้เลย!</button>`;
   overlay.style.display = 'flex';
   playLv();
@@ -1657,20 +1672,18 @@ function renderBossQuestion() {
     dots += `<div class="${cls}"></div>`;
   }
 
-  const ch = [q.answer];
-  const p = pool().map(v=>v.answer).filter(a=>a!==q.answer);
-  while(ch.length<4&&p.length) ch.push(p.splice(Math.floor(Math.random()*p.length),1)[0]);
-  ch.sort(()=>Math.random()-.5);
+  const ch = uniqueChoices(q.answer, pool());
+  bossChoices = ch;
 
-  const btns = ch.map(c =>
-    `<button class="cbtn" style="margin:4px 0" onclick="bossAnswer(this,'${c.replace(/'/g,"\\'")}','${q.answer.replace(/'/g,"\\'")}')">${c}</button>`
+  const btns = ch.map((c,i) =>
+    `<button class="cbtn" style="margin:4px 0" onclick="bossAnswer(this,${i})">${escH(c)}</button>`
   ).join('');
 
   card.innerHTML = `
     <div style="display:flex;gap:6px;justify-content:center;margin-bottom:14px">${dots}</div>
     <div class="boss-title" style="font-size:16px;margin-bottom:8px">ครั้งที่ ${bossRound+1}/${BOSS_ROUNDS}</div>
-    <div class="boss-word">${q.word}</div>
-    ${q.pron ? '<div class="boss-pron">[ '+q.pron+' ]</div>' : ''}
+    <div class="boss-word">${escH(q.word)}</div>
+    ${q.pron ? '<div class="boss-pron">[ '+escH(q.pron)+' ]</div>' : ''}
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">${btns}</div>
     <div id="boss-rt" style="min-height:24px;font-size:14px;font-weight:600;margin-top:12px;text-align:center"></div>`;
 }
@@ -1678,7 +1691,8 @@ function renderBossQuestion() {
 // bossAnswer(btn, choice, correctAnswer) = ประมวลผลคำตอบ boss
 //   ถูก: bossRound++ ถ้าครบ BOSS_ROUNDS = bossVictory()
 //   ผิด: รีเซ็ต bossRound = 0 เริ่มนับใหม่
-function bossAnswer(btn, choice, correctAnswer) {
+function bossAnswer(btn, i) {
+  const choice = bossChoices[i], correctAnswer = bossWord.answer;
   document.querySelectorAll('#boss-card .cbtn').forEach(b => {
     b.disabled = true;
     if(b.textContent === correctAnswer) b.classList.add('correct');
@@ -1715,7 +1729,7 @@ function bossVictory() {
   card.innerHTML = `
     <span class="boss-icon">&#127942;</span>
     <div class="boss-title" style="color:var(--gn)">Boss Defeated!</div>
-    <div class="boss-sub" style="margin-bottom:20px">"${bossWord.word}" ถูกลบออกจากรายการคำยาก &#127881;</div>
+    <div class="boss-sub" style="margin-bottom:20px">"${escH(bossWord.word)}" ถูกลบออกจากรายการคำยาก &#127881;</div>
     <button class="boss-start" style="background:linear-gradient(135deg,var(--gn),#1e8449)" onclick="closeBoss()">&#127919; เล่นต่อ</button>`;
   addXP(20);
   [784,1047,1319].forEach((f,i)=>setTimeout(()=>pt(f,'sine',.2,.35),i*100));
@@ -1742,11 +1756,11 @@ function renderHome() {
   const chs = [...new Set(all.map(v => v.chapter))].length;
   document.getElementById('home-sub').textContent =
     'คำศัพท์ทั้งหมด ' + all.length + ' คำ · ' + chs + ' บท';
-  const t = sc + wc;
-  document.getElementById('hst-c').textContent = sc;
-  document.getElementById('hst-w').textContent = wc;
-  document.getElementById('hst-s').textContent = mstrk;
-  document.getElementById('hst-a').textContent = t ? Math.round(sc/t*100)+'%' : '-';
+  const td = todayStats(), t = td.c + td.w;
+  document.getElementById('hst-c').textContent = td.c;
+  document.getElementById('hst-w').textContent = td.w;
+  document.getElementById('hst-s').textContent = td.ms;
+  document.getElementById('hst-a').textContent = t ? Math.round(td.c/t*100)+'%' : '-';
   updateHomeDCBanner();
 }
 
